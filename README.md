@@ -1,7 +1,7 @@
 WooCommerce Pay for Payment
 ===========================
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/woocommerce-pay-for-paymement.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment)
+[![plugin version](https://img.shields.io/wordpress/plugin/v/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment)
 
 About
 -----
