@@ -11,6 +11,7 @@ if ( ! class_exists( 'Pay4Pay_Admin' ) ) :
 class Pay4Pay_Admin {
 
 	private static $_instance = null;
+	public $required_wc_version = '2.2.0';
 
 	public static function instance(){
 		if ( is_null(self::$_instance) )
@@ -22,6 +23,7 @@ class Pay4Pay_Admin {
 		// handle options
 		add_action( 'wp_loaded' , array( &$this , 'add_payment_options'), 99 );
 		add_action( 'woocommerce_update_options_checkout' , array( &$this , 'add_payment_options') );
+		add_action( 'admin_init' , array( &$this , 'check_wc_version' ) );
 		
 		// payment gateways table
 		add_filter( 'woocommerce_payment_gateways_setting_columns' , array( &$this , 'add_extra_fee_column' ) );
@@ -29,6 +31,18 @@ class Pay4Pay_Admin {
 		
 		// settings script
 		add_action( 'load-woocommerce_page_wc-settings' , array( &$this , 'enqueue_checkout_settings_js' ) );
+	}
+
+	function check_wc_version() {
+		if ( ! function_exists( 'WC' ) || version_compare( WC()->version , $this->required_wc_version ) < 0 ) {
+			deactivate_plugins( plugin_basename( __FILE__ ) );
+			add_action( 'admin_notices', array( __CLASS__ , 'wc_version_notice' ) );
+		}
+	}
+	public static function wc_version_notice() {
+		?><div class="error"><p><?php
+			_e('WooCommerce Pay4Payment requires at least WooCommerce '.$this->required_wc_version.'. Please update!');
+		?></p></div><?php
 	}
 
 	public function enqueue_checkout_settings_js(){
@@ -196,7 +210,7 @@ class Pay4Pay_Admin {
 		foreach ( $defaults as $option_key => $default_value )
 			if ( array_key_exists( $option_key, $form_fields ) )
 				$form_fields[$option_key]['default'] = $default_value;
-		
+
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
 			$gateway->form_fields += $form_fields;
