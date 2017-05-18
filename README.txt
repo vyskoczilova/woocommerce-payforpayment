@@ -93,6 +93,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= Unreleased =
+- check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
+
 = 2.0.0 =
 - plugin overtaken by [@vyskoczilova](https://github.com/vyskoczilova/woocommerce-payforpayment)
 - fully compatible with WC 3.0+
@@ -175,4 +178,4 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Upgrade Notice ==
-Now compatible with WooCommerce 2.6.+ & 3.0.+
+Requires at least WooCommerce 2.6 and newer.

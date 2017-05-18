@@ -11,7 +11,7 @@ if ( ! class_exists( 'Pay4Pay_Admin' ) ) :
 class Pay4Pay_Admin {
 
 	private static $_instance = null;
-	public $required_wc_version = '2.2.0';
+	public $required_wc_version = '2.6.0';
 
 	public static function instance(){
 		if ( is_null(self::$_instance) )
