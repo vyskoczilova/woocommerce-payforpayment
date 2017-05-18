@@ -72,7 +72,7 @@ Use the GitHub Repo rather than the WordPress Plugin. Do as follows:
 
 2. in the console cd into Your 'wp-content/plugins´ directory
 
-3. type `git clone git@github.com:mcguffin/wp-access-areas.git`
+3. type `git clone https://github.com/vyskoczilova/woocommerce-payforpayment` or better type `git fork https://github.com/vyskoczilova/woocommerce-payforpayment`
 
 4. If you want to update to the latest files (be careful, might be untested on Your WP-Version) type `git pull´.
 
