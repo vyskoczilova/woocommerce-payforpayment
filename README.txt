@@ -94,21 +94,22 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 == Changelog ==
 
 = Unreleased =
-- check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
+- Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
+- Fix: translatable pay4pay_charges_fixed (WPML support)
 
 = 2.0.0 =
 - plugin overtaken by [@vyskoczilova](https://github.com/vyskoczilova/woocommerce-payforpayment)
 - fully compatible with WC 3.0+
-- ADDED Czech localization
-- ADDED Disable on zero shipping (by [@panvagenas](https://github.com/mcguffin/woocommerce-payforpayment/pull/35))
-- FIXED support for WC 2.6+ (by [@oerdnj](https://github.com/mcguffin/woocommerce-payforpayment/pull/42))
-- FIXED tax_rates notice (by [@javierrguez](https://wordpress.org/support/topic/error-wc_cart-tax/))
+- Added: Czech localization
+- Added: Disable on zero shipping (by [@panvagenas](https://github.com/mcguffin/woocommerce-payforpayment/pull/35))
+- Fix: support for WC 2.6+ (by [@oerdnj](https://github.com/mcguffin/woocommerce-payforpayment/pull/42))
+- Fix: tax_rates notice (by [@javierrguez](https://wordpress.org/support/topic/error-wc_cart-tax/))
 
 = 1.3.7 =
 - l10n: change textdomain to 'woocommerce-pay-for-payment' to make it work with translate.wordpress.org
 
 = 1.3.6 =
-- Fixed compatibility with Amazon Payments and also with Woocommerce 2.4
+- Fix: compatibility with Amazon Payments and also with Woocommerce 2.4
 - Fix: PHP Warning on shopping basket
 
 = 1.3.5 =
