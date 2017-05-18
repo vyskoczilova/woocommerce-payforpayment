@@ -2,198 +2,186 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Pay for Payment v1.3.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-05-01 15:33+0100\n"
+"POT-Creation-Date: 2017-05-18 17:05+0200\n"
+"PO-Revision-Date: 2017-05-18 17:05+0200\n"
 "Last-Translator: Jörn Lund <joern@podpirate.org>\n"
 "Language-Team: \n"
 "Language: tr\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Poedit-Basepath: ../\n"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;"
+"_nx_js:1,2,3c;esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;"
+"esc_attr_x:1,2c;esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;"
+"transChoice:1,2\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Loco-Target-Locale: tr_TR\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#. translators: plugin header field 'Author'
-#: woocommerce-payforpayment.php:0
-msgid "Jörn Lund"
+#: admin/class-pay4pay-admin.php:44 woocommerce-payforpayment.php:70
+#, php-format
+msgid ""
+"WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
 msgstr ""
 
-#. translators: plugin header field 'AuthorURI'
-#: woocommerce-payforpayment.php:0
-msgid "https://github.com/mcguffin"
+#: admin/class-pay4pay-admin.php:62 admin/class-pay4pay-admin.php:283
+#: woocommerce-payforpayment.php:32
+msgid "Extra Charge"
+msgstr "Ekstra Ücret"
+
+#: admin/class-pay4pay-admin.php:68
+msgid "Item Title"
+msgstr "Öğe Başlığı"
+
+#: admin/class-pay4pay-admin.php:70
+msgid "This will show up in the shopping basket."
+msgstr "Alışveriş sepetinde gösterilecektir."
+
+#: admin/class-pay4pay-admin.php:74
+msgid "Fixed charge"
+msgstr "Sabit Ücret"
+
+#: admin/class-pay4pay-admin.php:76
+msgid "Extra charge to be added to cart when this payment method is selected."
+msgstr "Bu ödeme yöntemi seçildiğinde ekstra ücret sepete eklenecek."
+
+#: admin/class-pay4pay-admin.php:83
+msgid "Percent charge"
+msgstr "Yüzde Ücreti"
+
+#: admin/class-pay4pay-admin.php:85
+msgid "Percentage of cart total to be added to payment."
+msgstr "Sepet toplamının yüzdesi sipariş tutarına eklenecek."
+
+#: admin/class-pay4pay-admin.php:96
+msgid "Charge at least"
+msgstr "En Düşük Ücret"
+
+#: admin/class-pay4pay-admin.php:98
+msgid ""
+"Minimum extra charge to be added to cart when this payment method is "
+"selected."
+msgstr ""
+"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en düşük ekstra "
+"ücret tutarıdır."
+
+#: admin/class-pay4pay-admin.php:106
+msgid "Charge at most"
+msgstr "En Yüksek Ücret"
+
+#: admin/class-pay4pay-admin.php:108
+msgid ""
+"Maximum extra charge to be added to cart when this payment method is "
+"selected. Enter zero to disable."
+msgstr ""
+"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en yüksek ekstra "
+"ücret tutarıdır. Devre dışı bırakmak için sıfır olarak girin."
+
+#: admin/class-pay4pay-admin.php:116
+msgid "Disable on Free Shipping"
+msgstr "Ücretsiz Kargoda Devre Dışı Bırak"
+
+#: admin/class-pay4pay-admin.php:117
+msgid "Don’t charge this fee when free shipping is available."
+msgstr "Ücretsiz kargo etkinleştirildiği zaman bu ücreti yükleme."
+
+#: admin/class-pay4pay-admin.php:128
+msgid "Extra Charge Taxes"
+msgstr "Ekstra Vergi Ücretleri"
+
+#: admin/class-pay4pay-admin.php:133
+msgid "Taxable"
 msgstr ""
 
-#. translators: plugin header field 'Version'
-#: woocommerce-payforpayment.php:0
-msgid "1.3.3"
-msgstr ""
+#: admin/class-pay4pay-admin.php:135
+msgid "Payment fee is taxable"
+msgstr "Vergiye tabi ödeme ücreti"
 
-#: woocommerce-payforpayment.php:67
-msgid "WooCommerce Pay4Payment requires at least WooCommerce 2.2. Please update!"
-msgstr ""
+#: admin/class-pay4pay-admin.php:142
+msgid "Inclusive Taxes"
+msgstr "Vergiler Dahil"
 
-#: admin/class-pay4pay-admin.php:268
+#: admin/class-pay4pay-admin.php:144
+msgid "The payment fee is inclusive of taxes."
+msgstr "Ödeme ücretine vergiler dahildir."
+
+#: admin/class-pay4pay-admin.php:145
+msgid ""
+"If you leave this unchecked taxes will be calculated on top of the payment "
+"fee."
+msgstr ""
+"Eğer işaretlenmemiş olarak bırakırsanız vergiler, ödeme ücreti üzerine "
+"hesaplanacaktır."
+
+#: admin/class-pay4pay-admin.php:151
+msgid "Tax class"
+msgstr "Vergi sınıfı"
+
+#: admin/class-pay4pay-admin.php:153
+msgid "Select a the tax class applied to the extra charge."
+msgstr "Ekstra ücret için uygulanacak bir vergi sınıfı belirleyin."
+
+#: admin/class-pay4pay-admin.php:166
+msgid "Include in percental payment fee calculation:"
+msgstr "Yüzdesel ödeme ücreti hesaplamasına dahil et:"
+
+#: admin/class-pay4pay-admin.php:172
+msgid "Fees"
+msgstr "Ücretler"
+
+#: admin/class-pay4pay-admin.php:174
+msgid "Include fees in calculation."
+msgstr "Ücretleri hesaplamaya dahil et."
+
+#: admin/class-pay4pay-admin.php:180
+msgid "Coupons"
+msgstr "Kuponlar"
+
+#: admin/class-pay4pay-admin.php:182
+msgid "Include Coupons in calculation."
+msgstr "Kuponları hesaplamaya dahil et."
+
+#: admin/class-pay4pay-admin.php:188
+msgid "Shipping"
+msgstr "Kargo"
+
+#: admin/class-pay4pay-admin.php:190
+msgid "Include shipping cost in calculation."
+msgstr "Kargo maliyetini hesaplamaya dahil et."
+
+#: admin/class-pay4pay-admin.php:199
+msgid "Taxes"
+msgstr "Vergiler"
+
+#: admin/class-pay4pay-admin.php:201
+msgid "Include taxes in calculation."
+msgstr "Vergileri hesaplamaya dahil et."
+
+#: admin/class-pay4pay-admin.php:295
 #, php-format
 msgctxt "Gateway list column"
 msgid "%s %% of cart totals"
 msgstr "Sepet toplamına oranı: %s %%"
 
-#: admin/class-pay4pay-admin.php:48 admin/class-pay4pay-admin.php:256
-#: woocommerce-payforpayment.php:34
-msgid "Extra Charge"
-msgstr "Ekstra Ücret"
-
-#: admin/class-pay4pay-admin.php:54
-msgid "Item Title"
-msgstr "Öğe Başlığı"
-
-#: admin/class-pay4pay-admin.php:56
-msgid "This will show up in the shopping basket."
-msgstr "Alışveriş sepetinde gösterilecektir."
-
-#: admin/class-pay4pay-admin.php:60
-msgid "Fixed charge"
-msgstr "Sabit Ücret"
-
-#: admin/class-pay4pay-admin.php:62
-msgid "Extra charge to be added to cart when this payment method is selected."
-msgstr "Bu ödeme yöntemi seçildiğinde ekstra ücret sepete eklenecek."
-
-#: admin/class-pay4pay-admin.php:69
-msgid "Percent charge"
-msgstr "Yüzde Ücreti"
-
-#: admin/class-pay4pay-admin.php:71
-msgid "Percentage of cart total to be added to payment."
-msgstr "Sepet toplamının yüzdesi sipariş tutarına eklenecek."
-
-#: admin/class-pay4pay-admin.php:119
-msgid "Includes Taxes"
-msgstr "Vergi Kapsamı"
-
-#: admin/class-pay4pay-admin.php:103
-msgid "Don’t charge this fee when free shipping is available."
-msgstr "Ücretsiz kargo etkinleştirildiği zaman bu ücreti yükleme."
-
-#: admin/class-pay4pay-admin.php:102
-msgid "Disable on Free Shipping"
-msgstr "Ücretsiz Kargoda Devre Dışı Bırak"
-
-#: admin/class-pay4pay-admin.php:114
-msgid "Extra Charge Taxes"
-msgstr "Ekstra Vergi Ücretleri"
-
-#: admin/class-pay4pay-admin.php:121
-msgid "Payment fee is taxable"
-msgstr "Vergiye tabi ödeme ücreti"
-
-#: admin/class-pay4pay-admin.php:128
-msgid "Inclusive Taxes"
-msgstr "Vergiler Dahil"
-
-#: admin/class-pay4pay-admin.php:130
-msgid "The payment fee is inclusive of taxes."
-msgstr "Ödeme ücretine vergiler dahildir."
-
-#: admin/class-pay4pay-admin.php:131
-msgid ""
-"If you leave this unchecked taxes will be calculated on top of the payment fee."
-msgstr ""
-"Eğer işaretlenmemiş olarak bırakırsanız vergiler, ödeme ücreti üzerine "
-"hesaplanacaktır."
-
-#: admin/class-pay4pay-admin.php:137
-msgid "Tax class"
-msgstr "Vergi sınıfı"
-
-#: admin/class-pay4pay-admin.php:139
-msgid "Select a the tax class applied to the extra charge."
-msgstr "Ekstra ücret için uygulanacak bir vergi sınıfı belirleyin."
-
-#: admin/class-pay4pay-admin.php:152
-msgid "Include in percental payment fee calculation:"
-msgstr "Yüzdesel ödeme ücreti hesaplamasına dahil et:"
-
-#: admin/class-pay4pay-admin.php:158
-msgid "Fees"
-msgstr "Ücretler"
-
-#: admin/class-pay4pay-admin.php:160
-msgid "Include fees in calculation."
-msgstr "Ücretleri hesaplamaya dahil et."
-
-#: admin/class-pay4pay-admin.php:166
-msgid "Coupons"
-msgstr "Kuponlar"
-
-#: admin/class-pay4pay-admin.php:168
-msgid "Include Coupons in calculation."
-msgstr "Kuponları hesaplamaya dahil et."
-
-#: admin/class-pay4pay-admin.php:174
-msgid "Shipping"
-msgstr "Kargo"
-
-#: admin/class-pay4pay-admin.php:176
-msgid "Include shipping cost in calculation."
-msgstr "Kargo maliyetini hesaplamaya dahil et."
-
-#: admin/class-pay4pay-admin.php:185
-msgid "Taxes"
-msgstr "Vergiler"
-
-#: admin/class-pay4pay-admin.php:187
-msgid "Include taxes in calculation."
-msgstr "Vergileri hesaplamaya dahil et."
-
-#. translators: plugin header field 'Name'
-#: woocommerce-payforpayment.php:0
-msgid "WooCommerce Pay for Payment"
-msgstr "WooCommerce Pay for Payment"
-
-#. translators: plugin header field 'PluginURI'
-#: woocommerce-payforpayment.php:0
-msgid "http://wordpress.org/plugins/woocommerce-pay-for-payment"
-msgstr "http://wordpress.org/plugins/woocommerce-pay-for-payment"
-
-#. translators: plugin header field 'Description'
-#: woocommerce-payforpayment.php:0
-msgid "Setup individual charges for each payment method in woocommerce."
-msgstr "Her bir WooCommerce ödeme yöntemi için ayrı ayrı ücretler ayarlayın."
-
-#: woocommerce-payforpayment.php:305
+#: woocommerce-payforpayment.php:249
 msgid "Standard"
 msgstr "Standart"
 
-#: admin/class-pay4pay-admin.php:82
-msgid "Charge at least"
-msgstr "En Düşük Ücret"
+#~ msgid "Includes Taxes"
+#~ msgstr "Vergi Kapsamı"
 
-#: admin/class-pay4pay-admin.php:84
-msgid ""
-"Minimum extra charge to be added to cart when this payment method is selected."
-msgstr ""
-"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en düşük ekstra ücret "
-"tutarıdır."
+#~ msgid "WooCommerce Pay for Payment"
+#~ msgstr "WooCommerce Pay for Payment"
 
-#: admin/class-pay4pay-admin.php:92
-msgid "Charge at most"
-msgstr "En Yüksek Ücret"
+#~ msgid "http://wordpress.org/plugins/woocommerce-pay-for-payment"
+#~ msgstr "http://wordpress.org/plugins/woocommerce-pay-for-payment"
 
-#: admin/class-pay4pay-admin.php:94
-msgid ""
-"Maximum extra charge to be added to cart when this payment method is selected. "
-"Enter zero to disable."
-msgstr ""
-"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en yüksek ekstra ücret "
-"tutarıdır. Devre dışı bırakmak için sıfır olarak girin."
+#~ msgid "Setup individual charges for each payment method in woocommerce."
+#~ msgstr ""
+#~ "Her bir WooCommerce ödeme yöntemi için ayrı ayrı ücretler ayarlayın."
