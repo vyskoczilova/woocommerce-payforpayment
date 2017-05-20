@@ -20,5 +20,9 @@
 			<key name="pay4pay_item_title" />
 			<key name="pay4pay_charges_fixed" />
 		</key>
+		<key name="woocommerce_stripe_settings">
+			<key name="pay4pay_item_title" />
+			<key name="pay4pay_charges_fixed" />
+		</key>
 	</admin-texts>
 </wpml-config>
