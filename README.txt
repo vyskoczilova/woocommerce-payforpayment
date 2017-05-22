@@ -30,6 +30,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.0+
 
 = Features =
 - Fixed charge and/or a percentage of cart total
+- Possibility to disable for free/zero shipping
 - Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)) and Czech localization ([díky](https://kybernaut.cz))
 - Plugin API. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
@@ -96,6 +97,8 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 = Unreleased =
 - Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
 - Fix: translatable pay4pay_charges_fixed (WPML support)
+- Fix: disable on free shipping (for WC 2.6+)
+- Fix: disable on zero shipping - added missing settings field
 
 = 2.0.0 =
 - plugin overtaken by [@vyskoczilova](https://github.com/vyskoczilova/woocommerce-payforpayment)
