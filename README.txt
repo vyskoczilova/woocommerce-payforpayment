@@ -94,7 +94,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= Unreleased =
+= 2.0.1 =
 - Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
 - Fix: translatable pay4pay_charges_fixed (WPML support)
 - Fix: disable on free shipping (for WC 2.6+)

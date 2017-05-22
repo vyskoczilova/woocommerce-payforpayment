@@ -22,10 +22,7 @@ Features
 
 Unreleased updates
 ------------------
-- Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
-- Fix: translatable pay4pay_charges_fixed (WPML support)
-- Fix: disable on free shipping (for WC 2.6+)
-- Fix: disable on zero shipping - added missing settings field
+- none yet
 
 Plugin API
 ----------
