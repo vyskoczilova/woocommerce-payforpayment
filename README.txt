@@ -94,13 +94,13 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.1 =
+= 2.0.1 (2017-05-22) =
 - Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
 - Fix: translatable pay4pay_charges_fixed (WPML support)
 - Fix: disable on free shipping (for WC 2.6+)
 - Fix: disable on zero shipping - added missing settings field
 
-= 2.0.0 =
+= 2.0.0 (2017-05-15) =
 - plugin overtaken by [@vyskoczilova](https://github.com/vyskoczilova/woocommerce-payforpayment)
 - fully compatible with WC 3.0+
 - Added: Czech localization
@@ -155,7 +155,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 = 1.2.1 =
 - Feature: [Calculate custom fee](http://wordpress.org/support/topic/not-calculating-custom-fees)
 
-= 1.2.0 =
+= 1.2.0 (2014-08-09) =
 - Feature: add option to disable payment fee when free shipping is selected
 - Feature: add pay4pay column in WooCommerce checkout settings
 - Plugin-API: add filter `woocommerce_pay4pay_apply`
