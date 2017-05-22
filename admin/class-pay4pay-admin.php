@@ -117,6 +117,12 @@ class Pay4Pay_Admin {
 				'label' => __( 'Don’t charge this fee when free shipping is available.' , 'woocommerce-pay-for-payment' ),
 				'type' => 'checkbox',
 				'desc_tip' => true,
+			),			
+			'pay4pay_disable_on_zero_shipping' => array(
+				'title' => __( 'Disable on Zero Shipping' , 'woocommerce-pay-for-payment' ),
+				'label' => __( 'Don’t charge this fee when zero shipping is available.' , 'woocommerce-pay-for-payment' ),
+				'type' => 'checkbox',
+				'desc_tip' => true,
 			),
 			
 		);
