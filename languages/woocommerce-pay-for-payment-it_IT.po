@@ -84,7 +84,7 @@ msgid ""
 "selected. Enter zero to disable."
 msgstr ""
 "Ricarico massimo da aggiungere al carrello quando questo metodo di "
-"pagamento viene selezionato."
+"pagamento viene selezionato. Inserisci zero per disabilitare."
 
 #: admin/class-pay4pay-admin.php:116
 msgid "Disable on Free Shipping"
