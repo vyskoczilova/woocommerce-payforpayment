@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Pay for Payment v0.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-07 10:12+0200\n"
+"PO-Revision-Date: 2017-06-07 10:22+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;"
+"_nx_js:1,2,3c;esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;"
+"esc_attr_x:1,2c;esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;"
+"transChoice:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: Davide Pesenti <mrjive@mrjive.it>\n"
+"Language: it_IT\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-pay4pay-admin.php:44 woocommerce-payforpayment.php:70
+#, php-format
+msgid ""
+"WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
+msgstr ""
+"WooCommerce Pay4Payment necessita di WooCommerce %s o superiore. Per favore "
+"aggiorna!"
+
+#: admin/class-pay4pay-admin.php:62 admin/class-pay4pay-admin.php:283
+#: woocommerce-payforpayment.php:32
+msgid "Extra Charge"
+msgstr "Costo supplementare"
+
+#: admin/class-pay4pay-admin.php:68
+msgid "Item Title"
+msgstr "Titolo elemento"
+
+#: admin/class-pay4pay-admin.php:70
+msgid "This will show up in the shopping basket."
+msgstr "Qesto comparirà nel carrello."
+
+#: admin/class-pay4pay-admin.php:74
+msgid "Fixed charge"
+msgstr "Tariffa fissa"
+
+#: admin/class-pay4pay-admin.php:76
+msgid "Extra charge to be added to cart when this payment method is selected."
+msgstr ""
+"Costo supplementare da aggiungere al carrello quando questo metodo di "
+"pagamento viene selezionato."
+
+#: admin/class-pay4pay-admin.php:83
+msgid "Percent charge"
+msgstr "Tariffa in percentuale"
+
+#: admin/class-pay4pay-admin.php:85
+msgid "Percentage of cart total to be added to payment."
+msgstr "Percentuale sul totale del carrello da aggiungere al pagamento."
+
+#: admin/class-pay4pay-admin.php:96
+msgid "Charge at least"
+msgstr "Aggiungi almeno"
+
+#: admin/class-pay4pay-admin.php:98
+msgid ""
+"Minimum extra charge to be added to cart when this payment method is "
+"selected."
+msgstr ""
+"Ricarico minimo da aggiungere al carrello quando questo metodo di pagamento "
+"viene selezionato."
+
+#: admin/class-pay4pay-admin.php:106
+msgid "Charge at most"
+msgstr "Ricarico massimo"
+
+#: admin/class-pay4pay-admin.php:108
+msgid ""
+"Maximum extra charge to be added to cart when this payment method is "
+"selected. Enter zero to disable."
+msgstr ""
+"Ricarico massimo da aggiungere al carrello quando questo metodo di "
+"pagamento viene selezionato. Inserisci zero per disabilitare."
+
+#: admin/class-pay4pay-admin.php:116
+msgid "Disable on Free Shipping"
+msgstr "Disabilita in caso di Spedizione Gratuita"
+
+#: admin/class-pay4pay-admin.php:117
+msgid "Don’t charge this fee when free shipping is available."
+msgstr ""
+"Non aggiungere questa tariffa se è disponibile la spedizione gratuita."
+
+#: admin/class-pay4pay-admin.php:128
+msgid "Extra Charge Taxes"
+msgstr "Tasse sul costo supplementare"
+
+#: admin/class-pay4pay-admin.php:133
+msgid "Taxable"
+msgstr "Tassabile"
+
+#: admin/class-pay4pay-admin.php:135
+msgid "Payment fee is taxable"
+msgstr "La tariffa è soggetta a tassazione"
+
+#: admin/class-pay4pay-admin.php:142
+msgid "Inclusive Taxes"
+msgstr "Incluse tasse"
+
+#: admin/class-pay4pay-admin.php:144
+msgid "The payment fee is inclusive of taxes."
+msgstr "La tariffa è comprensiva di tasse."
+
+#: admin/class-pay4pay-admin.php:145
+msgid ""
+"If you leave this unchecked taxes will be calculated on top of the payment "
+"fee."
+msgstr ""
+"Se lasci deselezionata questa opzione le tasse verranno calcolate sulla "
+"tariffa."
+
+#: admin/class-pay4pay-admin.php:151
+msgid "Tax class"
+msgstr "Classe di tassazione"
+
+#: admin/class-pay4pay-admin.php:153
+msgid "Select a the tax class applied to the extra charge."
+msgstr "Seleziona una classe di tassazione applicata al costo extra."
+
+#: admin/class-pay4pay-admin.php:166
+msgid "Include in percental payment fee calculation:"
+msgstr "Includi nella tariffa calcolata in percentuale:"
+
+#: admin/class-pay4pay-admin.php:172
+msgid "Fees"
+msgstr "Tariffa"
+
+#: admin/class-pay4pay-admin.php:174
+msgid "Include fees in calculation."
+msgstr "Includi la tariffa nel calcolo."
+
+#: admin/class-pay4pay-admin.php:180
+msgid "Coupons"
+msgstr "Coupon"
+
+#: admin/class-pay4pay-admin.php:182
+msgid "Include Coupons in calculation."
+msgstr "Includi il Coupon nel calcolo."
+
+#: admin/class-pay4pay-admin.php:188
+msgid "Shipping"
+msgstr "Spedizione"
+
+#: admin/class-pay4pay-admin.php:190
+msgid "Include shipping cost in calculation."
+msgstr "Includi la spedizione nel calcolo."
+
+#: admin/class-pay4pay-admin.php:199
+msgid "Taxes"
+msgstr "Tasse"
+
+#: admin/class-pay4pay-admin.php:201
+msgid "Include taxes in calculation."
+msgstr "Includi le tasse nel calcolo."
+
+#: admin/class-pay4pay-admin.php:295
+#, php-format
+msgctxt "Gateway list column"
+msgid "%s %% of cart totals"
+msgstr "%s %% del totale del carrello"
+
+#: woocommerce-payforpayment.php:249
+msgid "Standard"
+msgstr "Standard"
