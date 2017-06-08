@@ -18,11 +18,11 @@ Features
 - Fixed charge and/or a percentage of cart total
 - Possibility to disable for free/zero shipping
 - Translation ready
-- German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok teşekkürler!](https://github.com/TRRF)) and Czech localization ([díky](https://kybernaut.cz))
+- German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
 
 Unreleased updates
 ------------------
-- none yet
+- Added: Italian localization
 
 Plugin API
 ----------

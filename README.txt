@@ -31,7 +31,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.0+
 = Features =
 - Fixed charge and/or a percentage of cart total
 - Possibility to disable for free/zero shipping
-- Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)) and Czech localization ([díky](https://kybernaut.cz))
+- Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
 - Plugin API. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Limitations =
@@ -93,6 +93,8 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.2 (unreleased) =
 
 = 2.0.1 (2017-05-22) =
 - Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
@@ -182,4 +184,4 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Upgrade Notice ==
-Requires at least WooCommerce 2.6 and newer.
+Requires at least WooCommerce 2.6 or newer.
