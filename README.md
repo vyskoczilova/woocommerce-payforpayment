@@ -23,6 +23,7 @@ Features
 Unreleased updates
 ------------------
 - Added: Italian localization
+- Fix: $fragment_refresh is not defined (#13)
 
 Plugin API
 ----------

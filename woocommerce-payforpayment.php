@@ -76,7 +76,9 @@ class Pay4Pay {
 jQuery(document).ready(function($){
 	$(document.body).on('change', 'input[name="payment_method"]', function() {
 		$('body').trigger('update_checkout');
-		$.ajax( $fragment_refresh );
+		if (typeof $fragment_refresh !== 'undefined' ) {
+			$.ajax($fragment_refresh);
+		}
 	});
 });
  		</script><?php 
