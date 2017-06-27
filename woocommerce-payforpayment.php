@@ -2,12 +2,50 @@
 /*
 Plugin Name: WooCommerce Pay for Payment
 Plugin URI: http://wordpress.org/plugins/woocommerce-pay-for-payment
-Description: Setup individual charges for each payment method in woocommerce.
+Description: Setup individual charges for each payment method in WooCommerce.
 Version: 2.0.2
 Author: Karolína Vyskočilová
 Author URI: https://kybernaut.cz
 License: GPL
 */
+
+
+// Is WooCommerce active?
+add_action( 'plugins_loaded', 'pay4payment_plugin_init' );
+function pay4payment_plugin_init() {
+	
+	// If WooCommerce is NOT active
+	if ( current_user_can( 'activate_plugins' ) && !class_exists( 'woocommerce' ) ) {
+		
+		add_action( 'admin_init', 'pay4payment_deactivate' );
+		add_action( 'admin_notices', 'pay4payment_admin_notice' );	
+
+    } else {
+		Pay4Pay::instance();
+		if ( is_admin() )
+			require_once plugin_dir_path(__FILE__) . '/admin/class-pay4pay-admin.php';
+		}
+}
+
+// Throw an Alert to tell the Admin why it didn't activate
+function pay4payment_admin_notice() {
+	$pay4payment_plugin = __( 'WooCommerce Pay for Payment', 'woocommerce-pay-for-payment' );
+	$woocommerce_plugin = __( 'WooCommerce', 'woocommerce-pay-for-payment' );
+			
+			echo '<div class="error"><p>'
+				. sprintf( __( '%1$s requires %2$s. Please activate %2$s before activation of %1$s. This plugin has been deactivated.', 'woocommerce-pay-for-payment' ), '<strong>' . esc_html( $pay4payment_plugin ) . '</strong>', '<strong>' . esc_html( $woocommerce_plugin ) . '</strong>' )
+				. '</p></div>';
+		
+	if ( isset( $_GET['activate'] ) )
+		unset( $_GET['activate'] );
+}
+
+// Deactivate the Child Plugin
+function pay4payment_deactivate() {
+	deactivate_plugins( plugin_basename( __FILE__ ) );
+}
+
+
 
 /**
  * Pay4Pay
@@ -255,8 +293,3 @@ jQuery(document).ready(function($){
 		return $tax_class_options;
 	}
 }
-
-Pay4Pay::instance();
-
-if ( is_admin() )
-	require_once plugin_dir_path(__FILE__) . '/admin/class-pay4pay-admin.php';

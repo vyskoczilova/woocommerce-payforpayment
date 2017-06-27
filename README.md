@@ -23,7 +23,8 @@ Features
 Unreleased updates
 ------------------
 - Added: Italian localization
-- Fix: $fragment_refresh is not defined (#13)
+- Fix: $fragment_refresh is not defined ([#13](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/13))
+- Fix: turn of plugin, if WC is not active
 
 Plugin API
 ----------
