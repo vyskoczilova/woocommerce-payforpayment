@@ -25,7 +25,7 @@ Unreleased updates
 - Added: Italian localization
 - Fix: $fragment_refresh is not defined ([#13](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/13))
 - Fix: Turn off plugin, if WC is not active
-- Fix: Undefined index: woocommerce_cod_pay4pay_tax_class ([#12])(https://github.com/vyskoczilova/woocommerce-payforpayment/issues/12)
+- Fix: Undefined index: woocommerce_cod_pay4pay_tax_class ([#12](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/12))
 
 Plugin API
 ----------
