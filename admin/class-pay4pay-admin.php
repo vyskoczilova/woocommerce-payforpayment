@@ -236,6 +236,9 @@ class Pay4Pay_Admin {
 		
 		$opt_name = $prefix.'_settings';
 		$options = get_option( $opt_name );
+
+		$tax_class_sanitize = (isset($_POST[$prefix.'_pay4pay_tax_class'])? $_POST[$prefix.'_pay4pay_tax_class'] : '');
+
 		// validate!
 		$extra = array(
 			'pay4pay_item_title' 				=> sanitize_text_field( $_POST[$prefix.'_pay4pay_item_title'] ),
@@ -248,7 +251,7 @@ class Pay4Pay_Admin {
 			
 			'pay4pay_taxes' 					=> $this->_get_bool( $prefix.'_pay4pay_taxes' ),
 			'pay4pay_includes_taxes'			=> $this->_get_bool( $prefix.'_pay4pay_includes_taxes'),
-			'pay4pay_tax_class' 				=> $this->_sanitize_tax_class($_POST[$prefix.'_pay4pay_tax_class']), // 0, incl, excl
+			'pay4pay_tax_class' 				=> $this->_sanitize_tax_class($tax_class_sanitize), // 0, incl, excl
 			
 			'pay4pay_enable_extra_fees'			=> $this->_get_bool( $prefix.'_pay4pay_enable_extra_fees' ),
 			'pay4pay_include_shipping'			=> $this->_get_bool( $prefix.'_pay4pay_include_shipping'),
