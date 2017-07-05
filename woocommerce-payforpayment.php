@@ -59,7 +59,7 @@ class Pay4Pay {
 
 	private static $_instance = null;
 	private $_fee = null;
-	public $required_wc_version = '2.6.0';
+	public static $required_wc_version = '2.6.0';
 
 	public static function instance(){
 		if ( is_null(self::$_instance) )
@@ -100,14 +100,14 @@ class Pay4Pay {
 	}
 
 	public function check_wc_version() {
-		if ( ! function_exists( 'WC' ) || version_compare( WC()->version , $this->required_wc_version ) < 0 ) {
+		if ( ! function_exists( 'WC' ) || version_compare( WC()->version , self::$required_wc_version ) < 0 ) {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 			add_action( 'admin_notices', array( __CLASS__ , 'wc_version_notice' ) );
 		}
 	}
 	public static function wc_version_notice() {
 		?><div class="error"><p><?php
-			printf( __( 'WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!', 'woocommerce-pay-for-payment' ) , $this->required_wc_version );
+			printf( __( 'WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!', 'woocommerce-pay-for-payment' ) , self::$required_wc_version );
 		?></p></div><?php
 	}
 
