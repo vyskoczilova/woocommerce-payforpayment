@@ -167,7 +167,6 @@ jQuery(document).ready(function($){
 					$calculation_base = 0;
 					if ( $percent = floatval( $settings['pay4pay_charges_percentage'] ) ) {
 
-
 						$calculation_base = $cart->subtotal_ex_tax;
 
 						if ( $include_shipping )
@@ -188,7 +187,6 @@ jQuery(document).ready(function($){
 						$cost += $calculation_base * ( $percent / 100 );
 
 					}
-
 
 					$do_apply = $cost != 0;
 					$do_apply = apply_filters( "woocommerce_pay4pay_apply", $do_apply, $cost, $calculation_base, $current_gateway );
@@ -228,7 +226,6 @@ jQuery(document).ready(function($){
 							$cost /= $factor;
 						}
 
-
 						$cost = apply_filters( "woocommerce_pay4pay_{$current_gateway->id}_amount", $cost, $calculation_base, $current_gateway, $taxable, $include_taxes, $tax_class );
 						$cost = round( $cost, 2 );
 
@@ -238,7 +235,9 @@ jQuery(document).ready(function($){
 							'taxable'   => $taxable,
 							'tax_class' => $tax_class,
 						);
+
 						$cart->calculate_totals();
+
 						return;
 					}
 				}
@@ -246,12 +245,18 @@ jQuery(document).ready(function($){
 		}
 	}
 
+	/**
+	 * Get current gateway.
+	 *
+	 * The Stripe for woocommerce plugin considers itself unavailable if cart
+	 * total is below 50 ct. At this point the cart total is not yet calculated
+	 * and equals zero resulting in s4wc being unavaliable. We use
+	 * `WC()->payment_gateways->payment_gateways()` in favor of
+	 * `WC()->payment_gateways->get_available_payment_gateways()`
+	 *
+	 * @return mixed
+	 */
 	public function get_current_gateway() {
-		/**
-		 *	The Stripe for woocommerce plugin considers itself unavailable if cart total is below 50 ct.
-		 *	At this point the cart total is not yet calculated and equals zero resulting in s4wc being unavaliable.
-		 *	We use `WC()->payment_gateways->payment_gateways()` in favor of `WC()->payment_gateways->get_available_payment_gateways()`
-		 */
 		$available_gateways = WC()->payment_gateways->payment_gateways();
 
 		$current_gateway = null;
