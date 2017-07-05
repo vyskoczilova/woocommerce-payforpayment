@@ -22,7 +22,7 @@ function pay4payment_plugin_init() {
 		add_action( 'admin_init', 'pay4payment_deactivate' );
 		add_action( 'admin_notices', 'pay4payment_admin_notice' );
 
-    } else {
+	} else {
 		Pay4Pay::instance();
 		if ( is_admin() )
 			require_once plugin_dir_path(__FILE__) . '/admin/class-pay4pay-admin.php';
@@ -120,7 +120,7 @@ jQuery(document).ready(function($){
 		}
 	});
 });
- 		</script><?php
+		</script><?php
 	}
 	public function add_pay4payment( $cart ) {
 		if ( ! is_null($this->_fee) ) {
