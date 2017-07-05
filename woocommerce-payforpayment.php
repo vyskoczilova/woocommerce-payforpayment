@@ -1,14 +1,16 @@
 <?php
 /*
 Plugin Name: WooCommerce Pay for Payment
-Plugin URI: http://wordpress.org/plugins/woocommerce-pay-for-payment
+Plugin URI: https://wordpress.org/plugins/woocommerce-pay-for-payment/
 Description: Setup individual charges for each payment method in WooCommerce.
 Version: 2.0.2
 Author: Karolína Vyskočilová
 Author URI: https://kybernaut.cz
-License: GPL
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+Text Domain: woocommerce-pay-for-payment
+Domain Path: /languages
 */
-
 
 // Is WooCommerce active?
 add_action( 'plugins_loaded', 'pay4payment_plugin_init' );
@@ -281,7 +283,7 @@ jQuery(document).ready(function($){
 		}
 		return false;
 	}
-	
+
 	public function get_woocommerce_tax_classes() {
 		// I can't belive it really works like this!
 		$tax_classes = array_filter( array_map('trim', explode( "\n", get_option( 'woocommerce_tax_classes' ) ) ) );
