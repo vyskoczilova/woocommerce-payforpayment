@@ -25,7 +25,7 @@ function pay4payment_plugin_init() {
 	} else {
 		Pay4Pay::instance();
 		if ( is_admin() )
-			require_once plugin_dir_path(__FILE__) . '/admin/class-pay4pay-admin.php';
+			require_once plugin_dir_path( __FILE__ ) . '/admin/class-pay4pay-admin.php';
 		}
 }
 
@@ -59,8 +59,8 @@ class Pay4Pay {
 	private $_fee = null;
 	public static $required_wc_version = '2.6.0';
 
-	public static function instance(){
-		if ( is_null(self::$_instance) )
+	public static function instance() {
+		if ( is_null( self::$_instance ) )
 			self::$_instance = new self();
 		return self::$_instance;
 	}
@@ -93,7 +93,7 @@ class Pay4Pay {
 	}
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'woocommerce-pay-for-payment', false, dirname( plugin_basename( __FILE__ )) . '/languages' );
+		load_plugin_textdomain( 'woocommerce-pay-for-payment', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	public function check_wc_version() {
@@ -123,18 +123,18 @@ jQuery(document).ready(function($){
 	}
 
 	public function add_pay4payment( $cart ) {
-		if ( ! is_null($this->_fee) ) {
-			$cart->add_fee( $this->_fee->fee_title ,
-							$this->_fee->cost ,
-							$this->_fee->taxable ,
+		if ( ! is_null( $this->_fee ) ) {
+			$cart->add_fee( $this->_fee->fee_title,
+							$this->_fee->cost,
+							$this->_fee->taxable,
 							$this->_fee->tax_class
 						);
 
 		}
 	}
 
-	public function calculate_pay4payment( ) {
-		if ( ! is_null($this->_fee) ) {
+	public function calculate_pay4payment() {
+		if ( ! is_null( $this->_fee ) ) {
 			return;
 		}
 		if ( ( $current_gateway = $this->get_current_gateway() ) && ( $settings = $this->get_current_gateway_settings() ) ) {
@@ -156,16 +156,16 @@ jQuery(document).ready(function($){
 			if ( $settings['pay4pay_charges_fixed'] || $settings['pay4pay_charges_percentage'] ) {
 				$cart = WC()->cart;
 				$chosen_methods =  WC()->session->get( 'chosen_shipping_methods' );
-				if (is_null($chosen_methods)) {
+				if ( is_null( $chosen_methods ) ) {
 					$chosen_methods[]=null;
 				}
 
-				if ( (! $disable_on_free_shipping || ! preg_grep( '/^free_shipping.*/', $chosen_methods)) && (!$disable_on_zero_shipping || $cart->shipping_total > 0) ) {
-					$cost = floatval($settings['pay4pay_charges_fixed']);
+				if ( ( ! $disable_on_free_shipping || ! preg_grep( '/^free_shipping.*/', $chosen_methods ) ) && ( ! $disable_on_zero_shipping || $cart->shipping_total > 0 ) ) {
+					$cost = floatval( $settings['pay4pay_charges_fixed'] );
 
 					//  √ $this->cart_contents_total + √ $this->tax_total + √ $this->shipping_tax_total + $this->shipping_total + $this->fee_total,
 					$calculation_base = 0;
-					if ( $percent = floatval($settings['pay4pay_charges_percentage']) ) {
+					if ( $percent = floatval( $settings['pay4pay_charges_percentage'] ) ) {
 
 
 						$calculation_base = $cart->subtotal_ex_tax;
@@ -185,7 +185,7 @@ jQuery(document).ready(function($){
 								$calculation_base += $cart->shipping_tax_total;
 						}
 
-						$cost += $calculation_base * ($percent / 100 );
+						$cost += $calculation_base * ( $percent / 100 );
 
 					}
 
@@ -196,17 +196,17 @@ jQuery(document).ready(function($){
 
 					if ( $do_apply ) {
 						// make our fee being displayed in the order total
-						$fee_title	= $settings['pay4pay_item_title'] ? $settings['pay4pay_item_title'] : $current_gateway->title;
+						$fee_title = $settings['pay4pay_item_title'] ? $settings['pay4pay_item_title'] : $current_gateway->title;
 
-						$fee_title	= str_replace(
-							array( '[FIXED_AMOUNT]', '[PERCENT_AMOUNT]', '[CART_TOTAL]' ) ,
+						$fee_title = str_replace(
+							array( '[FIXED_AMOUNT]', '[PERCENT_AMOUNT]', '[CART_TOTAL]' ),
 							array(
-								strip_tags( wc_price( $settings['pay4pay_charges_fixed'] ) ) ,
+								strip_tags( wc_price( $settings['pay4pay_charges_fixed'] ) ),
 								floatval( $settings['pay4pay_charges_percentage'] ),
-								strip_tags(wc_price($calculation_base)) ,
+								strip_tags(wc_price($calculation_base)),
 							),
 							$fee_title );
-						$fee_id 	= sanitize_title( $fee_title );
+						$fee_id = sanitize_title( $fee_title );
 
 						// apply min + max before tax calculation
 						// some people may like to use the plugin to apply a discount, so we need to handle negative values correctly
@@ -220,7 +220,7 @@ jQuery(document).ready(function($){
 						// WooCommerce Fee is always ex taxes. We need to subtract taxes, WC will add them again later.
 						if ( $taxable && $include_taxes ) {
 
-							$tax_rates = WC_Tax::get_rates($tax_class);
+							$tax_rates = WC_Tax::get_rates( $tax_class );
 
 							$factor = 1;
 							foreach ( $tax_rates as $rate )
@@ -230,12 +230,12 @@ jQuery(document).ready(function($){
 
 
 						$cost = apply_filters( "woocommerce_pay4pay_{$current_gateway->id}_amount", $cost, $calculation_base, $current_gateway, $taxable, $include_taxes, $tax_class );
-						$cost = round($cost,2);
+						$cost = round( $cost, 2 );
 
 						$this->_fee = (object) array(
 							'fee_title' => $fee_title,
-							'cost' => $cost,
-							'taxable' => $taxable,
+							'cost'      => $cost,
+							'taxable'   => $taxable,
 							'tax_class' => $tax_class,
 						);
 						$cart->calculate_totals();
@@ -283,7 +283,7 @@ jQuery(document).ready(function($){
 	}
 
 	public function get_woocommerce_tax_classes() {
-		// I can't belive it really works like this!
+		// I can't believe it really works like this!
 		$tax_classes = array_filter( array_map( 'trim', explode( "\n", get_option( 'woocommerce_tax_classes' ) ) ) );
 		$tax_class_options = array();
 		$tax_class_options[''] = __( 'Standard', 'woocommerce' );

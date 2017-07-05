@@ -12,8 +12,8 @@ class Pay4Pay_Admin {
 
 	private static $_instance = null;
 
-	public static function instance(){
-		if ( is_null(self::$_instance) )
+	public static function instance() {
+		if ( is_null( self::$_instance ) )
 			self::$_instance = new self();
 		return self::$_instance;
 	}
@@ -47,8 +47,8 @@ class Pay4Pay_Admin {
 
 	public function enqueue_checkout_settings_js(){
 		if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'checkout' ) {
-			wp_enqueue_script( 'pay4pay_settings_checkout', plugins_url( '/js/pay4pay-settings-checkout.js', dirname(__FILE__) ), array( 'woocommerce_admin' ) );
-			wp_enqueue_style( 'pay4pay_settings_checkout', plugins_url( '/css/pay4pay-settings-checkout.css', dirname(__FILE__) ), array() );
+			wp_enqueue_script( 'pay4pay_settings_checkout', plugins_url( '/js/pay4pay-settings-checkout.js', dirname( __FILE__ ) ), array( 'woocommerce_admin' ) );
+			wp_enqueue_style( 'pay4pay_settings_checkout', plugins_url( '/css/pay4pay-settings-checkout.css', dirname( __FILE__ ) ), array() );
 		}
 	}
 
@@ -218,7 +218,7 @@ class Pay4Pay_Admin {
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
 			$gateway->form_fields += $form_fields;
-			add_action( 'woocommerce_update_options_payment_gateways_'.$gateway->id, array($this,'update_payment_options' ), 20 );
+			add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
 		}
 	}
 
@@ -230,68 +230,68 @@ class Pay4Pay_Admin {
 		$opt_name = $prefix . '_settings';
 		$options  = get_option( $opt_name );
 
-		$tax_class_sanitize = (isset($_POST[$prefix.'_pay4pay_tax_class'])? $_POST[$prefix.'_pay4pay_tax_class'] : '' );
+		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
 		// validate!
 		$extra = array(
-			'pay4pay_item_title' 				=> sanitize_text_field( $_POST[$prefix.'_pay4pay_item_title'] ),
-			'pay4pay_charges_fixed' 			=> floatval( $_POST[$prefix.'_pay4pay_charges_fixed'] ),
-			'pay4pay_charges_percentage' 		=> floatval( $_POST[$prefix.'_pay4pay_charges_percentage'] ),
-			'pay4pay_charges_minimum'			=> floatval( $_POST[$prefix.'_pay4pay_charges_minimum'] ),
-			'pay4pay_charges_maximum'			=> floatval( $_POST[$prefix.'_pay4pay_charges_maximum'] ),
-			'pay4pay_disable_on_free_shipping'	=> $this->_get_bool( $prefix.'_pay4pay_disable_on_free_shipping' ),
-			'pay4pay_disable_on_zero_shipping'	=> $this->_get_bool( $prefix.'_pay4pay_disable_on_zero_shipping' ),
+			'pay4pay_item_title' 				=> sanitize_text_field( $_POST[$prefix . '_pay4pay_item_title'] ),
+			'pay4pay_charges_fixed' 			=> floatval( $_POST[$prefix . '_pay4pay_charges_fixed'] ),
+			'pay4pay_charges_percentage' 		=> floatval( $_POST[$prefix . '_pay4pay_charges_percentage'] ),
+			'pay4pay_charges_minimum'			=> floatval( $_POST[$prefix . '_pay4pay_charges_minimum'] ),
+			'pay4pay_charges_maximum'			=> floatval( $_POST[$prefix . '_pay4pay_charges_maximum'] ),
+			'pay4pay_disable_on_free_shipping'	=> $this->_get_bool( $prefix . '_pay4pay_disable_on_free_shipping' ),
+			'pay4pay_disable_on_zero_shipping'	=> $this->_get_bool( $prefix . '_pay4pay_disable_on_zero_shipping' ),
 
-			'pay4pay_taxes' 					=> $this->_get_bool( $prefix.'_pay4pay_taxes' ),
-			'pay4pay_includes_taxes'			=> $this->_get_bool( $prefix.'_pay4pay_includes_taxes' ),
-			'pay4pay_tax_class' 				=> $this->_sanitize_tax_class($tax_class_sanitize), // 0, incl, excl
+			'pay4pay_taxes' 					=> $this->_get_bool( $prefix . '_pay4pay_taxes' ),
+			'pay4pay_includes_taxes'			=> $this->_get_bool( $prefix . '_pay4pay_includes_taxes' ),
+			'pay4pay_tax_class' 				=> $this->_sanitize_tax_class( $tax_class_sanitize ), // 0, incl, excl
 
-			'pay4pay_enable_extra_fees'			=> $this->_get_bool( $prefix.'_pay4pay_enable_extra_fees' ),
-			'pay4pay_include_shipping'			=> $this->_get_bool( $prefix.'_pay4pay_include_shipping' ),
-			'pay4pay_include_coupons'			=> $this->_get_bool( $prefix.'_pay4pay_include_coupons' ),
-			'pay4pay_include_cart_taxes'		=> $this->_get_bool( $prefix.'_pay4pay_include_cart_taxes' ),
+			'pay4pay_enable_extra_fees'			=> $this->_get_bool( $prefix . '_pay4pay_enable_extra_fees' ),
+			'pay4pay_include_shipping'			=> $this->_get_bool( $prefix . '_pay4pay_include_shipping' ),
+			'pay4pay_include_coupons'			=> $this->_get_bool( $prefix . '_pay4pay_include_coupons' ),
+			'pay4pay_include_cart_taxes'		=> $this->_get_bool( $prefix . '_pay4pay_include_cart_taxes' ),
 		);
 		$options += $extra;
 		update_option( $opt_name, $options );
 	}
 
 	private function _sanitize_tax_option( $tax_option, $default = 'incl' ) {
-		if ( in_array( $tax_option, array(0,'incl','excl' ) ) )
+		if ( in_array( $tax_option, array( 0, 'incl', 'excl' ) ) )
 			return $tax_option;
 		return $default;
 	}
 
 	private function _sanitize_tax_class( $tax_option, $default = 'incl' ) {
-		if ( in_array( $tax_option, array(0,'incl','excl' ) ) )
+		if ( in_array( $tax_option, array( 0, 'incl', 'excl' ) ) )
 			return $tax_option;
 		return $default;
 	}
 
 	private function _get_bool( $key ) {
-		return isset($_POST[ $key ]) && $_POST[ $key ] === '1' ? 'yes' : 'no';
+		return isset( $_POST[ $key ] ) && $_POST[ $key ] === '1' ? 'yes' : 'no';
 	}
 
 	private function _get_float( $key ) {
-		return isset($_POST[ $key ]) && $_POST[ $key ] === '1' ? 'yes' : 'no';
+		return isset( $_POST[ $key ] ) && $_POST[ $key ] === '1' ? 'yes' : 'no';
 	}
 
 	/*
 	Handline columns in Woocommerce > settings > checkout
 	*/
-	public function add_extra_fee_column( $columns ){
-		$return = array_slice($columns,0,-1,true)
+	public function add_extra_fee_column( $columns ) {
+		$return = array_slice( $columns, 0, -1, true )
 			+ array( 'pay4pay_extra' => __( 'Extra Charge', 'woocommerce-pay-for-payment' ) )
-			+ array_slice($columns,-1,1,true);
+			+ array_slice( $columns, -1, 1, true );
 		return $return;
 	}
 
 	public function extra_fee_column_content( $gateway ) {
 		?><td><?php
-			if ( isset( $gateway->settings['pay4pay_charges_fixed']) ) {
+			if ( isset( $gateway->settings['pay4pay_charges_fixed'] ) ) {
 				$items = array();
 //				$items[] = sprintf( '<strong>%s</strong>',$gateway->settings['pay4pay_item_title']);
-				if (  $gateway->settings['pay4pay_charges_fixed'] )
-					$items[] = wc_price($gateway->settings['pay4pay_charges_fixed'] );
+				if ( $gateway->settings['pay4pay_charges_fixed'] )
+					$items[] = wc_price( $gateway->settings['pay4pay_charges_fixed'] );
 				if ( $gateway->settings['pay4pay_charges_percentage'] ) {
 					$items[] = sprintf( _x( '%s %% of cart totals', 'Gateway list column', 'pay4pay' ), $gateway->settings['pay4pay_charges_percentage'] );
 
@@ -300,7 +300,7 @@ class Pay4Pay_Admin {
 					if ( isset($gateway->settings['pay4pay_charges_maximum']) && $gateway->settings['pay4pay_charges_maximum'] )
 						$items[] = wc_price($gateway->settings['pay4pay_charges_maximum'] );
 				}
-				echo implode( '<br />',$items);
+				echo implode( '<br />', $items );
 			}
 		?></td><?php
 	}
