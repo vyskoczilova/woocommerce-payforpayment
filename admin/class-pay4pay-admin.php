@@ -20,16 +20,16 @@ class Pay4Pay_Admin {
 
 	private function __construct() {
 		// handle options
-		add_action( 'wp_loaded' , array( &$this , 'add_payment_options'), 99 );
-		add_action( 'woocommerce_update_options_checkout' , array( &$this , 'add_payment_options') );
-		add_action( 'admin_init' , array( &$this , 'check_wc_version' ) );
+		add_action( 'wp_loaded' , array( $this, 'add_payment_options'), 99 );
+		add_action( 'woocommerce_update_options_checkout' , array( $this, 'add_payment_options') );
+		add_action( 'admin_init' , array( $this, 'check_wc_version' ) );
 
 		// payment gateways table
-		add_filter( 'woocommerce_payment_gateways_setting_columns' , array( &$this , 'add_extra_fee_column' ) );
-		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra' , array( &$this , 'extra_fee_column_content' ) );
+		add_filter( 'woocommerce_payment_gateways_setting_columns' , array( $this, 'add_extra_fee_column' ) );
+		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra' , array( $this, 'extra_fee_column_content' ) );
 
 		// settings script
-		add_action( 'load-woocommerce_page_wc-settings' , array( &$this , 'enqueue_checkout_settings_js' ) );
+		add_action( 'load-woocommerce_page_wc-settings' , array( $this, 'enqueue_checkout_settings_js' ) );
 	}
 
 	public function check_wc_version() {
