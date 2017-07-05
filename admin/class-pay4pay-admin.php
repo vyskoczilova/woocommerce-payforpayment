@@ -224,16 +224,11 @@ class Pay4Pay_Admin {
 
 	public function update_payment_options() {
 		global $current_section;
-		if ( version_compare( WC_VERSION, '2.6', '<' )) {
-			$class = new $current_section();
-			$class_id = $class->id;
-		} else {
-			$class_id = $current_section;
-		}
-		$prefix = 'woocommerce_'.$class_id;
 
-		$opt_name = $prefix.'_settings';
-		$options = get_option( $opt_name );
+		$class_id = $current_section;
+		$prefix   = 'woocommerce_' . $class_id;
+		$opt_name = $prefix . '_settings';
+		$options  = get_option( $opt_name );
 
 		$tax_class_sanitize = (isset($_POST[$prefix.'_pay4pay_tax_class'])? $_POST[$prefix.'_pay4pay_tax_class'] : '' );
 
