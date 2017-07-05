@@ -211,9 +211,11 @@ class Pay4Pay_Admin {
 			);
 		}
 
-		foreach ( $defaults as $option_key => $default_value )
-			if ( array_key_exists( $option_key, $form_fields ) )
+		foreach ( $defaults as $option_key => $default_value ) {
+			if ( array_key_exists( $option_key, $form_fields ) ) {
 				$form_fields[$option_key]['default'] = $default_value;
+			}
+		}
 
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;

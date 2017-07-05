@@ -221,8 +221,9 @@ jQuery(document).ready(function($){
 							$tax_rates = WC_Tax::get_rates( $tax_class );
 
 							$factor = 1;
-							foreach ( $tax_rates as $rate )
+							foreach ( $tax_rates as $rate ) {
 								$factor += $rate['rate']/100;
+							}
 							$cost /= $factor;
 						}
 
@@ -292,9 +293,11 @@ jQuery(document).ready(function($){
 		$tax_classes = array_filter( array_map( 'trim', explode( "\n", get_option( 'woocommerce_tax_classes' ) ) ) );
 		$tax_class_options = array();
 		$tax_class_options[''] = __( 'Standard', 'woocommerce' );
-		if ( $tax_classes )
-			foreach ( $tax_classes as $class )
+		if ( $tax_classes ) {
+			foreach ( $tax_classes as $class ) {
 				$tax_class_options[ sanitize_title( $class ) ] = esc_attr( $class );
+			}
+		}
 		return $tax_class_options;
 	}
 }
