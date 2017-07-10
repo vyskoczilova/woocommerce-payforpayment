@@ -18,11 +18,12 @@ Features
 - Fixed charge and/or a percentage of cart total
 - Possibility to disable for free/zero shipping
 - Translation ready
-- German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
+- German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)), Italian ([grazie](https://github.com/mrjive)) and Dutch localization ([bedankt](https://github.com/diggy))
 
 Unreleased updates
 ------------------
-- Added: Italian localization
+- Added: Italian and Dutch localization
+- Feature: misc code tweaks and fixes ([#16](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/16))
 - Fix: $fragment_refresh is not defined ([#13](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/13))
 - Fix: Turn off plugin, if WC is not active
 - Fix: Undefined index: woocommerce_cod_pay4pay_tax_class ([#12](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/12))
