@@ -234,10 +234,13 @@ class Pay4Pay_Admin {
 
 		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
+		$item_title = sanitize_text_field( $_POST[$prefix . '_pay4pay_item_title'] );
+		$charges_fixed = floatval( $_POST[$prefix . '_pay4pay_charges_fixed'] );
+
 		// validate!
 		$extra = array(
-			'pay4pay_item_title' 				=> sanitize_text_field( $_POST[$prefix . '_pay4pay_item_title'] ),
-			'pay4pay_charges_fixed' 			=> floatval( $_POST[$prefix . '_pay4pay_charges_fixed'] ),
+			'pay4pay_item_title' 				=> $item_title,
+			'pay4pay_charges_fixed' 			=> $charges_fixed,
 			'pay4pay_charges_percentage' 		=> floatval( $_POST[$prefix . '_pay4pay_charges_percentage'] ),
 			'pay4pay_charges_minimum'			=> floatval( $_POST[$prefix . '_pay4pay_charges_minimum'] ),
 			'pay4pay_charges_maximum'			=> floatval( $_POST[$prefix . '_pay4pay_charges_maximum'] ),
@@ -254,6 +257,16 @@ class Pay4Pay_Admin {
 			'pay4pay_include_cart_taxes'		=> $this->_get_bool( $prefix . '_pay4pay_include_cart_taxes' ),
 		);
 		$options += $extra;
+
+		// WMPL
+		// https://wpml.org/wpml-hook/wpml_register_single_string/
+		/**
+		* register strings for translation
+		*/
+		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment - item title', $item_title );
+		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment - charges fixed', $charges_fixed );
+		//WMPL
+
 		update_option( $opt_name, $options );
 	}
 
