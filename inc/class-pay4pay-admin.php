@@ -263,8 +263,8 @@ class Pay4Pay_Admin {
 		/**
 		* register strings for translation
 		*/
-		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment - item title', $item_title );
-		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment - charges fixed', $charges_fixed );
+		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment ('.$class_id.') - item title', $item_title );
+		do_action( 'wpml_register_single_string', 'WooCommerce', 'Pay for payment ('.$class_id.') - charges fixed', $charges_fixed );
 		//WMPL
 
 		update_option( $opt_name, $options );
