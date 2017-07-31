@@ -22,11 +22,7 @@ Features
 
 Unreleased updates
 ------------------
-- Added: Italian and Dutch localization
-- Tweak: Misc code tweaks and fixes ([#16](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/16))
-- Fix: $fragment_refresh is not defined ([#13](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/13))
-- Fix: Turn off plugin, if WC is not active
-- Fix: Undefined index: woocommerce_cod_pay4pay_tax_class ([#12](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/12))
+- none
 
 Plugin API
 ----------

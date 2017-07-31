@@ -146,12 +146,12 @@ jQuery(document).ready(function($){
 
 					if ( $do_apply ) {
 						// make our fee being displayed in the order total								
-						$fee_title = $settings['pay4pay_item_title'] ? apply_filters('wpml_translate_single_string', $settings['pay4pay_item_title'], 'WooCommerce', 'Pay for payment ('.$current_gateway->id.') - item title' ) : $current_gateway->title;
+						$fee_title = $settings['pay4pay_item_title'] ? apply_filters('wpml_translate_single_string', $settings['pay4pay_item_title'], 'woocommerce-pay-for-payment', $current_gateway->id.' - item title' ) : $current_gateway->title;
 
 						$fee_title = str_replace(
 							array( '[FIXED_AMOUNT]', '[PERCENT_AMOUNT]', '[CART_TOTAL]' ),
 							array(
-								strip_tags( wc_price( apply_filters('wpml_translate_single_string', $settings['pay4pay_charges_fixed'], 'WooCommerce', 'Pay for payment ('.$current_gateway->id.') - charges fixed' ) ) ),
+								strip_tags( wc_price( apply_filters('wpml_translate_single_string', $settings['pay4pay_charges_fixed'], 'woocommerce-pay-for-payment', $current_gateway->id.' - charges fixed' ) ) ),
 								floatval( $settings['pay4pay_charges_percentage'] ),
 								strip_tags(wc_price($calculation_base)),
 							),

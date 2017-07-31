@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 3.5
 Tested up to: 4.6.7
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 2.6
@@ -31,6 +31,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.0+
 = Features =
 - Fixed charge and/or a percentage of cart total
 - Possibility to disable for free/zero shipping
+- Compatibility with WPML (use String translation module for fee name/charges localization)
 - Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
 - Plugin API. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
@@ -94,7 +95,13 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.2 (unreleased) =
+= 2.0.2 (2017-07-31) =
+- Feature: Inner compatibility with WPML - fee title and fixed charges can be localized within "String translation" under "woocommerce-pay-for-payment" domain name. Removed wpml-config.xml.
+- Added: Italian and Dutch localization
+- Misc: Code tweaks and fixes ([#16](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/16))
+- Fix: $fragment_refresh is not defined ([#13](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/13))
+- Fix: Turn off plugin, if WC is not active
+- Fix: Undefined index: woocommerce_cod_pay4pay_tax_class ([#12](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/12))
 
 = 2.0.1 (2017-05-22) =
 - Feature: check WC version, minimum version 2.6 (by [@oerdnj](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/8))
@@ -184,4 +191,4 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Upgrade Notice ==
-Requires at least WooCommerce 2.6 or newer.
+Do you use WPML? Check "String translation" for localization of fee title and fixed charges, wpml-config.xml have been removed.
