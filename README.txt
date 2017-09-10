@@ -2,38 +2,35 @@
 Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
-Requires at least: 3.5
-Tested up to: 4.6.7
+Requires at least: 4.6
+Tested up to: 4.8.2
 Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 2.6
-WC tested up to: 3.0.5+
+WC tested up to: 3.1.2+
 
 Setup individual charges for each payment method in WooCommerce.
 
-
 == Description ==
 
-Add individual charges for each payment method as a flat rate and/or as a percentage of the cart total.
-The plugin first calculates the percentage rate and then adds the fixed rate on top.
+Add individual charges for each payment method as a flat rate and/or as a percentage of the cart total. The plugin first calculates the percentage rate and then adds the fixed rate on top.
 
-You can use placeholders in the payment item title:
+You can use **placeholders** in the payment item title:
 
-- [FIXED_AMOUNT]: Will print money-formatted fixed amount you entered.
-- [PERCENT_AMOUNT]: will print out percental amount you entered
-- [CART_TOTAL]: will print out money-formatted cart totals. 
+- *[FIXED_AMOUNT]*: Will print money-formatted fixed amount you entered.
+- *[PERCENT_AMOUNT]*: will print out percental amount you entered
+- *[CART_TOTAL]*: will print out money-formatted cart totals. 
 - Example: `Payment Fee ([FIXED_AMOUNT] + [PERCENT_AMOUNT]% of [CART_TOTAL])`
 
-
-Requires at least WooCommerce 2.6, compatible with WooCommerce 3.0+
+Requires at least WooCommerce 2.6, compatible with WooCommerce 3.1+ (recommended)
 
 = Features =
-- Fixed charge and/or a percentage of cart total
-- Possibility to disable for free/zero shipping
-- Compatibility with WPML (use String translation module for fee name/charges localization)
+- **Fixed charge and/or a percentage** of cart total
+- Possibility to **disable for free/zero shipping**
+- Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
-- Plugin API. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
+- **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Limitations =
 - Better not use it with paypal. (Legal issue, see FAQ as well.)
@@ -47,11 +44,14 @@ Just follow the standard [WordPress plugin installation procedere](http://codex.
 
 == Frequently asked questions ==
 
-= Can I use it with paypal? =
+= Can I use it with PayPal? =
 
 No. PayPal does not permit charging your customer for using PayPal. This is a legal issue rather than a technical one.
 See [PayPal User Agreement](https://www.paypal.com/webapps/mpp/ua/useragreement-full?country.x=US&locale.x=en_US#4), > "4.6 No Surcharges" for details. 
 You have been warned.
+
+= WPML - How to translate? =
+If you need to localize Fee title and Fixed charge go to go to WPML > String translation and look for following type of text domain: `admin_texts_woocommerce_{payment_method_slug}_settings` replacing `{payment_method_slug}` with yours (for examle `cod`). See the second screenshot.
 
 = Can't to setup my payment requirements in the user interface. The option I need is missing. =
 
@@ -91,6 +91,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 == Screenshots ==
 
 1. User interface. You can find this in every payment gateway configuration.
+1. Example of WPML String translation for COD.
 
 
 == Changelog ==
