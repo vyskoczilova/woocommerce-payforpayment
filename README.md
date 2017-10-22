@@ -24,6 +24,7 @@ Features
 Unreleased updates
 ------------------
 - Fix: *WC_Cart->discount_total argument is deprecated* error (by [@bolint](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/25))
+- Added Banner & Icon image (by [Dušan Konečný](http://abmanufaktura,cz))
 
 Plugin API
 ----------
