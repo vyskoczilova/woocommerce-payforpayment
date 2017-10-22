@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 4.8.2
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 2.6
@@ -95,6 +95,11 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.4 (2017-10-22) =
+- Fix: *WC_Cart->discount_total argument is deprecated* error (by [@bolint](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/25))
+- Fix: backwards compatibility to discount_total
+- Added banner & icon image to the WP repository (by [Dušan Konečný](http://abmanufaktura,cz))
 
 = 2.0.3 (2017-10-19) =
 - Fix: Compatibility issues with WC version 3.2 (thanks to [Peter J. Herrel](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/23))

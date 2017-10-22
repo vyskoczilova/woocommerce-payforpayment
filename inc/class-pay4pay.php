@@ -127,8 +127,13 @@ jQuery(document).ready(function($){
 						if ( $include_fees )
 							$calculation_base += $cart->fee_total;
 
-						if ( $include_coupons )
-							$calculation_base -= $cart->get_total_discount() + $cart->discount_cart;
+						if ( $include_coupons ) {
+							if ( version_compare( WC_VERSION, '3.2', '>' )) { 
+								$calculation_base -= $cart->get_total_discount() + $cart->discount_cart;
+							} else {
+								$calculation_base -= $cart->discount_total + $cart->discount_cart;
+							}
+						}
 
 						if ( $include_cart_taxes ) {
 							$calculation_base += $cart->tax_total;
