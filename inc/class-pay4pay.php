@@ -128,7 +128,7 @@ jQuery(document).ready(function($){
 							$calculation_base += $cart->fee_total;
 
 						if ( $include_coupons )
-							$calculation_base -= $cart->discount_total + $cart->discount_cart;
+							$calculation_base -= $cart->get_total_discount() + $cart->discount_cart;
 
 						if ( $include_cart_taxes ) {
 							$calculation_base += $cart->tax_total;
