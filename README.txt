@@ -96,6 +96,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= 2.0.3 (2017-10-19) =
+- Fix: Compatibility issues with WC version 3.2 (thanks to [Peter J. Herrel](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/23))
+
 = 2.0.2 (2017-07-31) =
 - Feature: Inner compatibility with WPML - fee title and fixed charges can be localized within "String translation" under "woocommerce-pay-for-payment" domain name. Removed wpml-config.xml.
 - Added: Italian and Dutch localization
