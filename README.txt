@@ -98,6 +98,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 = 2.0.5 (2017-10-29) =
 - Fix: doubled fee in total
+- Fix: negative fee percentage
 
 = 2.0.4 (2017-10-22) =
 - Fix: *WC_Cart->discount_total argument is deprecated* error (by [@bolint](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/25))

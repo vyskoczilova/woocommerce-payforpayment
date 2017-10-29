@@ -140,8 +140,8 @@ jQuery(document).ready(function($){
 							if ( $include_shipping )
 								$calculation_base += $cart->shipping_tax_total;
 						}
-
-						$cost += $calculation_base * ( $percent / 100 );
+						
+						$cost += $calculation_base * ( $percent / 100 );		
 
 					}
 
@@ -165,9 +165,9 @@ jQuery(document).ready(function($){
 
 						// apply min + max before tax calculation
 						// some people may like to use the plugin to apply a discount, so we need to handle negative values correctly
-						if ( $settings['pay4pay_charges_percentage'] ) {
-							$min_cost = isset( $settings['pay4pay_charges_minimum'] ) ? $settings['pay4pay_charges_minimum'] : -INF;
-							$max_cost = isset( $settings['pay4pay_charges_maximum'] ) && (bool) $settings['pay4pay_charges_maximum'] ? $settings['pay4pay_charges_maximum'] : INF;
+						if ( $settings['pay4pay_charges_percentage'] ) {							
+							$min_cost = !empty( $settings['pay4pay_charges_minimum'] ) ? $settings['pay4pay_charges_minimum'] : -INF;
+							$max_cost = !empty( $settings['pay4pay_charges_maximum'] ) && (bool) $settings['pay4pay_charges_maximum'] ? $settings['pay4pay_charges_maximum'] : INF;
 							$cost = max( $min_cost, $cost );
 							$cost = min( $max_cost, $cost );
 						}
