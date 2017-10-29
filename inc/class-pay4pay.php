@@ -37,7 +37,8 @@ class Pay4Pay {
 	}
 
 	private function __construct() {
-		add_action( 'woocommerce_cart_calculate_fees', array( $this, 'add_pay4payment' ), ( PHP_INT_MAX - 1 ), 1 ); // make sure this is the last fee being added
+		add_action( 'woocommerce_calculate_totals', array( $this, 'calculate_pay4payment' ), 99 );
+		add_action( 'woocommerce_cart_calculate_fees', array( $this, 'add_pay4payment' ), 99 ); // make sure this is the last fee being added
 		add_action( 'woocommerce_review_order_after_submit', array( $this, 'print_autoload_js' ) );
 		add_action( 'admin_init', array( $this, 'check_wc_version' ) );
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
@@ -74,7 +75,6 @@ jQuery(document).ready(function($){
 	}
 
 	public function add_pay4payment( $cart ) {
-		$this->calculate_pay4payment();
 		if ( ! is_null( $this->_fee ) ) {
 			$cart->add_fee( $this->_fee->fee_title,
 							$this->_fee->cost,
