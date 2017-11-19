@@ -3,12 +3,12 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 4.8.2
-Stable tag: 2.0.6
+Tested up to: 4.9
+Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 3.0
-WC tested up to: 3.2.1
+WC tested up to: 3.2.4
 
 Setup individual charges for each payment method in WooCommerce.
 
@@ -23,7 +23,7 @@ You can use **placeholders** in the payment item title:
 - *[CART_TOTAL]*: will print out money-formatted cart totals. 
 - Example: `Payment Fee ([FIXED_AMOUNT] + [PERCENT_AMOUNT]% of [CART_TOTAL])`
 
-Requires at least WooCommerce 2.6, compatible with WooCommerce 3.1+ (recommended)
+Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended). The support for WC 2.6 will be dropped soon.
 
 = Features =
 - **Fixed charge and/or a percentage** of cart total

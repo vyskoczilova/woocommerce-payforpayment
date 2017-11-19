@@ -83,10 +83,10 @@ jQuery(document).ready(function($){
 		}
 		if ( ! is_null( $this->_fee ) ) {
 			$cart->add_fee( $this->_fee->fee_title,
-							$this->_fee->cost,
-							$this->_fee->taxable,
-							$this->_fee->tax_class
-						);
+				$this->_fee->cost,
+				$this->_fee->taxable,
+				$this->_fee->tax_class
+			);
 
 		}
 	}
