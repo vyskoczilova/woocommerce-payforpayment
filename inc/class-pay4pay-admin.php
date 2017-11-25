@@ -230,7 +230,7 @@ class Pay4Pay_Admin {
 		$class_id = $current_section;
 		$prefix   = 'woocommerce_' . $class_id;
 		$opt_name = $prefix . '_settings';
-		$options  = get_option( $opt_name );
+		$options  = get_option( $opt_name, array() );
 
 		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
