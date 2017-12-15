@@ -28,9 +28,12 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 = Features =
 - **Fixed charge and/or a percentage** of cart total
 - Possibility to **disable for free/zero shipping**
-- Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Translations in German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok](https://www.transifex.com/accounts/profile/TRFlavourart/) [teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)) and Italian  localization ([grazie](https://github.com/mrjive))
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
+
+= Compatibility =
+- Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
+- Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
 
 = Limitations =
 - Better not use it with paypal. (Legal issue, see FAQ as well.)
