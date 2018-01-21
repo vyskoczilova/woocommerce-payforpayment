@@ -32,6 +32,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Compatibility =
+- PHP 5.6 & PHP 7 compatible
 - Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
 
