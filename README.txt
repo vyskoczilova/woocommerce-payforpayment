@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 4.9
+Tested up to: 4.9.2
 Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -96,7 +96,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 == Screenshots ==
 
 1. User interface. You can find this in every payment gateway configuration.
-1. Example of WPML String translation for COD.
+1. How to set up of WPML in String translation module.
 
 
 == Changelog ==
