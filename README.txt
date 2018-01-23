@@ -56,7 +56,7 @@ See [PayPal User Agreement](https://www.paypal.com/webapps/mpp/ua/useragreement-
 You have been warned.
 
 = WPML - How to translate? =
-If you need to localize Fee title and Fixed charge go to go to WPML > String translation and look for following type of text domain: `admin_texts_woocommerce_{payment_method_slug}_settings` replacing `{payment_method_slug}` with yours (for examle `cod`). See the second screenshot.
+If you need to localize Fee title and Fixed charge go to go to WPML > String translation and look for following type of text domain: `woocommerce-pay-for-payment` and than you should find a strings with name "{payment-method-slug} - charges fixed" or "{payment-method-slug} - item title". See the second screenshot.
 
 = Can't to setup my payment requirements in the user interface. The option I need is missing. =
 
