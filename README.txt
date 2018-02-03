@@ -8,7 +8,7 @@ Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 3.0
-WC tested up to: 3.2.4
+WC tested up to: 3.2.6
 
 Setup individual charges for each payment method in WooCommerce.
 
@@ -100,6 +100,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.7 (only on github) =
+- Fix: readme file
 
 = 2.0.6 (2017-10-29) =
 - Fix: wc compatibility issue (solved in 2.0.4), compatible with both versions of WC

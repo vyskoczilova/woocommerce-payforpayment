@@ -47,7 +47,7 @@ Handle if a payment fee is applied.
 
 *Example:*
 
-	function my_pay4pay_handle_christmas( $do_apply , $amount , $cart_subtotal , $current_payment_gateway ) {
+	function my_pay4pay_handle_christmas( $do_apply , $amount , $calculation_base , $current_payment_gateway ) {
 		if ( today_is_christmas() )
 			return false;
 		else
@@ -62,7 +62,7 @@ Handle if a payment fee on a specific payment method should be applied.
 
 *Example:*
 
-	function my_pay4pay_apply( $do_apply , $amount , $cart_subtotal , $current_payment_gateway ) {
+	function my_pay4pay_apply( $do_apply , $amount , $calculation_base , $current_payment_gateway ) {
 		if ( my_customer_is_a_nice_guy() )
 			return false;
 		else
