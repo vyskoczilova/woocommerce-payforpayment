@@ -23,7 +23,7 @@ Features
 
 Unreleased updates
 ------------------
-- none
+- updated WC tested up to
 
 Plugin API
 ----------
