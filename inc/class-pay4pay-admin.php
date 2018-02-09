@@ -237,10 +237,10 @@ class Pay4Pay_Admin {
 		// Other WooCommerce gateways might use this option name format
 		$fallback_option_name = $class_id . $postfix;
 		
-		// Try to get the WooCommerce Gateway settigs with default format
+		// Try to get the WooCommerce Gateway settings with default format
 		$options  = get_option( $default_option_name );
 		
-		// Try to get the WooCommerce Gateway settigs with fallback format
+		// Try to get the WooCommerce Gateway settings with fallback format
 		if( $options === false) {
 			$options  = get_option( $fallback_option_name );
 		}
