@@ -226,26 +226,29 @@ class Pay4Pay_Admin {
 
 	public function update_payment_options() {
 		global $current_section;
-
-		$prefix   = 'woocommerce_';
+		
 		$class_id = $current_section;
-		$postfix = '_settings';
+		$prefix   = 'woocommerce_' . $class_id;
+		$postfix  = '_settings';
 		
 		// Default WooCommerce gateways use this option name format
-		$default_option_name = $prefix . $class_id . $postfix;
-		
-		// Other WooCommerce gateways might use this option name format
-		$fallback_option_name = $class_id . $postfix;
+		$opt_name = $prefix . $postfix;
 		
 		// Try to get the WooCommerce Gateway settings with default format
-		$options  = get_option( $default_option_name );
+		$options  = get_option( $opt_name );
 		
 		// Try to get the WooCommerce Gateway settings with fallback format
-		if( $options === false) {
-			$options  = get_option( $fallback_option_name );
+		if ( $options === false ) {
+			$opt_name = $class_id . $postfix;
+			$options  = get_option( $opt_name );
+			$prefix = $class_id;
 		}
 
-		// TODO: check if $options is false, and if it is, show an admin notice?
+		// Check if $options is false, and if it is, show an admin notice?
+		if ( $options === false ) {
+			add_action( 'admin_notices', array( $this, 'update_error_notice') );
+			return;
+		}
 		
 		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
@@ -283,6 +286,21 @@ class Pay4Pay_Admin {
 		//WMPL
 
 		update_option( $opt_name, $options );
+
+	}
+
+	public function update_error_notice() {
+		global $current_section;
+		?>
+		<div class="error notice">
+			<p><?php _e( 'There has been an error witin the WooCommerce Pay for Payment plugin and settings can\'t be saved.', 'woocommerce-pay-for-payment' ); ?> <b><?php printf( __( 'To fix the issue, contact the plugin author either on %sGithub%s or %sWordpress.org%s and provide following information:', 'woocommerce-pay-for-payment' ), '<a href="https://github.com/vyskoczilova/woocommerce-payforpayment/issues/new" target="_blank">', '</a>', '<a href="https://wordpress.org/support/plugin/woocommerce-pay-for-payment" target="_blank">', '</a>' ); ?></b></p>
+			<pre>
+	1. <?php _e( 'Name of the payment method you are trying to save and the URL where it can be downloaded for testing.', 'woocommerce-pay-for-payment' ); ?><br />
+	2. <?php echo __( 'Current section ID:', 'woocommerce-pay-for-payment' ) . ' '. $current_section; ?><br />
+	3. <?php _e( 'Anything else might be helpful (recently added/updated plugins, etc.).', 'woocommerce-pay-for-payment' ); ?>
+			</pre>
+		</div>
+		<?php
 	}
 
 	private function _sanitize_tax_option( $tax_option, $default = 'incl' ) {
