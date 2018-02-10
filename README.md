@@ -11,19 +11,11 @@ Coupons are not supported. (Sorry guys. I tried, but no way.)
 
 You will find a stable version in [WordPress plugin directory](http://wordpress.org/plugins/woocommerce-pay-for-payment/).
 
-Previous versions have been created by [Jörn Lund](https://github.com/mcguffin), who abandoned this project due to a pile of other projects in 2016. See the previous [GitHub](https://github.com/mcguffin/woocommerce-payforpayment) for details. The new version is maintained by Karolína Vyskočilová since 2017.
-
-Features
---------
-- 100% compatible with WPML (use WPML String translate module)
-- Fixed charge and/or a percentage of cart total
-- Possibility to disable for free/zero shipping
-- Translation ready
-- German, Spanish ([muchas graçias!](https://github.com/GosserBox)), Turkish ([çok teşekkürler!](https://github.com/TRRF)), Czech ([díky](https://kybernaut.cz)), Italian ([grazie](https://github.com/mrjive)) and Dutch localization ([bedankt](https://github.com/diggy))
+Previous versions have been created by [Jörn Lund](https://github.com/mcguffin), who abandoned this project due to a pile of other projects in 2016. See the previous [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment-old) for details. The new version is maintained by Karolína Vyskočilová since 2017.
 
 Unreleased updates
 ------------------
-- updated WC tested up to
+- none
 
 Plugin API
 ----------
@@ -70,11 +62,3 @@ Handle if a payment fee on a specific payment method should be applied.
 	}
 	$current_gateway_id = 'cod';
 	add_filter( "woocommerce_pay4pay_applyfor_{$current_gateway_id}", 'my_pay4pay_apply' , 10 , 4 );
-
-
-
-Compatibility
--------------
-- Tested up to WP 4.8.1 / WC 3.2.1
-- Requires at least WooCommerce 2.6, fully supports 3.0+
-- Not compatible with PayPal policy. Details: [PayPal User Agreement](https://www.paypal.com/webapps/mpp/ua/useragreement-full?country.x=US&locale.x=en_US#4), > "4.6 No Surcharges". You have been warned.

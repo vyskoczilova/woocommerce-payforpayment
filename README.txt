@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova/
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 4.9.2
+Tested up to: 4.9.4
 Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,8 +99,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.7 (only on github) =
-- Fix: readme file
+= 2.0.7 (2018-02-10) =
+- Update: WC tested up to
+- Fix: added upport for gateways without default option format (#33) and fixed #20, thanks to [David de Boer](https://github.com/davdebcom)
 
 = 2.0.6 (2017-10-29) =
 - Fix: wc compatibility issue (solved in 2.0.4), compatible with both versions of WC
