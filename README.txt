@@ -101,7 +101,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 = 2.0.7 (2018-02-10) =
 - Update: WC tested up to
-- Fix: added upport for gateways without default option format (#33) and fixed #20, thanks to [David de Boer](https://github.com/davdebcom)
+- Fix: added upport for gateways without default option format ([#33](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/33)) and fixed [#20](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/20), thanks to [David de Boer](https://github.com/davdebcom)
 
 = 2.0.6 (2017-10-29) =
 - Fix: wc compatibility issue (solved in 2.0.4), compatible with both versions of WC
