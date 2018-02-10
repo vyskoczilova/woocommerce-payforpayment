@@ -227,11 +227,26 @@ class Pay4Pay_Admin {
 	public function update_payment_options() {
 		global $current_section;
 
+		$prefix   = 'woocommerce_';
 		$class_id = $current_section;
-		$prefix   = 'woocommerce_' . $class_id;
-		$opt_name = $prefix . '_settings';
-		$options  = get_option( $opt_name, array() );
+		$postfix = '_settings';
+		
+		// Default WooCommerce gateways use this option name format
+		$default_option_name = $prefix . $class_id . $postfix;
+		
+		// Other WooCommerce gateways might use this option name format
+		$fallback_option_name = $class_id . $postfix;
+		
+		// Try to get the WooCommerce Gateway settings with default format
+		$options  = get_option( $default_option_name );
+		
+		// Try to get the WooCommerce Gateway settings with fallback format
+		if( $options === false) {
+			$options  = get_option( $fallback_option_name );
+		}
 
+		// TODO: check if $options is false, and if it is, show an admin notice?
+		
 		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
 		$item_title = sanitize_text_field( $_POST[$prefix . '_pay4pay_item_title'] );
