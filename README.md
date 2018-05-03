@@ -64,6 +64,7 @@ Handle if a payment fee on a specific payment method should be applied. If you w
 	$current_gateway_id = 'cod';
 	add_filter( "woocommerce_pay4pay_applyfor_{$current_gateway_id}", 'my_pay4pay_apply' , 10 , 4 );
 
+#### FAQ ####
 
 ##### How to get subtotal? #####
 Within your filter use following lines:
