@@ -19,8 +19,9 @@ Unreleased updates
 
 Plugin API
 ----------
+
 ##### Filter `woocommerce_pay4pay_{$current_gateway_id}_amount`: #####
-Applied to the payment gateway fee before it is added to woocomerce' cart.
+Applied to the payment gateway fee before it is added to woocomerce' cart. If you work with subtotal, [check how to get it](https://github.com/vyskoczilova/woocommerce-payforpayment#how-to-get-subtotal).
 
 *Example:*
 
@@ -35,7 +36,7 @@ Applied to the payment gateway fee before it is added to woocomerce' cart.
 
 
 ##### Filter `woocommerce_pay4pay_apply`: #####
-Handle if a payment fee is applied.
+Handle if a payment fee is applied. If you work with subtotal, [check how to get it](https://github.com/vyskoczilova/woocommerce-payforpayment#how-to-get-subtotal).
 
 *Example:*
 
@@ -50,7 +51,7 @@ Handle if a payment fee is applied.
 
 
 ##### Filter `woocommerce_pay4pay_applyfor_{$current_gateway_id}`: #####
-Handle if a payment fee on a specific payment method should be applied.
+Handle if a payment fee on a specific payment method should be applied. If you work with subtotal, [check how to get it](https://github.com/vyskoczilova/woocommerce-payforpayment#how-to-get-subtotal).
 
 *Example:*
 
@@ -62,3 +63,14 @@ Handle if a payment fee on a specific payment method should be applied.
 	}
 	$current_gateway_id = 'cod';
 	add_filter( "woocommerce_pay4pay_applyfor_{$current_gateway_id}", 'my_pay4pay_apply' , 10 , 4 );
+
+
+##### How to get subtotal? #####
+Within your filter use following lines:
+
+	$cart = WC()->cart;	
+	if ( wc_prices_include_tax() ) {
+		$subtotal = intval( $cart->subtotal );
+	} else {
+		$subtotal = intval( $cart->subtotal_ex_tax );
+	}
