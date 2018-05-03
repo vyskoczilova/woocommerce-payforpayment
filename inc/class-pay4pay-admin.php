@@ -293,7 +293,7 @@ class Pay4Pay_Admin {
 		global $current_section;
 		?>
 		<div class="error notice">
-			<p><?php _e( 'There has been an error witin the WooCommerce Pay for Payment plugin and settings can\'t be saved.', 'woocommerce-pay-for-payment' ); ?> <b><?php printf( __( 'To fix the issue, contact the plugin author either on %sGithub%s or %sWordPress.org%s and provide following information:', 'woocommerce-pay-for-payment' ), '<a href="https://github.com/vyskoczilova/woocommerce-payforpayment/issues/new" target="_blank">', '</a>', '<a href="https://wordpress.org/support/plugin/woocommerce-pay-for-payment" target="_blank">', '</a>' ); ?></b></p>
+			<p><?php _e( 'There has been an error within the WooCommerce Pay for Payment plugin and settings can\'t be saved.', 'woocommerce-pay-for-payment' ); ?> <b><?php printf( __( 'To fix the issue, contact the plugin author either on %sGithub%s or %sWordPress.org%s and provide following information:', 'woocommerce-pay-for-payment' ), '<a href="https://github.com/vyskoczilova/woocommerce-payforpayment/issues/new" target="_blank">', '</a>', '<a href="https://wordpress.org/support/plugin/woocommerce-pay-for-payment" target="_blank">', '</a>' ); ?></b></p>
 			<pre>
 	1. <?php _e( 'Name of the payment method you are trying to save and the URL where it can be downloaded for testing.', 'woocommerce-pay-for-payment' ); ?><br />
 	2. <?php echo __( 'Current section ID:', 'woocommerce-pay-for-payment' ) . ' '. $current_section; ?><br />
@@ -341,7 +341,7 @@ class Pay4Pay_Admin {
 				if ( $gateway->settings['pay4pay_charges_fixed'] )
 					$items[] = wc_price( $gateway->settings['pay4pay_charges_fixed'] );
 				if ( $gateway->settings['pay4pay_charges_percentage'] ) {
-					$items[] = sprintf( _x( '%s of cart totals', 'Gateway list column', 'pay4pay' ), $gateway->settings['pay4pay_charges_percentage'] );
+					$items[] = sprintf( _x( '%s %% of cart totals', 'Gateway list column', 'pay4pay' ), $gateway->settings['pay4pay_charges_percentage'] );
 
 					if ( isset( $gateway->settings['pay4pay_charges_minimum'] ) && $gateway->settings['pay4pay_charges_minimum'] )
 						$items[] = wc_price($gateway->settings['pay4pay_charges_minimum'] );

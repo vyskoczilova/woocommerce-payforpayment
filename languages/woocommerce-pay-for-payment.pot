@@ -168,7 +168,7 @@ msgstr ""
 
 #: inc/class-pay4pay-admin.php:296
 msgid ""
-"There has been an error witin the WooCommerce Pay for Payment plugin and "
+"There has been an error within the WooCommerce Pay for Payment plugin and "
 "settings can't be saved."
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 #: inc/class-pay4pay-admin.php:344
 #, php-format
 msgctxt "Gateway list column"
-msgid "%s of cart totals"
+msgid "%s %% of cart totals"
 msgstr ""
 
 #: inc/class-pay4pay.php:261
