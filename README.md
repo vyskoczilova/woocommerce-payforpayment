@@ -15,7 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-- none
+- Translations moved to WordPress.org and deleted from the plugin itself.
 
 Plugin API
 ----------
