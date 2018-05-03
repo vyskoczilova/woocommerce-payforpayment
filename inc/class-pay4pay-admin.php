@@ -341,7 +341,7 @@ class Pay4Pay_Admin {
 				if ( $gateway->settings['pay4pay_charges_fixed'] )
 					$items[] = wc_price( $gateway->settings['pay4pay_charges_fixed'] );
 				if ( $gateway->settings['pay4pay_charges_percentage'] ) {
-					$items[] = sprintf( _x( '%s %% of cart totals', 'Gateway list column', 'pay4pay' ), $gateway->settings['pay4pay_charges_percentage'] );
+					$items[] = sprintf( _x( '%s of cart totals', 'Gateway list column', 'pay4pay' ), $gateway->settings['pay4pay_charges_percentage'] );
 
 					if ( isset( $gateway->settings['pay4pay_charges_minimum'] ) && $gateway->settings['pay4pay_charges_minimum'] )
 						$items[] = wc_price($gateway->settings['pay4pay_charges_minimum'] );

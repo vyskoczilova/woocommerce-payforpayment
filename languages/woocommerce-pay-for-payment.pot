@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Pay for Payment v0.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 12:33+0200\n"
+"POT-Creation-Date: 2018-05-03 13:15+0200\n"
 "PO-Revision-Date: 2016-05-01 15:33+0100\n"
 "Last-Translator: Jörn Lund <joern@podpirate.org>\n"
 "Language-Team: \n"
@@ -197,7 +197,7 @@ msgstr ""
 #: inc/class-pay4pay-admin.php:344
 #, php-format
 msgctxt "Gateway list column"
-msgid "%s %% of cart totals"
+msgid "%s of cart totals"
 msgstr ""
 
 #: inc/class-pay4pay.php:261
