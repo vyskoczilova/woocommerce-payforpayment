@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Pay for Payment v0.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-18 17:03+0200\n"
+"POT-Creation-Date: 2018-05-03 12:33+0200\n"
 "PO-Revision-Date: 2016-05-01 15:33+0100\n"
 "Last-Translator: Jörn Lund <joern@podpirate.org>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;"
 "__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;"
@@ -24,146 +24,197 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-pay4pay-admin.php:44 woocommerce-payforpayment.php:70
+#: inc/class-pay4pay-admin.php:44 inc/class-pay4pay.php:62
 #, php-format
 msgid ""
 "WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:62 admin/class-pay4pay-admin.php:283
-#: woocommerce-payforpayment.php:32
+#: inc/class-pay4pay-admin.php:62 inc/class-pay4pay-admin.php:331
+#: inc/class-pay4pay.php:22
 msgid "Extra Charge"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:68
+#: inc/class-pay4pay-admin.php:68
 msgid "Item Title"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:70
+#: inc/class-pay4pay-admin.php:70
 msgid "This will show up in the shopping basket."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:74
+#: inc/class-pay4pay-admin.php:74
 msgid "Fixed charge"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:76
+#: inc/class-pay4pay-admin.php:76
 msgid ""
 "Extra charge to be added to cart when this payment method is selected."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:83
+#: inc/class-pay4pay-admin.php:83
 msgid "Percent charge"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:85
+#: inc/class-pay4pay-admin.php:85
 msgid "Percentage of cart total to be added to payment."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:96
+#: inc/class-pay4pay-admin.php:96
 msgid "Charge at least"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:98
+#: inc/class-pay4pay-admin.php:98
 msgid ""
 "Minimum extra charge to be added to cart when this payment method is "
 "selected."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:106
+#: inc/class-pay4pay-admin.php:106
 msgid "Charge at most"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:108
+#: inc/class-pay4pay-admin.php:108
 msgid ""
 "Maximum extra charge to be added to cart when this payment method is "
 "selected. Enter zero to disable."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:116
+#: inc/class-pay4pay-admin.php:116
 msgid "Disable on Free Shipping"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:117
+#: inc/class-pay4pay-admin.php:117
 msgid "Don’t charge this fee when free shipping is available."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:128
+#: inc/class-pay4pay-admin.php:122
+msgid "Disable on Zero Shipping"
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:123
+msgid "Don’t charge this fee when zero shipping is available."
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:133
 msgid "Extra Charge Taxes"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:133
+#: inc/class-pay4pay-admin.php:138
 msgid "Taxable"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:135
+#: inc/class-pay4pay-admin.php:140
 msgid "Payment fee is taxable"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:142
+#: inc/class-pay4pay-admin.php:147
 msgid "Inclusive Taxes"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:144
+#: inc/class-pay4pay-admin.php:149
 msgid "The payment fee is inclusive of taxes."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:145
+#: inc/class-pay4pay-admin.php:150
 msgid ""
 "If you leave this unchecked taxes will be calculated on top of the payment "
 "fee."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:151
+#: inc/class-pay4pay-admin.php:156
 msgid "Tax class"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:153
+#: inc/class-pay4pay-admin.php:158
 msgid "Select a the tax class applied to the extra charge."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:166
+#: inc/class-pay4pay-admin.php:171
 msgid "Include in percental payment fee calculation:"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:172
+#: inc/class-pay4pay-admin.php:177
 msgid "Fees"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:174
+#: inc/class-pay4pay-admin.php:179
 msgid "Include fees in calculation."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:180
+#: inc/class-pay4pay-admin.php:185
 msgid "Coupons"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:182
+#: inc/class-pay4pay-admin.php:187
 msgid "Include Coupons in calculation."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:188
+#: inc/class-pay4pay-admin.php:193
 msgid "Shipping"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:190
+#: inc/class-pay4pay-admin.php:195
 msgid "Include shipping cost in calculation."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:199
+#: inc/class-pay4pay-admin.php:204
 msgid "Taxes"
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:201
+#: inc/class-pay4pay-admin.php:206
 msgid "Include taxes in calculation."
 msgstr ""
 
-#: admin/class-pay4pay-admin.php:295
+#: inc/class-pay4pay-admin.php:296
+msgid ""
+"There has been an error witin the WooCommerce Pay for Payment plugin and "
+"settings can't be saved."
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:296
+#, php-format
+msgid ""
+"To fix the issue, contact the plugin author either on %sGithub%s or "
+"%sWordPress.org%s and provide following information:"
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:298
+msgid ""
+"Name of the payment method you are trying to save and the URL where it can "
+"be downloaded for testing."
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:299
+msgid "Current section ID:"
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:300
+msgid ""
+"Anything else might be helpful (recently added/updated plugins, etc.)."
+msgstr ""
+
+#: inc/class-pay4pay-admin.php:344
 #, php-format
 msgctxt "Gateway list column"
 msgid "%s %% of cart totals"
 msgstr ""
 
-#: woocommerce-payforpayment.php:249
+#: inc/class-pay4pay.php:261
 msgid "Standard"
+msgstr ""
+
+#: woocommerce-payforpayment.php:47
+msgid "WooCommerce Pay for Payment"
+msgstr ""
+
+#: woocommerce-payforpayment.php:48
+msgid "WooCommerce"
+msgstr ""
+
+#: woocommerce-payforpayment.php:51
+#, php-format
+msgid ""
+"%1$s requires %2$s. Please activate %2$s before activation of %1$s. This "
+"plugin has been deactivated."
 msgstr ""
