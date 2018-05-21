@@ -1,6 +1,6 @@
 === WooCommerce Pay for Payment ===
 Contributors: vyskoczilova, podpirate
-Donate link: https://paypal.me/KarolinaVyskocilova/
+Donate link: https://www.patreon.com/kybernaut
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 4.9.4
@@ -104,7 +104,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 - Fix: added upport for gateways without default option format ([#33](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/33)) and fixed [#20](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/20), thanks to [David de Boer](https://github.com/davdebcom)
 
 = 2.0.6 (2017-10-29) =
-- Fix: wc compatibility issue (solved in 2.0.4), compatible with both versions of WC
+- Fix: WC compatibility issue (solved in 2.0.4), compatible with both versions of WC
 - Fix: problem with WooCommerce Multilingual [#24](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/24), only in WC 3.2+
 
 = 2.0.5 (2017-10-29) =
@@ -114,7 +114,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 = 2.0.4 (2017-10-22) =
 - Fix: *WC_Cart->discount_total argument is deprecated* error (by [@bolint](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/25))
 - Fix: backwards compatibility to discount_total
-- Added banner & icon image to the WP repository (by [Dušan Konečný](http://abmanufaktura,cz))
+- Added banner & icon image to the WP repository (by [Dušan Konečný](http://abmanufaktura.cz))
 
 = 2.0.3 (2017-10-19) =
 - Fix: Compatibility issues with WC version 3.2 (thanks to [Peter J. Herrel](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/23))
