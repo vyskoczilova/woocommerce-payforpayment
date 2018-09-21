@@ -35,7 +35,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 
 = Limitations =
 - Better not use it with paypal. (Legal issue, see FAQ as well.)
-- Doesn't work on "Pay for order" pages (manually created orders), because of [WC limitations](https://github.com/woocommerce/woocommerce/issues/17794)
+- Doesn't work on "Pay for order" pages (manually created orders or canceled payments), because of [WC limitations](https://github.com/woocommerce/woocommerce/issues/17794)
 
 = Special Credits =
 - to [Jörn Lund (@podpirate)](https://github.com/mcguffin/woocommerce-payforpayment) who have developed this plugin and abandoned it in 2016.
