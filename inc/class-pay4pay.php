@@ -111,6 +111,19 @@ jQuery(document).ready(function($){
 			$include_taxes				= 'yes' == $settings['pay4pay_includes_taxes'];
 			$tax_class					= $settings['pay4pay_tax_class'];
 
+			/**
+			 * Check if user is logged in and possibly is_vat_exempt
+			 * @version 2.0.8
+			 */
+			if ( $taxable && is_user_logged_in() ) {
+				$customer = new WC_Customer( $user->id );
+				if ( $customer->is_vat_exempt() ) {
+					$taxable = false;
+					$calc_taxes = false;
+					$include_taxes = false;
+				}					
+			}
+
 			if ( $settings['pay4pay_charges_fixed'] || $settings['pay4pay_charges_percentage'] ) {
 				$cart = WC()->cart;
 				$chosen_methods =  WC()->session->get( 'chosen_shipping_methods' );

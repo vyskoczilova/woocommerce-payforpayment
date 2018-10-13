@@ -15,7 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-- Translations moved to WordPress.org and deleted from the plugin itself.
+- Check if logged in user is VAT exempt
 
 Plugin API
 ----------
