@@ -1,212 +1,228 @@
-#, fuzzy
+# Translation of Plugins - WooCommerce Pay for Payment - Development (trunk) in Turkish
+# This file is distributed under the same license as the Plugins - WooCommerce Pay for Payment - Development (trunk) package.
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: WooCommerce Pay for Payment\n"
+"Project-Id-Version: Plugins - WooCommerce Pay for Payment - Development "
+"(trunk)\n"
 "POT-Creation-Date: 2018-10-13 22:05+0200\n"
-"PO-Revision-Date: 2018-10-13 22:05+0200\n"
+"PO-Revision-Date: 2018-10-13 22:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: woocommerce-payforpayment.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: inc/class-pay4pay-admin.php:44 inc/class-pay4pay.php:62
 #, php-format
 msgid ""
 "WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
 msgstr ""
+"WooCommerce Pay4Payment en az WooCommerce %s sürümünü gerektirir. Lütfen "
+"güncelleyin!"
 
 #: inc/class-pay4pay-admin.php:62 inc/class-pay4pay-admin.php:331
 #: inc/class-pay4pay.php:22
 msgid "Extra Charge"
-msgstr ""
+msgstr "Ek ücret"
 
 #: inc/class-pay4pay-admin.php:68
 msgid "Item Title"
-msgstr ""
+msgstr "Öge başlığı"
 
 #: inc/class-pay4pay-admin.php:70
 msgid "This will show up in the shopping basket."
-msgstr ""
+msgstr "Alışveriş sepetinde gösterilecektir."
 
 #: inc/class-pay4pay-admin.php:74
 msgid "Fixed charge"
-msgstr ""
+msgstr "Sabit ücret"
 
 #: inc/class-pay4pay-admin.php:76
 msgid "Extra charge to be added to cart when this payment method is selected."
-msgstr ""
+msgstr "Bu ödeme yöntemi seçildiğinde ek ücret sepete eklenecek."
 
 #: inc/class-pay4pay-admin.php:83
 msgid "Percent charge"
-msgstr ""
+msgstr "Yüzde ücreti"
 
 #: inc/class-pay4pay-admin.php:85
 msgid "Percentage of cart total to be added to payment."
-msgstr ""
+msgstr "Sepet toplamının yüzdesi sipariş tutarına eklenecek."
 
 #: inc/class-pay4pay-admin.php:96
 msgid "Charge at least"
-msgstr ""
+msgstr "En düşük ücret"
 
 #: inc/class-pay4pay-admin.php:98
 msgid ""
 "Minimum extra charge to be added to cart when this payment method is "
 "selected."
 msgstr ""
+"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en düşük ekstra "
+"ücret tutarıdır."
 
 #: inc/class-pay4pay-admin.php:106
 msgid "Charge at most"
-msgstr ""
+msgstr "En yüksek ücret"
 
 #: inc/class-pay4pay-admin.php:108
 msgid ""
 "Maximum extra charge to be added to cart when this payment method is "
 "selected. Enter zero to disable."
 msgstr ""
+"Bu ödeme yöntemi seçildiğinde sepet toplamına eklenecek en yüksek ekstra "
+"ücret tutarıdır. Devre dışı bırakmak için sıfır olarak girin."
 
 #: inc/class-pay4pay-admin.php:116
 msgid "Disable on Free Shipping"
-msgstr ""
+msgstr "Ücretsiz kargoda devre dışı bırak"
 
 #: inc/class-pay4pay-admin.php:117
 msgid "Don’t charge this fee when free shipping is available."
-msgstr ""
+msgstr "Ücretsiz kargo etkinleştirildiği zaman bu ücreti yükleme."
 
 #: inc/class-pay4pay-admin.php:122
 msgid "Disable on Zero Shipping"
-msgstr ""
+msgstr "Ücretsiz kargoda etkisizleştir"
 
 #: inc/class-pay4pay-admin.php:123
 msgid "Don’t charge this fee when zero shipping is available."
-msgstr ""
+msgstr "Ücretsiz kargo mevcut olduğunda bu ücreti yükleme."
 
 #: inc/class-pay4pay-admin.php:133
 msgid "Extra Charge Taxes"
-msgstr ""
+msgstr "Ekstra vergi ücretleri"
 
 #: inc/class-pay4pay-admin.php:138
 msgid "Taxable"
-msgstr ""
+msgstr "Vergilendirilebilir"
 
 #: inc/class-pay4pay-admin.php:140
 msgid "Payment fee is taxable"
-msgstr ""
+msgstr "Ödeme ücreti vergilendirilebilir"
 
 #: inc/class-pay4pay-admin.php:147
 msgid "Inclusive Taxes"
-msgstr ""
+msgstr "Vergiler dahil"
 
 #: inc/class-pay4pay-admin.php:149
 msgid "The payment fee is inclusive of taxes."
-msgstr ""
+msgstr "Ödeme ücretine vergiler dahildir."
 
 #: inc/class-pay4pay-admin.php:150
 msgid ""
 "If you leave this unchecked taxes will be calculated on top of the payment "
 "fee."
 msgstr ""
+"Eğer işaretlenmemiş olarak bırakırsanız vergiler, ödeme ücreti üzerine "
+"hesaplanacaktır."
 
 #: inc/class-pay4pay-admin.php:156
 msgid "Tax class"
-msgstr ""
+msgstr "Vergi sınıfı"
 
 #: inc/class-pay4pay-admin.php:158
 msgid "Select a the tax class applied to the extra charge."
-msgstr ""
+msgstr "Ekstra ücret için uygulanacak bir vergi sınıfı belirleyin."
 
 #: inc/class-pay4pay-admin.php:171
 msgid "Include in percental payment fee calculation:"
-msgstr ""
+msgstr "Yüzdesel ödeme ücreti hesaplamasına dahil et:"
 
 #: inc/class-pay4pay-admin.php:177
 msgid "Fees"
-msgstr ""
+msgstr "Masraflar"
 
 #: inc/class-pay4pay-admin.php:179
 msgid "Include fees in calculation."
-msgstr ""
+msgstr "Masrafları hesaplamaya dahil et."
 
 #: inc/class-pay4pay-admin.php:185
 msgid "Coupons"
-msgstr ""
+msgstr "Kuponlar"
 
 #: inc/class-pay4pay-admin.php:187
 msgid "Include Coupons in calculation."
-msgstr ""
+msgstr "Kuponları hesaplamaya dahil et."
 
 #: inc/class-pay4pay-admin.php:193
 msgid "Shipping"
-msgstr ""
+msgstr "Kargo"
 
 #: inc/class-pay4pay-admin.php:195
 msgid "Include shipping cost in calculation."
-msgstr ""
+msgstr "Kargo maliyetini hesaplamaya dahil et."
 
 #: inc/class-pay4pay-admin.php:204
 msgid "Taxes"
-msgstr ""
+msgstr "Vergiler"
 
 #: inc/class-pay4pay-admin.php:206
 msgid "Include taxes in calculation."
-msgstr ""
+msgstr "Vergileri hesaplamaya dahil et."
 
 #: inc/class-pay4pay-admin.php:296
+#, fuzzy
+#| msgid ""
+#| "There has been an error witin the WooCommerce Pay for Payment plugin and "
+#| "settings can't be saved."
 msgid ""
 "There has been an error within the WooCommerce Pay for Payment plugin and "
 "settings can't be saved."
 msgstr ""
+"WooCommerce Pay for Payment eklentisinde bir hata oluştu ve ayarlar "
+"kaydedilemedi."
 
 #: inc/class-pay4pay-admin.php:296
-#, php-format
+#, fuzzy, php-format
+#| msgid ""
+#| "To fix the issue, contact the plugin author either on %sGithub%s or "
+#| "%sWordpress.org%s and provide following information:"
 msgid ""
 "To fix the issue, contact the plugin author either on %sGithub%s or "
 "%sWordPress.org%s and provide following information:"
 msgstr ""
+"Problemi çözmek için eklenti geliştiricisi ile %sGithub%s ya da %sWordpress."
+"org%s üzerinden iletişime geçin ve şu bilgileri iletin:"
 
 #: inc/class-pay4pay-admin.php:298
 msgid ""
 "Name of the payment method you are trying to save and the URL where it can "
 "be downloaded for testing."
 msgstr ""
+"Kaydetmeye çalıştığınız ödeme yönteminin ismi ve test için indirme "
+"bağlantısı."
 
 #: inc/class-pay4pay-admin.php:299
 msgid "Current section ID:"
-msgstr ""
+msgstr "Şu anki bölüm No:"
 
 #: inc/class-pay4pay-admin.php:300
 msgid "Anything else might be helpful (recently added/updated plugins, etc.)."
 msgstr ""
+"Kalan her şey yardımcı olabilir (yeni eklenmiş/güncellenmiş eklentiler vb.)."
 
 #: inc/class-pay4pay-admin.php:344
 #, php-format
 msgctxt "Gateway list column"
 msgid "%s %% of cart totals"
-msgstr ""
+msgstr "Sepet toplamına oranı: %s %%"
 
 #: inc/class-pay4pay.php:274
 msgid "Standard"
-msgstr ""
+msgstr "Standart"
 
 #. Plugin Name of the plugin/theme
 #: woocommerce-payforpayment.php:47
 msgid "WooCommerce Pay for Payment"
-msgstr ""
+msgstr "WooCommerce Pay for Payment"
 
 #: woocommerce-payforpayment.php:48
 msgid "WooCommerce"
-msgstr ""
+msgstr "WooCommerce"
 
 #: woocommerce-payforpayment.php:51
 #, php-format
@@ -214,19 +230,21 @@ msgid ""
 "%1$s requires %2$s. Please activate %2$s before activation of %1$s. This "
 "plugin has been deactivated."
 msgstr ""
+"%1$s %2$s gerektirir. Lütfen %1$s etkinleştirmesinden önce %2$s "
+"etkinleştirmesini gerçekleştirin Bu eklenti etkisizleştirildi."
 
 #. Plugin URI of the plugin/theme
 msgid "https://wordpress.org/plugins/woocommerce-pay-for-payment/"
-msgstr ""
+msgstr "https://wordpress.org/plugins/woocommerce-pay-for-payment/"
 
 #. Description of the plugin/theme
 msgid "Setup individual charges for each payment method in WooCommerce."
-msgstr ""
+msgstr "Her bir ödeme yöntemi için WooCommerce içinde münferit ödemeler kurun."
 
 #. Author of the plugin/theme
 msgid "Karolína Vyskočilová"
-msgstr ""
+msgstr "Karolína Vyskočilová"
 
 #. Author URI of the plugin/theme
 msgid "https://kybernaut.cz"
-msgstr ""
+msgstr "https://kybernaut.cz"
