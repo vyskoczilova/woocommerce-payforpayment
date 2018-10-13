@@ -34,7 +34,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
 
 = Limitations =
-- Better not use it with paypal. (Legal issue, see FAQ as well.)
+- Better not use it with PayPal. (Legal issue, see FAQ as well.)
 - Doesn't work on "Pay for order" pages (manually created orders or canceled payments), because of [WC limitations](https://github.com/woocommerce/woocommerce/issues/17794)
 
 = Special Credits =
