@@ -116,11 +116,9 @@ jQuery(document).ready(function($){
 			 * @version 2.0.8
 			 */
 			if ( $taxable && is_user_logged_in() ) {
-				$customer = new WC_Customer( $user->id );
+				$customer = new WC_Customer( get_current_user_id() );
 				if ( $customer->is_vat_exempt() ) {
 					$taxable = false;
-					$calc_taxes = false;
-					$include_taxes = false;
 				}					
 			}
 

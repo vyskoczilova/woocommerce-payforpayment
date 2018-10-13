@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Plugins - WooCommerce Pay for Payment - Development "
 "(trunk)\n"
 "POT-Creation-Date: 2018-10-13 22:05+0200\n"
-"PO-Revision-Date: 2018-10-13 22:12+0200\n"
+"PO-Revision-Date: 2018-10-13 22:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -83,15 +83,15 @@ msgstr "Zakázat při dopravě zdarma"
 
 #: inc/class-pay4pay-admin.php:117
 msgid "Don’t charge this fee when free shipping is available."
-msgstr "Neuplatňovat poplatek pokud je k dispozici platba zdarma."
+msgstr "Neúčtovat poplatek, pokud je k dispozici doprava zdarma."
 
 #: inc/class-pay4pay-admin.php:122
 msgid "Disable on Zero Shipping"
-msgstr "Zakázat při dopravě zdarma"
+msgstr "Zakázat při nulové dopravě"
 
 #: inc/class-pay4pay-admin.php:123
 msgid "Don’t charge this fee when zero shipping is available."
-msgstr "Neuplatňovat tento poplatek pokud je k dispozici poštovné zdarma."
+msgstr "Neúčtovat tento poplatek, pokud je k dispozici nulová doprava."
 
 #: inc/class-pay4pay-admin.php:133
 msgid "Extra Charge Taxes"
@@ -99,7 +99,7 @@ msgstr "Poplatek za platbu DPH"
 
 #: inc/class-pay4pay-admin.php:138
 msgid "Taxable"
-msgstr "zdanitelný"
+msgstr "Zdanitelný"
 
 #: inc/class-pay4pay-admin.php:140
 msgid "Payment fee is taxable"
@@ -107,7 +107,7 @@ msgstr "Poplatek je zdanitelný"
 
 #: inc/class-pay4pay-admin.php:147
 msgid "Inclusive Taxes"
-msgstr "včetně DPH"
+msgstr "Včetně DPH"
 
 #: inc/class-pay4pay-admin.php:149
 msgid "The payment fee is inclusive of taxes."
@@ -165,10 +165,6 @@ msgid "Include taxes in calculation."
 msgstr "Zahrnout DPH při výpočtech."
 
 #: inc/class-pay4pay-admin.php:296
-#, fuzzy
-#| msgid ""
-#| "There has been an error witin the WooCommerce Pay for Payment plugin and "
-#| "settings can't be saved."
 msgid ""
 "There has been an error within the WooCommerce Pay for Payment plugin and "
 "settings can't be saved."
@@ -177,10 +173,7 @@ msgstr ""
 "uloženo."
 
 #: inc/class-pay4pay-admin.php:296
-#, fuzzy, php-format
-#| msgid ""
-#| "To fix the issue, contact the plugin author either on %sGithub%s or "
-#| "%sWordpress.org%s and provide following information:"
+#, php-format
 msgid ""
 "To fix the issue, contact the plugin author either on %sGithub%s or "
 "%sWordPress.org%s and provide following information:"
