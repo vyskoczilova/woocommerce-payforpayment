@@ -112,14 +112,13 @@ jQuery(document).ready(function($){
 			$tax_class					= $settings['pay4pay_tax_class'];
 
 			/**
-			 * Check if user is logged in and possibly is_vat_exempt
+			 * Check if user is is_vat_exempt
+			 * https://docs.woocommerce.com/document/class-reference/#section-5
 			 * @version 2.0.8
 			 */
-			if ( $taxable && is_user_logged_in() ) {
-				$customer = new WC_Customer( get_current_user_id() );
-				if ( $customer->is_vat_exempt() ) {
-					$taxable = false;
-				}					
+			global $woocommerce;
+			if ( $woocommerce->customer->is_vat_exempt() ) {
+				$taxable = false;									
 			}
 
 			if ( $settings['pay4pay_charges_fixed'] || $settings['pay4pay_charges_percentage'] ) {
