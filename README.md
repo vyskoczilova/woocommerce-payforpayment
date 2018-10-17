@@ -15,8 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-- Check if logged in user is VAT exempt
-- Return back translations (if installed from FTP, the WP.org translations are loaded after an update/manual install)
+- none
 
 Plugin API
 ----------

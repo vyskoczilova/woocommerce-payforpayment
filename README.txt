@@ -98,6 +98,11 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= 2.0.8 (2018-10-17) =
+- Fix: Check if logged in user is VAT exempt
+- Update: Return back translations (if installed from FTP, the WP.org translations are loaded after an update/manual install)
+- Update: WC tested up to
+
 = 2.0.7 (2018-02-10) =
 - Update: WC tested up to
 - Fix: added upport for gateways without default option format ([#33](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/33)) and fixed [#20](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/20), thanks to [David de Boer](https://github.com/davdebcom)
