@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://www.patreon.com/kybernaut
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 4.9.8
+Tested up to: 5.0
 Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,7 +74,7 @@ Use the GitHub Repo rather than the WordPress Plugin. Do as follows:
 
 1. If you haven't already done: [Install git](https://help.github.com/articles/set-up-git)
 
-2. in the console cd into Your 'wp-content/plugins´ directory
+2. In the console cd into Your 'wp-content/plugins´ directory
 
 3. type `git clone https://github.com/vyskoczilova/woocommerce-payforpayment` or better type `git fork https://github.com/vyskoczilova/woocommerce-payforpayment`
 
@@ -97,6 +97,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.9 (2018-11-14) =
+* Fix: Check if COD is enabled for current shipping method otherwise don't add the fee.
+* Update: WC tested up to 3.5.1 and WP 5.0
 
 = 2.0.8 (2018-10-17) =
 - Fix: Check if logged in user is VAT exempt

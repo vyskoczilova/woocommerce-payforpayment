@@ -95,8 +95,18 @@ jQuery(document).ready(function($){
 		if ( ! is_null( $this->_fee ) ) {
 			return;
 		}
+		
 		if ( ( $current_gateway = $this->get_current_gateway() ) && ( $settings = $this->get_current_gateway_settings() ) ) {
 			$settings = wp_parse_args( $settings, self::get_default_settings() );
+			$chosen_methods =  WC()->session->get( 'chosen_shipping_methods' );
+				
+			/**
+			 * Check if COD is enabled for current shipping method
+			 * @version 2.0.9
+			 */
+			if ( $current_gateway->id == 'cod' && ! empty( $settings['enable_for_methods'] ) && ! in_array( $chosen_methods[0], $settings['enable_for_methods'] ) ) {		
+				return;				
+			}
 
 			$disable_on_free_shipping	= 'yes' == $settings['pay4pay_disable_on_free_shipping'];
 			$disable_on_zero_shipping	= 'yes' == $settings['pay4pay_disable_on_zero_shipping'];
@@ -123,7 +133,6 @@ jQuery(document).ready(function($){
 
 			if ( $settings['pay4pay_charges_fixed'] || $settings['pay4pay_charges_percentage'] ) {
 				$cart = WC()->cart;
-				$chosen_methods =  WC()->session->get( 'chosen_shipping_methods' );
 				if ( is_null( $chosen_methods ) ) {
 					$chosen_methods[]=null;
 				}
