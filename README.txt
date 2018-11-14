@@ -4,7 +4,7 @@ Donate link: https://www.patreon.com/kybernaut
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.0
-Stable tag: 2.0.9
+Stable tag: 2.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.10 (2018-11-14) =
+* Critical fix of 2.0.9 bug - COD could be anabled as well for "any" shipping method type (accidentaly slipped out from 2.0.9)
 
 = 2.0.9 (2018-11-14) =
 * Fix: Check if COD is enabled for current shipping method otherwise don't add the fee.
