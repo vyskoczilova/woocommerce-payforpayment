@@ -15,7 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-
+* update links in readme and plugin settings
 
 Plugin API
 ----------
