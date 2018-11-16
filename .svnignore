@@ -1,5 +1,6 @@
 .git
 .gitignore
+.github
 mkzip.sh
 README.md
 trunk/.vscode
