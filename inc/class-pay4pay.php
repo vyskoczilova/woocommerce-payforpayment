@@ -92,7 +92,18 @@ jQuery(document).ready(function($){
 	}
 
 	public function calculate_pay4payment() {
+
 		if ( ! is_null( $this->_fee ) ) {
+			return;
+		}
+
+		$cart = WC()->cart;
+		
+		/**
+		 * Check the cart value if the cost is 0 don't add the fee
+		 * @since 2.0.11
+		 */
+		if ( $cart->subtotal == 0 ) {
 			return;
 		}
 		
@@ -136,7 +147,7 @@ jQuery(document).ready(function($){
 			}
 
 			if ( $settings['pay4pay_charges_fixed'] || $settings['pay4pay_charges_percentage'] ) {
-				$cart = WC()->cart;
+				
 				if ( is_null( $chosen_methods ) ) {
 					$chosen_methods[]=null;
 				}

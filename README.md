@@ -15,7 +15,8 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-* update links in readme and plugin settings
+* Fix: don't add the fee when order amount is 0. More details [here](https://wordpress.org/support/topic/total-order-0-bug/).
+* Updated links in readme and plugin settings.
 * Github: implemented [Probot](https://probot.github.io/apps/stale/)
 
 Plugin API
