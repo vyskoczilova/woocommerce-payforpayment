@@ -102,6 +102,7 @@ jQuery(document).ready(function($){
 		/**
 		 * Check the cart value & shipping value if the cost is 0 don't add the fee
 		 * @since 2.0.11
+		 * @version 2.0.12
 		 */
 		if ( $cart->subtotal == 0 && $cart->shipping_total == 0) {
 			return;
