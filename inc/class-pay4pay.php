@@ -100,10 +100,10 @@ jQuery(document).ready(function($){
 		$cart = WC()->cart;
 		
 		/**
-		 * Check the cart value if the cost is 0 don't add the fee
+		 * Check the cart value & shipping value if the cost is 0 don't add the fee
 		 * @since 2.0.11
 		 */
-		if ( $cart->subtotal == 0 ) {
+		if ( $cart->subtotal == 0 && $cart->shipping_total == 0) {
 			return;
 		}
 		
