@@ -183,7 +183,8 @@ jQuery(document).ready(function($){
 						}
 						
 						$cost += $calculation_base * ( $percent / 100 );		
-
+					}
+					
 					if ( $cost > 0 ) {
 						$cost += floatval( $settings['pay4pay_charges_fixed'] );
 					}
