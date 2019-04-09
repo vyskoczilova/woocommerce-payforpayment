@@ -153,7 +153,8 @@ jQuery(document).ready(function($){
 				}
 
 				if ( ( ! $disable_on_free_shipping || ! preg_grep( '/^free_shipping.*/', $chosen_methods ) ) && ( ! $disable_on_zero_shipping || $cart->shipping_total > 0 ) ) {
-					$cost = floatval( $settings['pay4pay_charges_fixed'] );
+					
+					$cost = 0;
 
 					//  √ $this->cart_contents_total + √ $this->tax_total + √ $this->shipping_tax_total + $this->shipping_total + $this->fee_total,
 					$calculation_base = 0;
@@ -183,6 +184,8 @@ jQuery(document).ready(function($){
 						
 						$cost += $calculation_base * ( $percent / 100 );		
 
+					if ( $cost > 0 ) {
+						$cost += floatval( $settings['pay4pay_charges_fixed'] );
 					}
 
 					$do_apply = $cost != 0;
