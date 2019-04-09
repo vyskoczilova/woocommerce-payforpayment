@@ -182,7 +182,8 @@ jQuery(document).ready(function($){
 								$calculation_base += $cart->shipping_tax_total;
 						}
 						
-						$cost += $calculation_base * ( $percent / 100 );		
+						$cost += $calculation_base * ( $percent / 100 );
+					}
 
 					if ( $cost > 0 ) {
 						$cost += floatval( $settings['pay4pay_charges_fixed'] );
