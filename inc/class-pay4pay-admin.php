@@ -225,7 +225,6 @@ class Pay4Pay_Admin {
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
 			$gateway->form_fields += $form_fields;
-			// add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
 		}
 	}
 
