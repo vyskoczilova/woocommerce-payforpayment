@@ -28,6 +28,11 @@ class Pay4Pay_Admin {
 		add_filter( 'woocommerce_payment_gateways_setting_columns', array( $this, 'add_extra_fee_column' ) );
 		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra', array( $this, 'extra_fee_column_content' ) );
 
+		// add save actions for every single method
+		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
+			add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
+		}
+
 		// settings script
 		add_action( 'load-woocommerce_page_wc-settings', array( $this, 'enqueue_checkout_settings_js' ) );
 	}
@@ -220,7 +225,7 @@ class Pay4Pay_Admin {
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
 			$gateway->form_fields += $form_fields;
-			add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
+			// add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
 		}
 	}
 
@@ -237,7 +242,7 @@ class Pay4Pay_Admin {
 		// Try to get the WooCommerce Gateway settings with default format
 		$options  = get_option( $opt_name );
 		
-		// Try to get the WooCommerce Gateway settings with fallback format
+		// Try to get the WooComm erce Gateway settings with fallback format
 		if ( $options === false ) {
 			$opt_name = $class_id . $postfix;
 			$options  = get_option( $opt_name );
@@ -274,7 +279,7 @@ class Pay4Pay_Admin {
 			'pay4pay_include_coupons'			=> $this->_get_bool( $prefix . '_pay4pay_include_coupons' ),
 			'pay4pay_include_cart_taxes'		=> $this->_get_bool( $prefix . '_pay4pay_include_cart_taxes' ),
 		);
-		$options += $extra;
+		$options = array_merge( $options, $extra );
 
 		// WMPL
 		// https://wpml.org/wpml-hook/wpml_register_single_string/
