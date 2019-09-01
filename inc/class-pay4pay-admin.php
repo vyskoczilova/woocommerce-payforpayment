@@ -27,14 +27,18 @@ class Pay4Pay_Admin {
 		// payment gateways table
 		add_filter( 'woocommerce_payment_gateways_setting_columns', array( $this, 'add_extra_fee_column' ) );
 		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra', array( $this, 'extra_fee_column_content' ) );
-
+		
 		// add save actions for every single method
-		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
-			add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
-		}
+		add_action( 'woocommerce_integrations_init', array( $this, 'save_actions_for_every_method' ) );
 
 		// settings script
 		add_action( 'load-woocommerce_page_wc-settings', array( $this, 'enqueue_checkout_settings_js' ) );
+	}
+
+	public function save_actions_for_every_method() {
+		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
+			add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
+		}
 	}
 
 	public function check_wc_version() {

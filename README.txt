@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.2
-Stable tag: 2.0.12
+Stable tag: 2.0.13.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,7 +98,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.13 (2019-08-28) =
+= 2.0.13.2 (2019-08-28) =
 * Fix: Compatibility with WC 3.7.0 - Error when saving settings.
 
 = 2.0.12 (2018-02-03) =
