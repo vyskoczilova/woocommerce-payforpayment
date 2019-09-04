@@ -28,8 +28,10 @@ class Pay4Pay_Admin {
 		add_filter( 'woocommerce_payment_gateways_setting_columns', array( $this, 'add_extra_fee_column' ) );
 		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra', array( $this, 'extra_fee_column_content' ) );
 		
-		// add save actions for every single method
-		add_action( 'woocommerce_integrations_init', array( $this, 'save_actions_for_every_method' ) );
+		// add save actions for every single method - related to: https://github.com/woocommerce/woocommerce/pull/23091
+		if ( version_compare( WC_VERSION, '3.7', '>=' )) { 
+			add_action( 'wp_loaded', array( $this, 'save_actions_for_every_method' ) );
+		}
 
 		// settings script
 		add_action( 'load-woocommerce_page_wc-settings', array( $this, 'enqueue_checkout_settings_js' ) );
@@ -229,6 +231,9 @@ class Pay4Pay_Admin {
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
 			$gateway->form_fields += $form_fields;
+			if ( version_compare( WC_VERSION, '3.7', '<' )) { 
+				add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
+			}
 		}
 	}
 
