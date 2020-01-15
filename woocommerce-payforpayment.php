@@ -32,6 +32,9 @@ function pay4payment_plugin_init() {
 		require_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay.php';
 		Pay4Pay::instance();
 
+		// Price Based on Country integration.
+		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-price-based-country.php';
+
 		if ( is_admin() )
 			require_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-admin.php';
 		}
