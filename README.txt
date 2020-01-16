@@ -3,8 +3,8 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.2
-Stable tag: 2.0.13.3
+Tested up to: 5.3
+Stable tag: 2.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ You can use **placeholders** in the payment item title:
 
 - *[FIXED_AMOUNT]*: Will print money-formatted fixed amount you entered.
 - *[PERCENT_AMOUNT]*: will print out percental amount you entered
-- *[CART_TOTAL]*: will print out money-formatted cart totals. 
+- *[CART_TOTAL]*: will print out money-formatted cart totals.
 - Example: `Payment Fee ([FIXED_AMOUNT] + [PERCENT_AMOUNT]% of [CART_TOTAL])`
 
 Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended). The support for WC 2.6 will be dropped soon.
@@ -32,6 +32,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - PHP 5.6 & PHP 7 compatible
 - Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
+- Compatibility with **[Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/)**
 
 = Limitations =
 - Better not use it with PayPal. (Legal issue, see FAQ as well.)
@@ -49,7 +50,7 @@ Just follow the standard [WordPress plugin installation procedere](http://codex.
 = Can I use it with PayPal? =
 
 No. PayPal does not permit charging your customer for using PayPal. This is a legal issue rather than a technical one.
-See [PayPal User Agreement](https://www.paypal.com/webapps/mpp/ua/useragreement-full?country.x=US&locale.x=en_US#4), > "4.6 No Surcharges" for details. 
+See [PayPal User Agreement](https://www.paypal.com/webapps/mpp/ua/useragreement-full?country.x=US&locale.x=en_US#4), > "4.6 No Surcharges" for details.
 You have been warned.
 
 = WPML - How to translate? =
@@ -57,8 +58,8 @@ If you need to localize Fee title and Fixed charge go to go to WPML > String tra
 
 = Can't to setup my payment requirements in the user interface. The option I need is missing. =
 
-The plugin user interface only offers either a fixed amout or a percentage of the carts subtotal. 
-If you need to implement more complex calcuations like 'no charges for orders above 100 Bucks' or '2% of cart subtotal but at least 2 Bucks', 
+The plugin user interface only offers either a fixed amout or a percentage of the carts subtotal.
+If you need to implement more complex calcuations like 'no charges for orders above 100 Bucks' or '2% of cart subtotal but at least 2 Bucks',
 you'll have to use one of the filters. See [Plugin API](https://github.com/vyskoczilova/woocommerce-payforpayment#plugin-api) for details.
 
 <code>woocommerce_pay4pay_apply</code> specifies if a charge will be applied.
@@ -97,6 +98,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.14 (2020-01-16) =
+* Added a compatibility with [Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) in [#51](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/51) thanks to [Oscar Gare](https://github.com/oscargare).
 
 = 2.0.13.3 (2019-09-04) =
 * Fix: Compatibility with WC 3.7.0 - Move saving settings to `wp_loaded` as WooCommerce does in [PR #23091](https://github.com/woocommerce/woocommerce/pull/23091)
@@ -194,7 +198,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 - Feature: Select tax class to be applied to payment fee
 - Feature: Select if cart taxes will be included on payment fee calculation
 - Feature: Placeholders in fee title.
-- Fixes: completely repeat all WooCommerce tax and fee calculation steps after payment fee has been added. 
+- Fixes: completely repeat all WooCommerce tax and fee calculation steps after payment fee has been added.
 
 = 1.2.5 =
 - Fix: incorrect fee calculation.
@@ -216,7 +220,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 - Plugin-API: add filter `woocommerce_pay4pay_apply`
 - Code Refactoring: separated admin UI from frontend to keep things lean.
 - Code Refactoring: use function <code>WC()</code> (available since WC 2.1) in favour of <code>global $woocommerce</code>.
-- Compatibility: requires at least WC 2.1.x, 
+- Compatibility: requires at least WC 2.1.x,
 
 = 1.1.1 =
 - Added wpml configuration file to keep compatibility with http://wordpress.org/plugins/woocommerce-multilingual/
