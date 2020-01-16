@@ -207,8 +207,8 @@ jQuery(document).ready(function($){
 						// apply min + max before tax calculation
 						// some people may like to use the plugin to apply a discount, so we need to handle negative values correctly
 						if ( $settings['pay4pay_charges_percentage'] ) {							
-							$min_cost = !empty( $settings['pay4pay_charges_minimum'] ) ? apply_filters( 'woocommerce_pay4pay_charges_minimum', $settings['pay4pay_charges_minimum'] ) : -INF;
-							$max_cost = !empty( $settings['pay4pay_charges_maximum'] ) && (bool) $settings['pay4pay_charges_maximum'] ? apply_filters( 'woocommerce_pay4pay_charges_maximum', $settings['pay4pay_charges_maximum'] ) : INF;
+							$min_cost = !empty( $settings['pay4pay_charges_minimum'] ) ? apply_filters( 'woocommerce_pay4pay_charges_minimum', $settings['pay4pay_charges_minimum'], $current_gateway ) : -INF;
+							$max_cost = !empty( $settings['pay4pay_charges_maximum'] ) && (bool) $settings['pay4pay_charges_maximum'] ? apply_filters( 'woocommerce_pay4pay_charges_maximum', $settings['pay4pay_charges_maximum'], $current_gateway ) : INF;
 							$cost = max( $min_cost, $cost );
 							$cost = min( $max_cost, $cost );
 						}
