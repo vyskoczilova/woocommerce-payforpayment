@@ -15,7 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
--
+- Slovak translation (thanks to [Roman Velocký](https://gandalf.sk/))
 
 Plugin API
 ----------
@@ -69,7 +69,7 @@ Handle if a payment fee on a specific payment method should be applied. If you w
 ##### How to get subtotal? #####
 Within your filter use following lines:
 
-	$cart = WC()->cart;	
+	$cart = WC()->cart;
 	if ( wc_prices_include_tax() ) {
 		$subtotal = intval( $cart->subtotal );
 	} else {

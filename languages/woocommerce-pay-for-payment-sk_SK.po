@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Project-Id-Version: WooCommerce Pay for Payment\n"
+"POT-Creation-Date: 2018-10-13 22:05+0200\n"
+"PO-Revision-Date: 2020-01-23 14:31+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: woocommerce-payforpayment.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Roman Valocký <valocky@gandalf.sk>\n"
+"Language: sk_SK\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/class-pay4pay-admin.php:44 inc/class-pay4pay.php:62
+#, php-format
+msgid ""
+"WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
+msgstr ""
+"WooCommerce Pay4Payment vyžaduje aspoň WooCommerce %s. Prosím aktualizujte!"
+
+#: inc/class-pay4pay-admin.php:62 inc/class-pay4pay-admin.php:331
+#: inc/class-pay4pay.php:22
+msgid "Extra Charge"
+msgstr "Poplatok za platbu"
+
+#: inc/class-pay4pay-admin.php:68
+msgid "Item Title"
+msgstr "Názov poplatku"
+
+#: inc/class-pay4pay-admin.php:70
+msgid "This will show up in the shopping basket."
+msgstr "Zobrazí sa v nákupnom košíku."
+
+#: inc/class-pay4pay-admin.php:74
+msgid "Fixed charge"
+msgstr "Pevný poplatok"
+
+#: inc/class-pay4pay-admin.php:76
+msgid "Extra charge to be added to cart when this payment method is selected."
+msgstr ""
+"Ďalší poplatok, ktorý sa pridá do košíka, ak bude zvolená táto platobná "
+"metóda."
+
+#: inc/class-pay4pay-admin.php:83
+msgid "Percent charge"
+msgstr "Poplatok v percentách"
+
+#: inc/class-pay4pay-admin.php:85
+msgid "Percentage of cart total to be added to payment."
+msgstr "Percento z celkovej ceny košíka, ktoré sa pridá ku platbe."
+
+#: inc/class-pay4pay-admin.php:96
+msgid "Charge at least"
+msgstr "Najmenej"
+
+#: inc/class-pay4pay-admin.php:98
+msgid ""
+"Minimum extra charge to be added to cart when this payment method is "
+"selected."
+msgstr ""
+"Minimálny poplatok, ktorý bude pridaný do košíka, keď bude zvolená táto "
+"platobná metóda."
+
+#: inc/class-pay4pay-admin.php:106
+msgid "Charge at most"
+msgstr "Maximálne"
+
+#: inc/class-pay4pay-admin.php:108
+msgid ""
+"Maximum extra charge to be added to cart when this payment method is "
+"selected. Enter zero to disable."
+msgstr ""
+"Maximálny poplatok, ktorý bude pridaný do košíka, keď bude zvolená táto "
+"platobná metóda. Zadajte nulu, ak sa nemá použiť."
+
+#: inc/class-pay4pay-admin.php:116
+msgid "Disable on Free Shipping"
+msgstr "Nepoužiť pri doprave zdarma"
+
+#: inc/class-pay4pay-admin.php:117
+msgid "Don’t charge this fee when free shipping is available."
+msgstr "Neuplatniť poplatok, pokiaľ je k dispozícii doprava zdarma."
+
+#: inc/class-pay4pay-admin.php:122
+msgid "Disable on Zero Shipping"
+msgstr "Nepoužiť pri doprave zdarma"
+
+#: inc/class-pay4pay-admin.php:123
+msgid "Don’t charge this fee when zero shipping is available."
+msgstr "Neuplatniť poplatok, pokiaľ je k dispozícii doprava zdarma."
+
+#: inc/class-pay4pay-admin.php:133
+msgid "Extra Charge Taxes"
+msgstr "Poplatok za platbu a DPH"
+
+#: inc/class-pay4pay-admin.php:138
+msgid "Taxable"
+msgstr "Zdaniteľný"
+
+#: inc/class-pay4pay-admin.php:140
+msgid "Payment fee is taxable"
+msgstr "Poplatok podlieha DPH"
+
+#: inc/class-pay4pay-admin.php:147
+msgid "Inclusive Taxes"
+msgstr "Vrátane DPH"
+
+#: inc/class-pay4pay-admin.php:149
+msgid "The payment fee is inclusive of taxes."
+msgstr "Poplatok za platbu je vrátane dane."
+
+#: inc/class-pay4pay-admin.php:150
+msgid ""
+"If you leave this unchecked taxes will be calculated on top of the payment "
+"fee."
+msgstr ""
+"Ak toto pole ponecháte prázdne, k poplatku za platbu bude pripočítaná DPH."
+
+#: inc/class-pay4pay-admin.php:156
+msgid "Tax class"
+msgstr "Daňová trieda"
+
+#: inc/class-pay4pay-admin.php:158
+msgid "Select a the tax class applied to the extra charge."
+msgstr "Vyberte daňovú triedu, ktorá sa použije pre poplatok za platbu."
+
+#: inc/class-pay4pay-admin.php:171
+msgid "Include in percental payment fee calculation:"
+msgstr "Zahrnúť do kalkulácie percentuálneho poplatku:"
+
+#: inc/class-pay4pay-admin.php:177
+msgid "Fees"
+msgstr "Poplatky"
+
+#: inc/class-pay4pay-admin.php:179
+msgid "Include fees in calculation."
+msgstr "Zahrnúť do kalkulácie poplatky."
+
+#: inc/class-pay4pay-admin.php:185
+msgid "Coupons"
+msgstr "Kupóny"
+
+#: inc/class-pay4pay-admin.php:187
+msgid "Include Coupons in calculation."
+msgstr "Zahrnúť do kalkulácie kupóny."
+
+#: inc/class-pay4pay-admin.php:193
+msgid "Shipping"
+msgstr "Doručenie"
+
+#: inc/class-pay4pay-admin.php:195
+msgid "Include shipping cost in calculation."
+msgstr "Zahrnúť do kalkulácie náklady na dopravu."
+
+#: inc/class-pay4pay-admin.php:204
+msgid "Taxes"
+msgstr "Dane"
+
+#: inc/class-pay4pay-admin.php:206
+msgid "Include taxes in calculation."
+msgstr "Zahrnúť do kalkulácie dane."
+
+#: inc/class-pay4pay-admin.php:296
+msgid ""
+"There has been an error within the WooCommerce Pay for Payment plugin and "
+"settings can't be saved."
+msgstr ""
+"Došlo k chybe v rámci WooCommerce Pay pre platobný plugin a nastavenia nie "
+"je možné uložiť."
+
+#: inc/class-pay4pay-admin.php:296
+#, php-format
+msgid ""
+"To fix the issue, contact the plugin author either on %sGithub%s or "
+"%sWordPress.org%s and provide following information:"
+msgstr ""
+"Ak chcete vyriešiť tento problém, obráťte sa na autora pluginu buď na "
+"%sGithub %s alebo %sWordPress. org %s a poskytnite nasledujúce informácie:"
+
+#: inc/class-pay4pay-admin.php:298
+msgid ""
+"Name of the payment method you are trying to save and the URL where it can "
+"be downloaded for testing."
+msgstr ""
+"Názov spôsobu platby, ktorý sa pokúšate uložiť, a adresu URL, kde ju možno "
+"prevziať na testovanie."
+
+#: inc/class-pay4pay-admin.php:299
+msgid "Current section ID:"
+msgstr "Aktuálna identifikácia sekcie:"
+
+#: inc/class-pay4pay-admin.php:300
+msgid "Anything else might be helpful (recently added/updated plugins, etc.)."
+msgstr ""
+"Čokoľvek iného by mohlo byť užitočné (Nedávno pridané/aktualizované "
+"pluginy, atď)."
+
+#: inc/class-pay4pay-admin.php:344
+#, php-format
+msgctxt "Gateway list column"
+msgid "%s %% of cart totals"
+msgstr "%s %% z ceny objednávky"
+
+#: inc/class-pay4pay.php:274
+msgid "Standard"
+msgstr "Štandardný"
+
+#. Plugin Name of the plugin/theme
+#: woocommerce-payforpayment.php:47
+msgid "WooCommerce Pay for Payment"
+msgstr "WooCommerce Pay for Payment"
+
+#: woocommerce-payforpayment.php:48
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: woocommerce-payforpayment.php:51
+#, php-format
+msgid ""
+"%1$s requires %2$s. Please activate %2$s before activation of %1$s. This "
+"plugin has been deactivated."
+msgstr ""
+"%1$s vyžaduje %2$s. Pred aktiváciou %1$s aktivujte aktiváciu %2$s. Tento "
+"plugin bol deaktivovaný."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/woocommerce-pay-for-payment/"
+msgstr "https://wordpress.org/plugins/woocommerce-pay-for-payment/"
+
+#. Description of the plugin/theme
+msgid "Setup individual charges for each payment method in WooCommerce."
+msgstr "Nastaviť individuálne poplatky za každý spôsob platby v WooCommerce."
+
+#. Author of the plugin/theme
+msgid "Karolína Vyskočilová"
+msgstr "Karolína Vyskočilová"
+
+#. Author URI of the plugin/theme
+msgid "https://kybernaut.cz"
+msgstr "https://kybernaut.cz"
