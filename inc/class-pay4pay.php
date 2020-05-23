@@ -291,16 +291,6 @@ jQuery(document).ready(function($){
 
 	// TODO zjistit, kdy se to rozbilo.
 	public function get_woocommerce_tax_classes() {
-		// I can't believe it really works like this!
-		// $tax_classes = array_filter( array_map( 'trim', explode( "\n", get_option( 'woocommerce_tax_classes' ) ) ) );
-		// $tax_class_options = array();
-		// $tax_class_options[''] = __( 'Standard', 'woocommerce' );
-		// if ( $tax_classes ) {
-			// 	foreach ( $tax_classes as $class ) {
-				// 		$tax_class_options[ sanitize_title( $class ) ] = esc_attr( $class );
-				// 	}
-				// }
-
 		$tax_class_options = [];
 		$tax_classes = WC_Tax::get_tax_classes(); // Retrieve all tax classes.
 		$tax_class_options[''] = __( 'Standard', 'woocommerce' );

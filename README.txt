@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.3
-Stable tag: 2.0.14
+Stable tag: 2.0.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,11 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.15 (2020-05-23) =
+* Slovak translation (thanks to [Roman Velocký](https://gandalf.sk/))
+* Fix not loading tax classes in the payment settings
+* Support for [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) (when store country is USD)
 
 = 2.0.14 (2020-01-16) =
 * Added a compatibility with [Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) in [#51](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/51) thanks to [Oscar Gare](https://github.com/oscargare).
