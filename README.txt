@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: 2.0.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
 - Compatibility with **[Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/)**
+- [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when store currency is USD
 
 = Limitations =
 - Better not use it with PayPal. (Legal issue, see FAQ as well.)
@@ -102,7 +103,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 = 2.0.15 (2020-05-23) =
 * Slovak translation (thanks to [Roman Velocký](https://gandalf.sk/))
 * Fix not loading tax classes in the payment settings
-* Support for [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) (when store country is USD)
+* Support for [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when store currency is USD
 
 = 2.0.14 (2020-01-16) =
 * Added a compatibility with [Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) in [#51](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/51) thanks to [Oscar Gare](https://github.com/oscargare).
