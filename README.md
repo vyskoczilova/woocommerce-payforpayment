@@ -17,7 +17,7 @@ Unreleased updates
 ------------------
 - Slovak translation (thanks to [Roman Velocký](https://gandalf.sk/))
 - Fix not loading tax classes in the payment settings (not yet finall)
-- Support for [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/)
+- Support for [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) (when store country is USD)
 
 Plugin API
 ----------
