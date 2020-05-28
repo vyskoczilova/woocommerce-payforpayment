@@ -15,6 +15,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
+* Fix Mercadopago compatibility issue
 
 Plugin API
 ----------

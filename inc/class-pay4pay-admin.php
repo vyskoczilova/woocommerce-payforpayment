@@ -27,9 +27,9 @@ class Pay4Pay_Admin {
 		// payment gateways table
 		add_filter( 'woocommerce_payment_gateways_setting_columns', array( $this, 'add_extra_fee_column' ) );
 		add_action( 'woocommerce_payment_gateways_setting_column_pay4pay_extra', array( $this, 'extra_fee_column_content' ) );
-		
+
 		// add save actions for every single method - related to: https://github.com/woocommerce/woocommerce/pull/23091
-		if ( version_compare( WC_VERSION, '3.7', '>=' )) { 
+		if ( version_compare( WC_VERSION, '3.7', '>=' )) {
 			add_action( 'wp_loaded', array( $this, 'save_actions_for_every_method' ) );
 		}
 
@@ -230,8 +230,8 @@ class Pay4Pay_Admin {
 
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
-			$gateway->form_fields += $form_fields;
-			if ( version_compare( WC_VERSION, '3.7', '<' )) { 
+			$gateway->form_fields = array_merge($gateway->form_fields, $form_fields); // Fix Mercadopago integration
+			if ( version_compare( WC_VERSION, '3.7', '<' )) {
 				add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
 			}
 		}
@@ -239,17 +239,17 @@ class Pay4Pay_Admin {
 
 	public function update_payment_options() {
 		global $current_section;
-		
+
 		$class_id = $current_section;
 		$prefix   = 'woocommerce_' . $class_id;
 		$postfix  = '_settings';
-		
+
 		// Default WooCommerce gateways use this option name format
 		$opt_name = $prefix . $postfix;
-		
+
 		// Try to get the WooCommerce Gateway settings with default format
 		$options  = get_option( $opt_name );
-		
+
 		// Try to get the WooComm erce Gateway settings with fallback format
 		if ( $options === false ) {
 			$opt_name = $class_id . $postfix;
@@ -262,7 +262,7 @@ class Pay4Pay_Admin {
 			add_action( 'admin_notices', array( $this, 'update_error_notice') );
 			return;
 		}
-		
+
 		$tax_class_sanitize = ( isset( $_POST[$prefix . '_pay4pay_tax_class'] )? $_POST[$prefix . '_pay4pay_tax_class'] : '' );
 
 		$item_title = sanitize_text_field( $_POST[$prefix . '_pay4pay_item_title'] );
