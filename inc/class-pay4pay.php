@@ -289,13 +289,12 @@ jQuery(document).ready(function($){
 		return false;
 	}
 
-	// TODO zjistit, kdy se to rozbilo.
 	public function get_woocommerce_tax_classes() {
 		$tax_class_options = [];
-		$tax_classes = WC_Tax::get_tax_classes(); // Retrieve all tax classes.
-		$tax_class_options[''] = __( 'Standard', 'woocommerce' );
+		$tax_classes = \WC_Tax::get_tax_classes(); // Retrieve all tax classes.
+		$tax_class_options[''] = esc_attr(__( 'Standard', 'woocommerce' ));
 		foreach ($tax_classes as $tax_class) {
-			$tax_class_options[$tax_class] = $tax_class;
+			$tax_class_options[sanitize_title($tax_class)] = esc_attr($tax_class);
 		}
 
 		return $tax_class_options;
