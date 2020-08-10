@@ -2,6 +2,10 @@ WooCommerce Pay for Payment
 ===========================
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment)
+[![plugin downloads](https://img.shields.io/wordpress/plugin/dt/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment/stats/)
+[![plugin active installs](https://img.shields.io/wordpress/plugin/installs/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment/stats/)
+[![plugin active installs](https://img.shields.io/wordpress/plugin/rating/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment/stats/)
+[![plugin tested up to](https://img.shields.io/wordpress/v/woocommerce-pay-for-payment.svg)](https://wordpress.org/plugins/woocommerce-pay-for-payment/)
 
 About
 -----
@@ -15,7 +19,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-* Fix Mercadopago compatibility issue
+* none
 
 Plugin API
 ----------

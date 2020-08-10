@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 2.0.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,9 +33,10 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
 - Compatibility with **[Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/)**
-- [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when store currency is USD
+- [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
 
 = Limitations =
+- It seems that Mercadopago gateway is not handling WC_Fee correctly. Get in touch with Mercadopago support.
 - Better not use it with PayPal. (Legal issue, see FAQ as well.)
 - Doesn't work on "Pay for order" pages (manually created orders or canceled payments), because of [WC limitations](https://github.com/woocommerce/woocommerce/issues/17794)
 
@@ -99,6 +100,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.16 (2020-08-10) =
+* FIX: `Unsupported operand types` when adding settings to a payment (fixes Mercadopago fatal error)
+* FIX: Escape tax related settings.
 
 = 2.0.15 (2020-05-23) =
 * Slovak translation (thanks to [Roman Velocký](https://gandalf.sk/))
