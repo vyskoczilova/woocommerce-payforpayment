@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.5
-Stable tag: 2.0.16
+Stable tag: 2.0.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,10 +29,9 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Compatibility =
-- PHP 5.6 & PHP 7 compatible
-- Compatibility with **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
-- Compatibility with **[WooCommerce Price Based on Country PRO](https://www.pricebasedcountry.com)** as stated [here](https://wordpress.org/support/topic/how-to-make-my-plugin-compatible/)
-- Compatibility with **[Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/)**
+- **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
+- [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) - free & PRO
+- [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/) - free & PRO
 - [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
 
 = Limitations =
@@ -100,6 +99,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.17 (2020-10-15) =
+* Added compatibility with [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)
 
 = 2.0.16 (2020-08-10) =
 * FIX: `Unsupported operand types` when adding settings to a payment (fixes Mercadopago fatal error)
