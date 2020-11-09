@@ -226,7 +226,7 @@ jQuery(document).ready(function($){
 						}
 
 						$cost = apply_filters( "woocommerce_pay4pay_{$current_gateway->id}_amount", $cost, $calculation_base, $current_gateway, $taxable, $include_taxes, $tax_class );
-						$cost = round( $cost, 2 );
+						$cost = round($cost, \wc_get_price_decimals());
 
 						$this->_fee = (object) array(
 							'fee_title' => $fee_title,
@@ -238,7 +238,6 @@ jQuery(document).ready(function($){
 						if ( version_compare( WC_VERSION, '3.2', '<' )) {
 							$cart->calculate_totals();
 						}
-						//$cart->calculate_totals();
 
 						return;
 					}

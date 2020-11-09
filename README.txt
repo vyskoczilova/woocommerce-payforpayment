@@ -100,8 +100,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.18rc1 (2020-11-09) =
+= 2.0.18rc2 (2020-11-09) =
 * Fix: add option for Payment tax based on cart items [issue](https://wordpress.org/support/topic/payment-fee-tax-class-based-on-product-tax-class/)
+* Tweak: Reflect Number of decimals in WC currency settings instead of rounding to two digits.
 
 = 2.0.17 (2020-10-15) =
 * Added compatibility with [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)
