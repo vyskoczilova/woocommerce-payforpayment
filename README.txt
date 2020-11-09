@@ -30,8 +30,8 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 
 = Compatibility =
 - **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
-- [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) - free & PRO
-- [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/) - free & PRO
+- [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) & PRO
+- [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)  & PRO
 - [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
 
 = Limitations =
@@ -99,6 +99,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.18rc1 (2020-11-09) =
+* Fix: add option for Payment tax based on cart items [issue](https://wordpress.org/support/topic/payment-fee-tax-class-based-on-product-tax-class/)
 
 = 2.0.17 (2020-10-15) =
 * Added compatibility with [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)

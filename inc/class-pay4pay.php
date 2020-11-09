@@ -290,12 +290,8 @@ jQuery(document).ready(function($){
 	}
 
 	public function get_woocommerce_tax_classes() {
-		$tax_class_options = [];
-		$tax_classes = \WC_Tax::get_tax_classes(); // Retrieve all tax classes.
-		$tax_class_options[''] = esc_attr(__( 'Standard', 'woocommerce' ));
-		foreach ($tax_classes as $tax_class) {
-			$tax_class_options[sanitize_title($tax_class)] = esc_attr($tax_class);
-		}
+
+		$tax_class_options = array('inherit' => __('Payment fee tax class based on cart items', 'woocommerce-pay-for-payment')) +  \wc_get_product_tax_class_options(); // Since 3.0
 
 		return $tax_class_options;
 	}
