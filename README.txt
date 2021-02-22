@@ -3,8 +3,8 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.5
-Stable tag: 2.0.17
+Tested up to: 5.6
+Stable tag: 2.0.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,9 +100,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.0.18rc2 (2020-11-09) =
+= 2.0.18 (2021-02-22) =
 * Fix: add option for Payment tax based on cart items [issue](https://wordpress.org/support/topic/payment-fee-tax-class-based-on-product-tax-class/)
-* Tweak: Reflect Number of decimals in WC currency settings instead of rounding to two digits.
+* Tweak: Reflect the number of decimals in WC currency settings instead of rounding to two digits.
 
 = 2.0.17 (2020-10-15) =
 * Added compatibility with [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)
