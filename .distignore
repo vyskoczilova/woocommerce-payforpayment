@@ -1,0 +1,9 @@
+/.git
+/.github
+/.wordpress-org
+.distignore
+.gitignore
+.gitattributes
+.editorconfig
+.svnignore
+README.md

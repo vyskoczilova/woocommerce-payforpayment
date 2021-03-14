@@ -20,6 +20,11 @@ Unreleased updates
 ------------------
 * none
 
+## Credits
+
+* Deploy Github actions: [WordPress.org Plugin Deploy](https://github.com/10up/action-wordpress-plugin-deploy) & [WordPress.org Plugin Readme/Assets Update](https://github.com/10up/action-wordpress-plugin-asset-update)
+
+
 Plugin API
 ----------
 
