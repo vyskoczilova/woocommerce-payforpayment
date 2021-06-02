@@ -1,4 +1,4 @@
-=== WooCommerce Pay for Payment ===
+=== Pay for Payment for WooCommerce ===
 Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
@@ -99,6 +99,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.0.19 (2021-06-02) =
+
+* Change the plugin name from "WooCommerce Pay for Payment" to "Pay for Payment for WooCommerce" since the WC claims the trademark.
 
 = 2.0.18 (2021-02-22) =
 * Fix: add option for Payment tax based on cart items [issue](https://wordpress.org/support/topic/payment-fee-tax-class-based-on-product-tax-class/)
