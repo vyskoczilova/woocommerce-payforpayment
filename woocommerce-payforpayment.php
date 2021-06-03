@@ -49,7 +49,7 @@ function pay4payment_plugin_init() {
  */
 function pay4payment_admin_notice() {
 
-	$pay4payment_plugin = __( 'WooCommerce Pay for Payment', 'woocommerce-pay-for-payment' );
+	$pay4payment_plugin = __( 'Pay for Payment for WooCommerce', 'woocommerce-pay-for-payment' );
 	$woocommerce_plugin = __( 'WooCommerce', 'woocommerce-pay-for-payment' );
 
 	echo '<div class="error"><p>'

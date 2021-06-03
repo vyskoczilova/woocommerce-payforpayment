@@ -5,22 +5,22 @@ msgstr ""
 "Project-Id-Version: Plugins - WooCommerce Pay for Payment - Development "
 "(trunk)\n"
 "POT-Creation-Date: 2018-10-13 22:05+0200\n"
-"PO-Revision-Date: 2018-10-13 22:13+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-06-03 10:10+0200\n"
+"Last-Translator: Karolína Vyskočilová <karolina@kybernaut.cz>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: inc/class-pay4pay-admin.php:44 inc/class-pay4pay.php:62
 #, php-format
 msgid ""
 "WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!"
 msgstr ""
-"WooCommerce Pay4Payment requiere al menos WooCommerce %s. ¡Por favor "
+"Pay for Payment for WooCommerce requiere al menos WooCommerce %s. ¡Por favor "
 "actualiza!"
 
 #: inc/class-pay4pay-admin.php:62 inc/class-pay4pay-admin.php:331

@@ -59,7 +59,7 @@ class Pay4Pay {
 
 	public static function wc_version_notice() {
 		?><div class="error"><p><?php
-			printf( __( 'WooCommerce Pay4Payment requires at least WooCommerce %s. Please update!', 'woocommerce-pay-for-payment' ), self::$required_wc_version );
+			printf( __( 'Pay for Payment for WooCommerce requires at least WooCommerce %s. Please update!', 'woocommerce-pay-for-payment' ), self::$required_wc_version );
 		?></p></div><?php
 	}
 
