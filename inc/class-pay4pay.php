@@ -283,7 +283,7 @@ jQuery(document).ready(function($){
 		if ( $current_gateway = $this->get_current_gateway() ) {
 			$defaults = self::get_default_settings();
 			$settings = $current_gateway->settings + $defaults;
-			return $settings;
+			return apply_filters('woocommerce_pay4pay_get_settings', $settings, $current_gateway);
 		}
 		return false;
 	}
