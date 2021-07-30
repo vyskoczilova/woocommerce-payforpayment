@@ -170,9 +170,9 @@ jQuery(document).ready(function($){
 
 						if ( $include_coupons ) {
 							if ( version_compare( WC_VERSION, '3.2', '>' )) {
-								$calculation_base -= $cart->get_total_discount() + $cart->discount_cart;
+								$calculation_base -= (float) $cart->get_total_discount() + (float) $cart->discount_cart;
 							} else {
-								$calculation_base -= $cart->discount_total + $cart->discount_cart;
+								$calculation_base -= (float) $cart->discount_total + (float) $cart->discount_cart;
 							}
 						}
 
@@ -283,7 +283,7 @@ jQuery(document).ready(function($){
 		if ( $current_gateway = $this->get_current_gateway() ) {
 			$defaults = self::get_default_settings();
 			$settings = $current_gateway->settings + $defaults;
-			return apply_filters('woocommerce_pay4pay_get_current_gateway_settings', $settings, $current_gateway);
+			return apply_filters('(float) ', $settings, $current_gateway);
 		}
 		return false;
 	}

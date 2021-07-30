@@ -12,13 +12,16 @@ Add individual charges for each payment method as a flat rate and/or as a percen
 The plugin first calculates the percentage rate and then adds the fixed rate on top.
 Coupons are not supported. (Sorry guys. I tried, but no way.)
 
+Supports PHP 8.0
+
 You will find a stable version in [WordPress plugin directory](http://wordpress.org/plugins/woocommerce-pay-for-payment/).
 
 Previous versions have been created by [Jörn Lund](https://github.com/mcguffin), who abandoned this project due to a pile of other projects in 2016. See the previous [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment-old) for details. The new version is maintained by Karolína Vyskočilová since 2017.
 
 Unreleased updates
 ------------------
-* New filter introduced `woocommerce_pay4pay_get_current_gateway_settings`
+* New filter introduced `woocommerce_pay4pay_get_current_gateway_settings` ([#61](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/61))
+* PHP 8.0 - Unsupported operand types fix ([#63](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/63))
 
 ## Credits
 
