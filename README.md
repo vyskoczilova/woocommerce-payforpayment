@@ -18,7 +18,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-* none
+* New filter introduced `woocommerce_pay4pay_get_current_gateway_settings`
 
 ## Credits
 
@@ -71,6 +71,11 @@ Handle if a payment fee on a specific payment method should be applied. If you w
 	}
 	$current_gateway_id = 'cod';
 	add_filter( "woocommerce_pay4pay_applyfor_{$current_gateway_id}", 'my_pay4pay_apply' , 10 , 4 );
+
+
+#### Filter `woocommerce_pay4pay_get_current_gateway_settings`
+
+Allows you to modify the current gateway settings before the fee calculation - in pretty edge cases that allows you to change tax rate dynamically
 
 #### FAQ ####
 
