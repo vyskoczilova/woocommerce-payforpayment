@@ -3,8 +3,8 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.7
-Stable tag: 2.0.19
+Tested up to: 5.8
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,11 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.0 (2021-07-30) =
+
+* New filter introduced `woocommerce_pay4pay_get_current_gateway_settings` ([#61](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/61))
+* PHP 8.0 - Unsupported operand types fix ([#63](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/63))
 
 = 2.0.19 (2021-06-02) =
 

@@ -20,8 +20,8 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 
 Unreleased updates
 ------------------
-* New filter introduced `woocommerce_pay4pay_get_current_gateway_settings` ([#61](https://github.com/vyskoczilova/woocommerce-payforpayment/pull/61))
-* PHP 8.0 - Unsupported operand types fix ([#63](https://github.com/vyskoczilova/woocommerce-payforpayment/issues/63))
+
+- none
 
 ## Credits
 
