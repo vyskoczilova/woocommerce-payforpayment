@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.8
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,7 +35,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
 
 = Limitations =
-- It seems that Mercadopago gateway is not handling WC_Fee correctly. Get in touch with Mercadopago support.
+- It seems that Mercadopago gateway is not handling WC_Fee correctly. Get in touch with Mercadopago support (and I'm happy to help them fix the issue)
 - Better not use it with PayPal. (Legal issue, see FAQ as well.)
 - Doesn't work on "Pay for order" pages (manually created orders or canceled payments), because of [WC limitations](https://github.com/woocommerce/woocommerce/issues/17794)
 
@@ -99,6 +99,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.1 (2021-08-17) =
+
+* Fix - check if array passe in gateway settings (fixes [Mercadopago error](https://wordpress.org/support/topic/fatal-error-mercado-pago-compatibility/))
 
 = 2.1.0 (2021-07-30) =
 

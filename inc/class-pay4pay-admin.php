@@ -230,7 +230,7 @@ class Pay4Pay_Admin {
 
 		foreach ( WC()->payment_gateways()->payment_gateways() as $gateway_id => $gateway ) {
 			$form_fields['pay4pay_item_title']['default'] = $gateway->title;
-			$gateway->form_fields = array_merge($gateway->form_fields, $form_fields); // Fix Mercadopago integration
+			$gateway->form_fields = array_merge(is_array($gateway->form_fields) ? $gateway->form_fields : [], $form_fields);
 			if ( version_compare( WC_VERSION, '3.7', '<' )) {
 				add_action( 'woocommerce_update_options_payment_gateways_' . $gateway->id, array( $this,'update_payment_options' ), 20 );
 			}
