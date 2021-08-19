@@ -100,6 +100,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= 2.1.2 (2021-08-19) =
+
+* Fix - cost rounding (use `wc_get_rounding_precision()`) - thanks to [morvy](https://github.com/morvy)
+
 = 2.1.1 (2021-08-17) =
 
 * Fix - check if array passe in gateway settings (fixes [Mercadopago error](https://wordpress.org/support/topic/fatal-error-mercado-pago-compatibility/))
