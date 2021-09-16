@@ -21,7 +21,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 Unreleased updates
 ------------------
 
-- none
+* Fix - tax class when taxes by cart items is on - applies the highest used tax. Thanks to [morvy](https://github.com/morvy)
 
 ## Credits
 
