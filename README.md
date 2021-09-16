@@ -21,7 +21,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 Unreleased updates
 ------------------
 
-- none
+* Fix - WPML exchange rates (apply filter `wcml_raw_price_amount`)
 
 ## Credits
 

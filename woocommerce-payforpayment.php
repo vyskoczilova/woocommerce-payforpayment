@@ -36,6 +36,7 @@ function pay4payment_plugin_init() {
 		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-price-based-country.php';
 		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-woocommerce-multicurrency.php';
 		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-woo-multi-currency.php';
+		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-wcml.php';
 
 		if ( is_admin() )
 			require_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-admin.php';
