@@ -215,6 +215,8 @@ jQuery(document).ready(function($){
 
 						// WooCommerce Fee is always ex taxes. We need to subtract taxes, WC will add them again later.
 						if ( $taxable && $include_taxes ) {
+
+							// Apply the highest tax in the cart (see #65)
 							if ( $tax_class === 'inherit' ) {
 								$highestTaxRate = 0;
 								if ( $cart->get_cart() ) {
@@ -224,7 +226,7 @@ jQuery(document).ready(function($){
 										} else {
 											$itemTaxRate = $item['line_tax'] / $item['line_total'];
 										}
-										
+
 										if ( $itemTaxRate >= $highestTaxRate ) {
 											$highestTaxRate = $itemTaxRate;
 											$tax_class = $item['data']->tax_class;
@@ -232,7 +234,7 @@ jQuery(document).ready(function($){
 									}
 								}
 							}
-							
+
 							$tax_rates = WC_Tax::get_rates( $tax_class );
 
 							$factor = 1;
