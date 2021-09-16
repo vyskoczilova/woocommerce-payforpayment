@@ -21,8 +21,7 @@ Previous versions have been created by [Jörn Lund](https://github.com/mcguffin)
 Unreleased updates
 ------------------
 
-* Fix - WPML exchange rates (apply filter `wcml_raw_price_amount`)
-* Fix - tax class when taxes by cart items is on - applies the highest used tax. Thanks to [morvy](https://github.com/morvy)
+* none
 
 ## Credits
 

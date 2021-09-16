@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.8
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,11 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.3 (2021-09-16) =
+
+* Fix - WPML exchange rates (apply filter `wcml_raw_price_amount`)
+* Fix - tax class when taxes by cart items is on - applies the highest used tax. Thanks to [morvy](https://github.com/morvy)
 
 = 2.1.2 (2021-08-19) =
 
