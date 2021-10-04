@@ -241,6 +241,13 @@ class Pay4Pay_Admin {
 		global $current_section;
 
 		$class_id = $current_section;
+
+		// Fix for Eurobank WooCommerce Payment Gateway https://el.wordpress.org/plugins/woo-payment-gateway-for-eurobank/
+		// TODO add filter and move this to filter.
+		if ( $class_id === 'wc_eurobank_gateway') {
+			$class_id = "eurobank_gateway";
+		}
+
 		$prefix   = 'woocommerce_' . $class_id;
 		$postfix  = '_settings';
 
