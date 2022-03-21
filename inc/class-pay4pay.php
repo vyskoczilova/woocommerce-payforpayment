@@ -211,6 +211,16 @@ jQuery(document).ready(function($){
 							$max_cost = !empty( $settings['pay4pay_charges_maximum'] ) && (bool) $settings['pay4pay_charges_maximum'] ? apply_filters( 'woocommerce_pay4pay_charges_maximum', $settings['pay4pay_charges_maximum'], $current_gateway ) : INF;
 							$cost = max( $min_cost, $cost );
 							$cost = min( $max_cost, $cost );
+
+							// Allow placeholders in this case.
+							$fee_title = str_replace(
+								array('[MINIMUM_AMOUNT]', '[MAXIMUM_AMOUNT]'),
+								array(
+									strip_tags(wc_price($min_cost)),
+									strip_tags(wc_price($max_cost)),
+								),
+								$fee_title
+							);
 						}
 
 						// WooCommerce Fee is always ex taxes. We need to subtract taxes, WC will add them again later.

@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 5.8
-Stable tag: 2.1.5
+Stable tag: 2.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ You can use **placeholders** in the payment item title:
 - *[FIXED_AMOUNT]*: Will print money-formatted fixed amount you entered.
 - *[PERCENT_AMOUNT]*: will print out percental amount you entered
 - *[CART_TOTAL]*: will print out money-formatted cart totals.
+- *[MINIMUM_AMOUNT]*: will print out money-formatted minimum amount you entered when calculating percentage fee.
+- *[MAXIMUM_AMOUNT]*: will print out money-formatted maximum amount you entered when calculating percentage fee.
 - Example: `Payment Fee ([FIXED_AMOUNT] + [PERCENT_AMOUNT]% of [CART_TOTAL])`
 
 Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended). The support for WC 2.6 will be dropped soon.
@@ -101,6 +103,8 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 == Changelog ==
 
 = 2.1.5 (unreleased) =
+
+* Feature: Add `[MINIMUM_AMOUNT]` and `[MAXIMUM_AMOUNT]` placeholders to fee title
 
 = 2.1.4 (2021-10-04) =
 
