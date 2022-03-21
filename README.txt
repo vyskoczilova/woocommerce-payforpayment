@@ -31,6 +31,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Compatibility =
+- **Currently not compatible with [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)** since it's React powered and I can't hook in. Use [Payment Plugins for Stripe WooCommerce](https://wordpress.org/plugins/woo-stripe-payment/) instead for now.
 - **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) & PRO
 - [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)  & PRO
