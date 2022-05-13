@@ -3,8 +3,8 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 5.8
-Stable tag: 2.1.5
+Tested up to: 6.0
+Stable tag: 2.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,11 +31,12 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Compatibility =
-- **Currently not compatible with [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)** since it's React powered and I can't hook in. Use [Payment Plugins for Stripe WooCommerce](https://wordpress.org/plugins/woo-stripe-payment/) instead for now.
+- **Currently not compatible with [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)** since it's React powered and I can't hook in. Use [Payment Plugins for Stripe WooCommerce](https://wordpress.org/plugins/woo-stripe-payment/) instead for now, waiting for their team to resolve the problem.
 - **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) & PRO
 - [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)  & PRO
 - [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
+- [YayCurrency PRO](https://yaycommerce.com/yaycurrency-woocommerce-multi-currency-switcher/)
 
 = Limitations =
 - It seems that Mercadopago gateway is not handling WC_Fee correctly. Get in touch with Mercadopago support (and I'm happy to help them fix the issue)
@@ -102,6 +103,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.5 (2022-05-13)
+
+* Fix: Don't deactivate the plugin even when the WooCommerce is not active (keep a notice only).
 
 = 2.1.5 (2022-03-21) =
 
