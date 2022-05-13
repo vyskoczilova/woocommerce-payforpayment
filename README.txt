@@ -104,7 +104,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.1.5 (2022-05-13)
+= 2.1.6 (2022-05-13) =
 
 * Fix: Don't deactivate the plugin even when the WooCommerce is not active (keep a notice only).
 
