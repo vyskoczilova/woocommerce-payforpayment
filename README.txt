@@ -37,6 +37,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)  & PRO
 - [WooCommerce Multi-Currency](https://woocommerce.com/products/multi-currency/) when the store currency is USD
 - [YayCurrency PRO](https://yaycommerce.com/yaycurrency-woocommerce-multi-currency-switcher/)
+- [WOOCS](https://wordpress.org/plugins/woocommerce-currency-switcher/)
 
 = Limitations =
 - It seems that Mercadopago gateway is not handling WC_Fee correctly. Get in touch with Mercadopago support (and I'm happy to help them fix the issue)
@@ -103,6 +104,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.7 (2022-05-17) =
+
+* Update: Add support for WOOCS converter.
 
 = 2.1.6 (2022-05-13) =
 
