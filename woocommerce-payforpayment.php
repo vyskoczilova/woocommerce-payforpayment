@@ -3,7 +3,7 @@
 Plugin Name: Pay for Payment for WooCommerce
 Plugin URI: https://kybernaut.cz/pluginy/woocommerce-pay-for-payment/
 Description: Setup individual charges for each payment method in WooCommerce.
-Version: 2.1.7
+Version: 2.1.8
 Author: Karolína Vyskočilová
 Author URI: https://kybernaut.cz
 License: GPL-2.0+
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 Text Domain: woocommerce-pay-for-payment
 Domain Path: /languages
 WC requires at least: 2.6
-WC tested up to: 6.5.1
+WC tested up to: 8.0.0
 */
 
 /**
@@ -61,3 +61,10 @@ function pay4payment_admin_notice() {
 		unset( $_GET['activate'] );
 	}
 }
+
+// Declare compatibility with HPOS.
+add_action( 'before_woocommerce_init', function() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );

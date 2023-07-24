@@ -3,8 +3,8 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 6.0
-Stable tag: 2.1.7
+Tested up to: 6.2.0
+Stable tag: 2.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.8 (2023-07-24) =
+
+* Declared HPOS support.
 
 = 2.1.7 (2022-05-17) =
 
