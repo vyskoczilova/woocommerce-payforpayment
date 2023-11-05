@@ -329,9 +329,10 @@ class Pay4Pay_Admin {
 		return $default;
 	}
 
-	private function _sanitize_tax_class( $tax_option, $default = 'incl' ) {
-		if ( in_array( $tax_option, array( 0, 'incl', 'excl' ) ) )
+	private function _sanitize_tax_class( $tax_option, $default = 'inherit' ) {
+		if ( array_key_exists( $tax_option, wc_get_product_tax_class_options() ) )
 			return $tax_option;
+	
 		return $default;
 	}
 
