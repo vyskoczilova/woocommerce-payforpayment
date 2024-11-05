@@ -1,0 +1,32 @@
+{
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.0",
+		"wp": "latest"
+	},
+	"phpExtensionBundles": ["kitchen-sink"],
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+            "step": "installTheme",
+            "themeData": {
+                "resource": "wordpress.org/themes",
+                "slug": "twentytwentyfour"
+            }
+        },
+		{
+			"step": "importWordPressFiles",
+			"wordPressFilesZip": {
+				"resource": "url",
+				"url": "https://kybernaut.cz/blueprints/pay-for-payment-playground.zip"
+			}
+		},
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		}
+	]
+}

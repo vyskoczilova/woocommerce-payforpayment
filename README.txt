@@ -3,7 +3,7 @@ Contributors: vyskoczilova, podpirate
 Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
-Tested up to: 6.2.0
+Tested up to: 6.7
 Stable tag: 2.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,10 @@ Setup individual charges for each payment method in WooCommerce.
 == Description ==
 
 Add individual charges for each payment method as a flat rate and/or as a percentage of the cart total. The plugin first calculates the percentage rate and then adds the fixed rate on top.
+
+
+**Current version is not compatible with WooCommerce Block Checkout** please use shortcode for checkout instead. [How to guide](https://kybernaut.cz/en/clanky/how-to-revert-woocommerce-block-checkout-to-the-old-checkou-page/). I'm working on a new version compatible with block checkout and React settings.
+
 
 You can use **placeholders** in the payment item title:
 
@@ -31,6 +35,8 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 - **Plugin API**. See [GitHub](https://github.com/vyskoczilova/woocommerce-payforpayment) for details.
 
 = Compatibility =
+
+- ** Current version is not compatible with WooCommerce Block Checkout** please use shortcode for checkout instead. [How to guide](https://kybernaut.cz/en/clanky/how-to-revert-woocommerce-block-checkout-to-the-old-checkou-page/). I'm working on a new version compatible with block checkout and React settings.
 - **Currently not compatible with [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)** since it's React powered and I can't hook in. Use [Payment Plugins for Stripe WooCommerce](https://wordpress.org/plugins/woo-stripe-payment/) instead for now, waiting for their team to resolve the problem.
 - **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) & PRO
