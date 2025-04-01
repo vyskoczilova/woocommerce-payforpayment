@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 6.7
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,6 +114,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 = 2.1.9 (2025-04-01) =
 
 * Fix: Tax class settings not being saved properly in payment gateway configuration.
+* [Call for beta testers](https://kybernaut.cz/en/plugins/woocommerce-pay-for-payment/testing-v2/): New features are coming in Q2 2024—and I’m looking for folks to help test them out!
 
 = 2.1.8 (2023-07-24) =
 
