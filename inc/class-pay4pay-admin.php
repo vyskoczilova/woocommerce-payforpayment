@@ -287,7 +287,7 @@ class Pay4Pay_Admin {
 
 			'pay4pay_taxes' 					=> $this->_get_bool( $prefix . '_pay4pay_taxes' ),
 			'pay4pay_includes_taxes'			=> $this->_get_bool( $prefix . '_pay4pay_includes_taxes' ),
-			'pay4pay_tax_class' 				=> $this->_sanitize_tax_class( $tax_class_sanitize ), // 0, incl, excl
+		    'pay4pay_tax_class' 				=> sanitize_title( $tax_class_sanitize ),
 
 			'pay4pay_enable_extra_fees'			=> $this->_get_bool( $prefix . '_pay4pay_enable_extra_fees' ),
 			'pay4pay_include_shipping'			=> $this->_get_bool( $prefix . '_pay4pay_include_shipping' ),
@@ -321,18 +321,6 @@ class Pay4Pay_Admin {
 			</pre>
 		</div>
 		<?php
-	}
-
-	private function _sanitize_tax_option( $tax_option, $default = 'incl' ) {
-		if ( in_array( $tax_option, array( 0, 'incl', 'excl' ) ) )
-			return $tax_option;
-		return $default;
-	}
-
-	private function _sanitize_tax_class( $tax_option, $default = 'incl' ) {
-		if ( in_array( $tax_option, array( 0, 'incl', 'excl' ) ) )
-			return $tax_option;
-		return $default;
 	}
 
 	private function _get_bool( $key ) {

@@ -111,6 +111,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= 2.1.9 (2025-04-01) =
+
+* Fix: Tax class settings not being saved properly in payment gateway configuration.
+
 = 2.1.8 (2023-07-24) =
 
 * Declared HPOS support.
