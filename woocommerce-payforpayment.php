@@ -3,7 +3,7 @@
 Plugin Name: Pay for Payment for WooCommerce
 Plugin URI: https://kybernaut.cz/pluginy/woocommerce-pay-for-payment/
 Description: Setup individual charges for each payment method in WooCommerce.
-Version: 2.1.9
+Version: 2.1.10
 Author: Karolína Vyskočilová
 Author URI: https://kybernaut.cz
 License: GPL-2.0+
@@ -61,67 +61,6 @@ function pay4payment_admin_notice() {
 		unset( $_GET['activate'] );
 	}
 }
-
-/**
- * Display beta testing notice
- */
-function pay4payment_beta_notice() {
-	// Check if notice has been dismissed
-	$dismissed = get_transient('pay4payment_beta_notice_dismissed');
-	if ($dismissed) {
-		return;
-	}
-
-	// Check if user has capability
-	if (!current_user_can('manage_options')) {
-		return;
-	}
-
-	?>
-	<div class="notice notice-info is-dismissible" data-dismissible="pay4payment-beta-notice">
-		<p>
-			<?php printf(__('Plugin %sPay for Payment for WooCommerce%s,  for beta (Q2 2025)! It comes with revamped settings and more features on the way. Want in? ', 'woocommerce-pay-for-payment'), '<strong>', '</strong>'); ?>
-			<a href="https://kybernaut.cz/en/plugins/woocommerce-pay-for-payment/testing-v2/" target="_blank"><?php _e('Sign up here!', 'woocommerce-pay-for-payment'); ?></a>
-		</p>
-	</div>
-	<script>
-	jQuery(document).ready(function($) {
-		$('.notice[data-dismissible]').on('click', '.notice-dismiss', function() {
-			var $this = $(this);
-			var dismissible = $this.closest('.notice').data('dismissible');
-
-			$.post(ajaxurl, {
-				action: 'dismiss_pay4payment_beta_notice',
-				dismissible: dismissible,
-				nonce: '<?php echo wp_create_nonce('dismiss_pay4payment_beta_notice'); ?>'
-			});
-		});
-	});
-	</script>
-	<?php
-}
-
-/**
- * Handle notice dismissal
- */
-function pay4payment_dismiss_beta_notice() {
-	if (!isset($_POST['dismissible']) || !isset($_POST['nonce'])) {
-		return;
-	}
-
-	if (!wp_verify_nonce($_POST['nonce'], 'dismiss_pay4payment_beta_notice')) {
-		return;
-	}
-
-	if ($_POST['dismissible'] === 'pay4payment-beta-notice') {
-		set_transient('pay4payment_beta_notice_dismissed', true, 60 * 60 * 24 * 60); // 60 days
-	}
-
-	wp_die();
-}
-
-add_action('admin_notices', 'pay4payment_beta_notice');
-add_action('wp_ajax_dismiss_pay4payment_beta_notice', 'pay4payment_dismiss_beta_notice');
 
 // Declare compatibility with HPOS.
 add_action( 'before_woocommerce_init', function() {
