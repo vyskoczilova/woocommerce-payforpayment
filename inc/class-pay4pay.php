@@ -158,7 +158,7 @@ jQuery(document).ready(function($){
 
 					//  √ $this->cart_contents_total + √ $this->tax_total + √ $this->shipping_tax_total + $this->shipping_total + $this->fee_total,
 					$calculation_base = 0;
-					if ( $percent = floatval( $settings['pay4pay_charges_percentage'] ) ) {
+					if ( $percent = floatval(apply_filters( 'woocommerce_pay4pay_charges_percentage', $settings['pay4pay_charges_percentage'], $current_gateway ) ) ) {
 
 						$calculation_base = $cart->subtotal_ex_tax;
 

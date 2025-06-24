@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 6.7
-Stable tag: 2.1.10
+Stable tag: 2.1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.1.11 (2025-06-24) =
+* Add new filter for percentage fee.
 
 = 2.1.10 (2025-04-28) =
 * Closing call for beta testers.
