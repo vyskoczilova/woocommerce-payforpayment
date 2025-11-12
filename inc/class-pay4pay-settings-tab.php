@@ -521,8 +521,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		// Update option
 		update_option( $opt_name, $options );
 
-		// Add success message
-		WC_Admin_Settings::add_message( __( 'Settings saved successfully.', 'woocommerce-pay-for-payment' ) );
+		// Success message is automatically shown by WooCommerce's settings framework
 	}
 
 	/**
