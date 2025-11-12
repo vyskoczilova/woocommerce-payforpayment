@@ -15,6 +15,11 @@ WC tested up to: 10.3.4
 */
 
 /**
+ * Version of the plugin.
+ */
+define( 'PAY4PAYMENT_VERSION', '2.2.0' );
+
+/**
  * Check if WooCommerce is active.
  *
  * @return void

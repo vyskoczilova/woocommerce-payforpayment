@@ -29,7 +29,18 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	private $payment_gateways = null;
 
 	/**
+	 * Cached taxes enabled status to avoid repeated get_option calls
+	 *
+	 * @var string|null
+	 */
+	private $taxes_enabled = null;
+
+	/**
 	 * Singleton instance
+	 *
+	 * @since 2.2.0
+	 *
+	 * @return Pay4Pay_Settings_Tab
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -40,6 +51,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 
 	/**
 	 * Constructor
+	 *
+	 * @since 2.2.0
 	 */
 	private function __construct() {
 		$this->id    = 'pay4payment';
@@ -54,6 +67,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	/**
 	 * Get payment gateways with caching
 	 *
+	 * @since 2.2.0
+	 *
 	 * @return array
 	 */
 	private function get_payment_gateways() {
@@ -64,7 +79,23 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	}
 
 	/**
+	 * Check if taxes are enabled with caching
+	 *
+	 * @since 2.2.0
+	 *
+	 * @return bool
+	 */
+	private function are_taxes_enabled() {
+		if ( is_null( $this->taxes_enabled ) ) {
+			$this->taxes_enabled = get_option( 'woocommerce_calc_taxes' );
+		}
+		return 'yes' === $this->taxes_enabled;
+	}
+
+	/**
 	 * Get sections (subtabs for each payment gateway)
+	 *
+	 * @since 2.2.0
 	 *
 	 * @return array
 	 */
@@ -83,6 +114,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 
 	/**
 	 * Output sections (subtabs)
+	 *
+	 * @since 2.2.0
 	 */
 	public function output_sections() {
 		global $current_section;
@@ -98,7 +131,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		$array_keys = array_keys( $sections );
 
 		foreach ( $sections as $id => $label ) {
-			echo '<li><a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) . '" class="' . ( $current_section === $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) === $id ? '' : '|' ) . ' </li>';
+			echo '<li><a href="' . esc_url( admin_url( 'admin.php?page=wc-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) ) . '" class="' . ( $current_section === $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) === $id ? '' : '|' ) . ' </li>';
 		}
 
 		echo '</ul><br class="clear" />';
@@ -107,13 +140,19 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	/**
 	 * Get settings for current section (current gateway)
 	 *
+	 * @since 2.2.0
+	 *
+	 * @param string|null $section Optional. The section to get settings for. Defaults to global $current_section.
 	 * @return array
 	 */
-	public function get_settings() {
+	public function get_settings( $section = null ) {
 		global $current_section;
 
+		// Use provided section or fall back to global
+		$section = $section ?? $current_section;
+
 		// Get current gateway
-		$gateway_id = $current_section;
+		$gateway_id = $section;
 		if ( empty( $gateway_id ) ) {
 			// Default to first gateway
 			$payment_gateways = $this->get_payment_gateways();
@@ -229,7 +268,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		);
 
 		// Add tax fields if taxes are enabled
-		if ( 'yes' === get_option( 'woocommerce_calc_taxes' ) ) {
+		if ( $this->are_taxes_enabled() ) {
 			$form_fields = array_merge(
 				$form_fields,
 				array(
@@ -333,7 +372,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		);
 
 		// Add taxes checkbox if taxes are enabled
-		if ( 'yes' === get_option( 'woocommerce_calc_taxes' ) ) {
+		if ( $this->are_taxes_enabled() ) {
 			$form_fields[] = array(
 				'title'             => __( 'Taxes', 'woocommerce-pay-for-payment' ),
 				'type'              => 'checkbox',
@@ -359,6 +398,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 
 	/**
 	 * Output the settings
+	 *
+	 * @since 2.2.0
 	 */
 	public function output() {
 		global $current_section;
@@ -371,23 +412,19 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			return;
 		}
 
-		// If no section selected, default to first gateway (use local variable to avoid modifying global)
+		// If no section selected, default to first gateway
 		$section = ! empty( $current_section ) ? $current_section : array_key_first( $payment_gateways );
 
-		// Temporarily set global for get_settings() compatibility, then restore
-		$original_section = $current_section;
-		$current_section = $section;
-
-		$settings = $this->get_settings();
+		// Get settings for the specific section without modifying global
+		$settings = $this->get_settings( $section );
 
 		WC_Admin_Settings::output_fields( $settings );
-
-		// Restore original global value
-		$current_section = $original_section;
 	}
 
 	/**
 	 * Save settings
+	 *
+	 * @since 2.2.0
 	 *
 	 * Security Note: Both nonce verification and capability checks ('manage_woocommerce')
 	 * are handled by WooCommerce's WC_Admin_Settings class at the settings page level
@@ -433,17 +470,30 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			return;
 		}
 
-		// Get posted values
+		// Get posted values with validation
 		$item_title = isset( $_POST[ $prefix . '_pay4pay_item_title' ] ) ? sanitize_text_field( $_POST[ $prefix . '_pay4pay_item_title' ] ) : '';
 		$charges_fixed = isset( $_POST[ $prefix . '_pay4pay_charges_fixed' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_fixed' ] ) : 0;
+
+		// Validate and sanitize percentage
+		$charges_percentage = isset( $_POST[ $prefix . '_pay4pay_charges_percentage' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_percentage' ] ) : 0;
+
+		// Validate and sanitize minimum and maximum
+		$charges_minimum = isset( $_POST[ $prefix . '_pay4pay_charges_minimum' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_minimum' ] ) : 0;
+		$charges_maximum = isset( $_POST[ $prefix . '_pay4pay_charges_maximum' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_maximum' ] ) : 0;
+
+		// Validate min/max relationship: minimum should not be greater than maximum (when both are positive)
+		if ( $charges_minimum > 0 && $charges_maximum > 0 && $charges_minimum > $charges_maximum ) {
+			WC_Admin_Settings::add_error( __( 'Minimum charge cannot be greater than maximum charge. Settings not saved.', 'woocommerce-pay-for-payment' ) );
+			return;
+		}
 
 		// Build extra settings array
 		$extra = array(
 			'pay4pay_item_title'                => $item_title,
 			'pay4pay_charges_fixed'             => $charges_fixed,
-			'pay4pay_charges_percentage'        => isset( $_POST[ $prefix . '_pay4pay_charges_percentage' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_percentage' ] ) : 0,
-			'pay4pay_charges_minimum'           => isset( $_POST[ $prefix . '_pay4pay_charges_minimum' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_minimum' ] ) : 0,
-			'pay4pay_charges_maximum'           => isset( $_POST[ $prefix . '_pay4pay_charges_maximum' ] ) ? floatval( $_POST[ $prefix . '_pay4pay_charges_maximum' ] ) : 0,
+			'pay4pay_charges_percentage'        => $charges_percentage,
+			'pay4pay_charges_minimum'           => $charges_minimum,
+			'pay4pay_charges_maximum'           => $charges_maximum,
 			'pay4pay_disable_on_free_shipping'  => isset( $_POST[ $prefix . '_pay4pay_disable_on_free_shipping' ] ) && $_POST[ $prefix . '_pay4pay_disable_on_free_shipping' ] === '1' ? 'yes' : 'no',
 			'pay4pay_disable_on_zero_shipping'  => isset( $_POST[ $prefix . '_pay4pay_disable_on_zero_shipping' ] ) && $_POST[ $prefix . '_pay4pay_disable_on_zero_shipping' ] === '1' ? 'yes' : 'no',
 			'pay4pay_taxes'                     => isset( $_POST[ $prefix . '_pay4pay_taxes' ] ) && $_POST[ $prefix . '_pay4pay_taxes' ] === '1' ? 'yes' : 'no',
@@ -471,6 +521,10 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 
 	/**
 	 * Enqueue admin assets
+	 *
+	 * @since 2.2.0
+	 *
+	 * @param string $hook The current admin page hook.
 	 */
 	public function enqueue_admin_assets( $hook ) {
 		// Only load on our settings page
@@ -478,8 +532,13 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			return;
 		}
 
-		// Check if we're on our tab
-		if ( ! isset( $_GET['tab'] ) || $_GET['tab'] !== $this->id ) {
+		// Check capability
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			return;
+		}
+
+		// Check if we're on our tab with proper sanitization
+		if ( ! isset( $_GET['tab'] ) || sanitize_key( $_GET['tab'] ) !== $this->id ) {
 			return;
 		}
 
@@ -488,7 +547,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			'pay4pay_settings_checkout',
 			plugins_url( '/js/pay4pay-settings-checkout.js', dirname( __FILE__ ) ),
 			array( 'jquery', 'woocommerce_admin' ),
-			false,
+			PAY4PAYMENT_VERSION,
 			true
 		);
 
@@ -497,7 +556,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			'pay4pay_settings_checkout',
 			plugins_url( '/css/pay4pay-settings-checkout.css', dirname( __FILE__ ) ),
 			array(),
-			false
+			PAY4PAYMENT_VERSION
 		);
 	}
 }
