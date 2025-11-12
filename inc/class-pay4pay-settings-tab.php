@@ -120,6 +120,9 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	public function output_sections() {
 		global $current_section;
 
+		// Sanitize current section for security
+		$current_section = sanitize_key( $current_section );
+
 		$sections = $this->get_sections();
 
 		if ( empty( $sections ) || 1 === count( $sections ) ) {
