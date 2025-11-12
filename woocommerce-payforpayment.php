@@ -3,7 +3,7 @@
 Plugin Name: Pay for Payment for WooCommerce
 Plugin URI: https://kybernaut.cz/pluginy/woocommerce-pay-for-payment/
 Description: Setup individual charges for each payment method in WooCommerce.
-Version: 2.2.0-rc.1
+Version: 2.2.0
 Author: Karolína Vyskočilová
 Author URI: https://kybernaut.cz
 License: GPL-2.0+
@@ -38,9 +38,25 @@ function pay4payment_plugin_init() {
 		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-wcml.php';
 		include_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-woocs.php';
 
-		if ( is_admin() )
+		if ( is_admin() ) {
 			require_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-admin.php';
+
+			// Add settings tab using WooCommerce's official filter
+			add_filter( 'woocommerce_get_settings_pages', 'pay4payment_add_settings_tab' );
 		}
+	}
+}
+
+/**
+ * Add Pay for Payment settings tab to WooCommerce settings
+ *
+ * @param array $settings Array of WooCommerce settings page objects.
+ * @return array Modified array of settings page objects.
+ */
+function pay4payment_add_settings_tab( $settings ) {
+	require_once plugin_dir_path( __FILE__ ) . '/inc/class-pay4pay-settings-tab.php';
+	$settings[] = Pay4Pay_Settings_Tab::instance();
+	return $settings;
 }
 
 /**
@@ -61,6 +77,19 @@ function pay4payment_admin_notice() {
 		unset( $_GET['activate'] );
 	}
 }
+
+/**
+ * Add settings link to plugin action links
+ *
+ * @param array $links Plugin action links.
+ * @return array Modified plugin action links.
+ */
+function pay4payment_plugin_action_links( $links ) {
+	$settings_link = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=pay4payment' ) . '">' . __( 'Settings', 'woocommerce-pay-for-payment' ) . '</a>';
+	array_unshift( $links, $settings_link );
+	return $links;
+}
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'pay4payment_plugin_action_links' );
 
 // Declare compatibility with HPOS.
 add_action( 'before_woocommerce_init', function() {
