@@ -7,3 +7,5 @@
 .editorconfig
 .svnignore
 README.md
+.claude
+CLAUDE.md
