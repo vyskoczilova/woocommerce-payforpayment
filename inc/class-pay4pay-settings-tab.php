@@ -437,8 +437,14 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 
 		$gateway_id = $current_section;
 
+		// If no section selected, default to first gateway (same logic as output())
 		if ( empty( $gateway_id ) ) {
-			WC_Admin_Settings::add_error( __( 'Could not save settings. No payment gateway selected.', 'woocommerce-pay-for-payment' ) );
+			$payment_gateways = $this->get_payment_gateways();
+			$gateway_id = ! empty( $payment_gateways ) ? array_key_first( $payment_gateways ) : '';
+		}
+
+		if ( empty( $gateway_id ) ) {
+			WC_Admin_Settings::add_error( __( 'Could not save settings. No payment gateway found.', 'woocommerce-pay-for-payment' ) );
 			return;
 		}
 
