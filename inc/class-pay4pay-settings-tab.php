@@ -22,6 +22,13 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	private static $_instance = null;
 
 	/**
+	 * Cached payment gateways to avoid repeated calls
+	 *
+	 * @var array|null
+	 */
+	private $payment_gateways = null;
+
+	/**
 	 * Singleton instance
 	 */
 	public static function instance() {
@@ -45,6 +52,18 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	}
 
 	/**
+	 * Get payment gateways with caching
+	 *
+	 * @return array
+	 */
+	private function get_payment_gateways() {
+		if ( is_null( $this->payment_gateways ) ) {
+			$this->payment_gateways = WC()->payment_gateways()->payment_gateways();
+		}
+		return $this->payment_gateways;
+	}
+
+	/**
 	 * Get sections (subtabs for each payment gateway)
 	 *
 	 * @return array
@@ -52,8 +71,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	public function get_sections() {
 		$sections = array();
 
-		// Get all registered payment gateways
-		$payment_gateways = WC()->payment_gateways()->payment_gateways();
+		// Get all registered payment gateways (cached)
+		$payment_gateways = $this->get_payment_gateways();
 
 		foreach ( $payment_gateways as $gateway_id => $gateway ) {
 			$sections[ $gateway->id ] = $gateway->get_title();
@@ -79,7 +98,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		$array_keys = array_keys( $sections );
 
 		foreach ( $sections as $id => $label ) {
-			echo '<li><a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) . '" class="' . ( $current_section == $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) == $id ? '' : '|' ) . ' </li>';
+			echo '<li><a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) . '" class="' . ( $current_section === $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) === $id ? '' : '|' ) . ' </li>';
 		}
 
 		echo '</ul><br class="clear" />';
@@ -97,7 +116,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		$gateway_id = $current_section;
 		if ( empty( $gateway_id ) ) {
 			// Default to first gateway
-			$payment_gateways = WC()->payment_gateways()->payment_gateways();
+			$payment_gateways = $this->get_payment_gateways();
 			$gateway_id = ! empty( $payment_gateways ) ? array_key_first( $payment_gateways ) : '';
 		}
 
@@ -105,8 +124,8 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			return array();
 		}
 
-		// Get gateway object
-		$payment_gateways = WC()->payment_gateways()->payment_gateways();
+		// Get gateway object (cached)
+		$payment_gateways = $this->get_payment_gateways();
 		$gateway = isset( $payment_gateways[ $gateway_id ] ) ? $payment_gateways[ $gateway_id ] : null;
 
 		if ( ! $gateway ) {
@@ -247,7 +266,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 					array(
 						'title'             => __( 'Tax class', 'woocommerce-pay-for-payment' ),
 						'type'              => 'select',
-						'desc'              => __( 'Select a the tax class applied to the extra charge.', 'woocommerce-pay-for-payment' ),
+						'desc'              => __( 'Select the tax class applied to the extra charge.', 'woocommerce-pay-for-payment' ),
 						'desc_tip'          => true,
 						'id'                => 'woocommerce_' . $gateway_id . '_pay4pay_tax_class',
 						'options'           => $tax_class_options,
@@ -344,26 +363,37 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	public function output() {
 		global $current_section;
 
-		// Check if we have any payment gateways
-		$payment_gateways = WC()->payment_gateways()->payment_gateways();
+		// Check if we have any payment gateways (cached)
+		$payment_gateways = $this->get_payment_gateways();
 
 		if ( empty( $payment_gateways ) ) {
 			echo '<div class="notice notice-warning"><p>' . __( 'No payment gateways found. Please install and activate at least one payment gateway.', 'woocommerce-pay-for-payment' ) . '</p></div>';
 			return;
 		}
 
-		// If no section selected, default to first gateway
-		if ( empty( $current_section ) ) {
-			$current_section = array_key_first( $payment_gateways );
-		}
+		// If no section selected, default to first gateway (use local variable to avoid modifying global)
+		$section = ! empty( $current_section ) ? $current_section : array_key_first( $payment_gateways );
+
+		// Temporarily set global for get_settings() compatibility, then restore
+		$original_section = $current_section;
+		$current_section = $section;
 
 		$settings = $this->get_settings();
 
 		WC_Admin_Settings::output_fields( $settings );
+
+		// Restore original global value
+		$current_section = $original_section;
 	}
 
 	/**
 	 * Save settings
+	 *
+	 * Security Note: Both nonce verification and capability checks ('manage_woocommerce')
+	 * are handled by WooCommerce's WC_Admin_Settings class at the settings page level
+	 * before this method is called via the 'woocommerce_settings_save_{tab_id}' action hook.
+	 * WooCommerce verifies these in the WC_Admin_Settings::save() method before triggering
+	 * save actions for individual tabs.
 	 */
 	public function save() {
 		global $current_section;
@@ -371,6 +401,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		$gateway_id = $current_section;
 
 		if ( empty( $gateway_id ) ) {
+			WC_Admin_Settings::add_error( __( 'Could not save settings. No payment gateway selected.', 'woocommerce-pay-for-payment' ) );
 			return;
 		}
 
@@ -457,7 +488,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			'pay4pay_settings_checkout',
 			plugins_url( '/js/pay4pay-settings-checkout.js', dirname( __FILE__ ) ),
 			array( 'jquery', 'woocommerce_admin' ),
-			'2.5.1',
+			false,
 			true
 		);
 
@@ -466,7 +497,7 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 			'pay4pay_settings_checkout',
 			plugins_url( '/css/pay4pay-settings-checkout.css', dirname( __FILE__ ) ),
 			array(),
-			'2.5.1'
+			false
 		);
 	}
 }
