@@ -14,8 +14,7 @@ Setup individual charges for each payment method in WooCommerce.
 
 Add individual charges for each payment method as a flat rate and/or as a percentage of the cart total. The plugin first calculates the percentage rate and then adds the fixed rate on top.
 
-
-**Current version is not compatible with WooCommerce Block Checkout** please use shortcode for checkout instead. [How to guide](https://kybernaut.cz/en/clanky/how-to-revert-woocommerce-block-checkout-to-the-old-checkou-page/). I'm working on a new version compatible with block checkout and React settings.
+**Now compatible with React-based payment gateways!** Configure payment fees for all gateways (including WooCommerce Stripe) using the new centralized settings tab at WooCommerce > Settings > Pay for payment.
 
 
 You can use **placeholders** in the payment item title:
@@ -36,8 +35,7 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 
 = Compatibility =
 
-- ** Current version is not compatible with WooCommerce Block Checkout** please use shortcode for checkout instead. [How to guide](https://kybernaut.cz/en/clanky/how-to-revert-woocommerce-block-checkout-to-the-old-checkou-page/). I'm working on a new version compatible with block checkout and React settings.
-- **Currently not compatible with [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)** since it's React powered and I can't hook in. Use [Payment Plugins for Stripe WooCommerce](https://wordpress.org/plugins/woo-stripe-payment/) instead for now, waiting for their team to resolve the problem.
+- **Now compatible with React-based payment gateways** including [WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)! Use the centralized "Pay for payment" settings tab (WooCommerce > Settings > Pay for payment) to configure fees for React-based gateways.
 - **WPML** (see [FAQ](https://wordpress.org/plugins/woocommerce-pay-for-payment#faq))
 - [WooCommerce Price Based on Country for WooCommerce](https://wordpress.org/plugins/woocommerce-product-price-based-on-countries/) & PRO
 - [Multi Currency for WooCommerce](https://wordpress.org/plugins/woo-multi-currency/)  & PRO
@@ -56,6 +54,16 @@ Requires at least WooCommerce 2.6, compatible with WooCommerce 3.2+ (recommended
 == Installation ==
 
 Just follow the standard [WordPress plugin installation procedere](http://codex.wordpress.org/Managing_Plugins).
+
+= Configuration =
+
+After installation, you can configure payment fees in two locations:
+
+1. **Centralized Settings (Recommended)**: Go to WooCommerce > Settings > Pay for payment. This tab displays all payment gateways as subtabs, allowing you to configure fees for each gateway in one place. This method works with all payment gateways, including React-based gateways like WooCommerce Stripe.
+
+2. **Individual Gateway Settings**: Go to WooCommerce > Settings > Payments, and click on a payment gateway to configure its settings. The payment fee options will appear at the bottom of the gateway's settings page. Note: This method doesn't work with React-based payment gateways.
+
+Both locations read and write to the same settings, so you can use either method. Changes made in one location will be reflected in the other.
 
 == Frequently asked questions ==
 
@@ -110,6 +118,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.2.0 (2025-11-12) =
+* New: Centralized "Pay for Payment" settings tab (WooCommerce > Settings > Pay for payment) with settings link on plugin page (Note: Settings available in both centralized tab and individual gateway pages (both synchronized))
+* Fix: Now compatible with React-based payment gateways (e.g., WooCommerce Stripe)
 
 = 2.1.11 (2025-06-24) =
 * Add new filter for percentage fee.
