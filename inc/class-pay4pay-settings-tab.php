@@ -73,7 +73,11 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 	 */
 	private function get_payment_gateways() {
 		if ( is_null( $this->payment_gateways ) ) {
-			$this->payment_gateways = WC()->payment_gateways()->payment_gateways();
+			$all_gateways = WC()->payment_gateways()->payment_gateways();
+			// Filter to only include enabled gateways
+			$this->payment_gateways = array_filter( $all_gateways, function( $gateway ) {
+				return isset( $gateway->enabled ) && 'yes' === $gateway->enabled;
+			} );
 		}
 		return $this->payment_gateways;
 	}
