@@ -117,7 +117,7 @@ jQuery(document).ready(function($){
 			 * @since 2.0.9
 			 * @version 2.0.10
 			 */
-			if ( $current_gateway->id == 'cod' && ! empty( $settings['enable_for_methods'] ) ) {
+			if ( $current_gateway->id == 'cod' && ! empty( $settings['enable_for_methods'] ) && ! empty( $chosen_methods ) && ! empty( $chosen_methods[0] ) ) {
 				$chosen_methods_type = explode( ':', $chosen_methods[0] ); // solves problem with "any" type of method selected
 				if ( ! in_array( $chosen_methods[0], $settings['enable_for_methods'] ) && ! in_array( $chosen_methods_type[0], $settings['enable_for_methods'] ) ) {
 					return;

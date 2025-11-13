@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 6.7
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -118,6 +118,9 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 
 == Changelog ==
+
+= 2.2.1 () =
+* Fix PHP 8.0+ warning when accessing shipping methods array, fixes [this forum issue](https://wordpress.org/support/topic/php-warning-in-woocommerce-pay-for-payment-plugin/).
 
 = 2.2.0 (2025-11-12) =
 * New: Centralized "Pay for Payment" settings tab (WooCommerce > Settings > Pay for payment) with settings link on plugin page (Note: Settings available in both centralized tab and individual gateway pages (both synchronized))
