@@ -121,6 +121,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 = 2.2.1 () =
 * Fix PHP 8.0+ warning when accessing shipping methods array, fixes [this forum issue](https://wordpress.org/support/topic/php-warning-in-woocommerce-pay-for-payment-plugin/).
+* New: Added admin footer text with rating request on plugin settings pages.
 
 = 2.2.0 (2025-11-12) =
 * New: Centralized "Pay for Payment" settings tab (WooCommerce > Settings > Pay for payment) with settings link on plugin page (Note: Settings available in both centralized tab and individual gateway pages (both synchronized))

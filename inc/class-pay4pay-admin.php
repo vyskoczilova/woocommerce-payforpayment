@@ -35,6 +35,9 @@ class Pay4Pay_Admin {
 
 		// settings script
 		add_action( 'load-woocommerce_page_wc-settings', array( $this, 'enqueue_checkout_settings_js' ) );
+
+		// admin footer text
+		add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ) );
 	}
 
 	public function save_actions_for_every_method() {
@@ -359,6 +362,64 @@ class Pay4Pay_Admin {
 				echo implode( '<br />', $items );
 			}
 		?></td><?php
+	}
+
+	/**
+	 * Change the admin footer text on Pay for Payment plugin pages.
+	 *
+	 * @since 2.2.1
+	 *
+	 * @param string $footer_text Footer text to be rendered.
+	 * @return string
+	 */
+	public function admin_footer_text( $footer_text ) {
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			return $footer_text;
+		}
+
+		$current_screen = get_current_screen();
+
+		// Check if we're on plugin-related WooCommerce settings pages
+		$is_plugin_page = false;
+		if ( isset( $current_screen->id ) && $current_screen->id === 'woocommerce_page_wc-settings' ) {
+			// Check if we're on the checkout tab or Pay for Payment tab
+			if ( isset( $_GET['tab'] ) && ( $_GET['tab'] === 'checkout' || $_GET['tab'] === 'pay4payment' ) ) {
+				$is_plugin_page = true;
+			}
+		}
+
+		/**
+		 * Filter to determine if admin footer text should be displayed.
+		 *
+		 * @since 2.5.8
+		 *
+		 * @param bool $is_plugin_page Whether the current page is a plugin page.
+		 */
+		if ( apply_filters( 'woocommerce_pay4pay_display_admin_footer_text', $is_plugin_page ) ) {
+			// Change the footer text
+			if ( ! get_option( 'woocommerce_pay4pay_admin_footer_text_rated' ) ) {
+				$footer_text = sprintf(
+					/* translators: 1: Pay for Payment 2: five stars */
+					__( 'If you like %1$s please leave us a %2$s rating. A huge thanks in advance!', 'woocommerce-pay-for-payment' ),
+					sprintf( '<strong>%s</strong>', esc_html__( 'Pay for Payment for WooCommerce', 'woocommerce-pay-for-payment' ) ),
+					'<a href="https://wordpress.org/support/plugin/woocommerce-pay-for-payment/reviews?rate=5#new-post" target="_blank" class="pay4pay-rating-link" aria-label="' . esc_attr__( 'five star', 'woocommerce-pay-for-payment' ) . '" data-rated="' . esc_attr__( 'Thanks :)', 'woocommerce-pay-for-payment' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
+				);
+
+				// Only enqueue the JS if wc_enqueue_js function exists (WooCommerce is active)
+				if ( function_exists( 'wc_enqueue_js' ) ) {
+					wc_enqueue_js(
+						"jQuery( 'a.pay4pay-rating-link' ).on( 'click', function() {
+							jQuery.post( '" . admin_url( 'admin-ajax.php' ) . "', { action: 'woocommerce_pay4pay_rated' } );
+							jQuery( this ).parent().text( jQuery( this ).data( 'rated' ) );
+						});"
+					);
+				}
+			} else {
+				$footer_text = __( 'Thank you for using Pay for Payment for WooCommerce.', 'woocommerce-pay-for-payment' );
+			}
+		}
+
+		return '<span id="footer-thankyou">' . $footer_text . '</span>';
 	}
 }
 

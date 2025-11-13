@@ -102,3 +102,15 @@ add_action( 'before_woocommerce_init', function() {
 		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 	}
 } );
+
+/**
+ * AJAX handler for rating link click
+ *
+ * @since 2.2.1
+ * @return void
+ */
+function pay4payment_rated_ajax_handler() {
+	update_option( 'woocommerce_pay4pay_admin_footer_text_rated', 1 );
+	wp_die();
+}
+add_action( 'wp_ajax_woocommerce_pay4pay_rated', 'pay4payment_rated_ajax_handler' );
