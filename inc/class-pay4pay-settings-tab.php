@@ -418,6 +418,40 @@ class Pay4Pay_Settings_Tab extends WC_Settings_Page {
 		// If no section selected, default to first gateway
 		$section = ! empty( $current_section ) ? $current_section : array_key_first( $payment_gateways );
 
+		// Get gateway ID
+		$gateway_id = $section;
+
+		// Fix for Eurobank WooCommerce Payment Gateway
+		$class_id = $gateway_id;
+		if ( $class_id === 'wc_eurobank_gateway' ) {
+			$class_id = 'eurobank_gateway';
+		}
+
+		$prefix  = 'woocommerce_' . $class_id;
+		$postfix = '_settings';
+
+		// Load gateway settings directly from database
+		$opt_name = $prefix . $postfix;
+		$gateway_settings = get_option( $opt_name );
+
+		// Try fallback format
+		if ( $gateway_settings === false ) {
+			$opt_name = $class_id . $postfix;
+			$gateway_settings = get_option( $opt_name );
+		}
+
+		// If still no settings, use defaults
+		if ( $gateway_settings === false ) {
+			$gateway_settings = array();
+		}
+
+		// Temporarily set options for each field so WC_Admin_Settings::output_fields() can read them
+		foreach ( $gateway_settings as $key => $value ) {
+			if ( strpos( $key, 'pay4pay_' ) === 0 ) {
+				update_option( $prefix . '_' . $key, $value, false );
+			}
+		}
+
 		// Get settings for the specific section without modifying global
 		$settings = $this->get_settings( $section );
 
