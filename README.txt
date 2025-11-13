@@ -119,7 +119,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
-= 2.2.1 () =
+= 2.2.1 (2025-11-13) =
 * Fix: Centralized settings tab now correctly displays payment fee values.
 * Fix PHP 8.0+ warning when accessing shipping methods array, fixes [this forum issue](https://wordpress.org/support/topic/php-warning-in-woocommerce-pay-for-payment-plugin/).
 * Improvement: Centralized settings tab now only shows enabled payment gateways for cleaner admin interface.
