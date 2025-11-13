@@ -13,7 +13,7 @@ increment_version() {
     echo "$major.$minor.$patch"
 }
 
-# Get current version from phone-validator-and-formatter.php
+# Get current version from woocommerce-payforpayment.php
 current_version=$(grep -o "Version: [0-9]\+\.[0-9]\+\.[0-9]\+" woocommerce-payforpayment.php | cut -d' ' -f2)
 echo "Current version: $current_version"
 
@@ -24,7 +24,7 @@ if [ -z "$new_version" ]; then
     new_version=$(increment_version $current_version)
 fi
 
-# Update version in phone-validator-and-formatter.php
+# Update version in woocommerce-payforpayment.php
 sed -i '' "s/Version: $current_version/Version: $new_version/" woocommerce-payforpayment.php
 # Update the define() statement for PAY4PAYMENT_VERSION in woocommerce-payforpayment.php
 sed -i '' "s/define( 'PAY4PAYMENT_VERSION', '$current_version' );/define( 'PAY4PAYMENT_VERSION', '$new_version' );/" woocommerce-payforpayment.php
@@ -32,9 +32,10 @@ sed -i '' "s/define( 'PAY4PAYMENT_VERSION', '$current_version' );/define( 'PAY4P
 echo "Updated version to $new_version in woocommerce-payforpayment.php"
 
 # Ask about updating readme.txt
-read -p "Do you want to update the stable tag in readme.txt? (y/n): " update_readme
+read -p "Update the stable tag in readme.txt? (default: yes, Y/n): " update_readme
+update_readme=${update_readme:-Y}
 
-if [ "$update_readme" = "y" ] || [ "$update_readme" = "Y" ]; then
+if [ "$update_readme" != "n" ] && [ "$update_readme" != "N" ]; then
     if [ -f "readme.txt" ]; then
         # Update the stable tag line
         sed -i '' "s/^Stable tag: .*/Stable tag: $new_version/" readme.txt

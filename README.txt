@@ -119,6 +119,10 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 == Changelog ==
 
+= 2.2.2 (2025-11-13) =
+* Fix: Undefined array key warnings for pay4pay_charges_minimum and pay4pay_charges_maximum in settings tab, fixes [this forum issue](https://wordpress.org/support/topic/unidened-pay4pay_charges-minimum/).
+* Fix: Use proper getter method for product tax_class to avoid WooCommerce deprecation warning.
+
 = 2.2.1 (2025-11-13) =
 * Fix: Centralized settings tab now correctly displays payment fee values.
 * Fix PHP 8.0+ warning when accessing shipping methods array, fixes [this forum issue](https://wordpress.org/support/topic/php-warning-in-woocommerce-pay-for-payment-plugin/).

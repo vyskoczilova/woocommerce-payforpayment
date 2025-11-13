@@ -22,6 +22,8 @@ class Pay4Pay {
 			'pay4pay_item_title' => __( 'Extra Charge', 'woocommerce-pay-for-payment' ),
 			'pay4pay_charges_fixed' => 0,
 			'pay4pay_charges_percentage' => 0,
+			'pay4pay_charges_minimum' => 0,
+			'pay4pay_charges_maximum' => 0,
 			'pay4pay_disable_on_free_shipping' => 'no',
 			'pay4pay_disable_on_zero_shipping' => 'no',
 
@@ -239,7 +241,7 @@ jQuery(document).ready(function($){
 
 										if ( $itemTaxRate >= $highestTaxRate ) {
 											$highestTaxRate = $itemTaxRate;
-											$tax_class = $item['data']->tax_class;
+											$tax_class = $item['data']->get_tax_class();
 										}
 									}
 								}
