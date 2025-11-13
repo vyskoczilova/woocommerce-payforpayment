@@ -4,7 +4,7 @@ Donate link: https://paypal.me/KarolinaVyskocilova
 Tags: ecommerce, woocommerce, payment gateway, fee
 Requires at least: 4.6
 Tested up to: 6.7
-Stable tag: 2.2.2
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,7 @@ Either post it on [GitHub](https://github.com/vyskoczilova/woocommerce-payforpay
 
 = 2.2.2 (2025-11-13) =
 * Fix: Undefined array key warnings for pay4pay_charges_minimum and pay4pay_charges_maximum in settings tab, fixes [this forum issue](https://wordpress.org/support/topic/unidened-pay4pay_charges-minimum/).
+* Fix: Use proper getter method for product tax_class to avoid WooCommerce deprecation warning.
 
 = 2.2.1 (2025-11-13) =
 * Fix: Centralized settings tab now correctly displays payment fee values.

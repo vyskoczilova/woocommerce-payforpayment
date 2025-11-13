@@ -241,7 +241,7 @@ jQuery(document).ready(function($){
 
 										if ( $itemTaxRate >= $highestTaxRate ) {
 											$highestTaxRate = $itemTaxRate;
-											$tax_class = $item['data']->tax_class;
+											$tax_class = $item['data']->get_tax_class();
 										}
 									}
 								}
