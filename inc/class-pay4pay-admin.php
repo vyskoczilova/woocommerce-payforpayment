@@ -387,7 +387,7 @@ class Pay4Pay_Admin {
 		/**
 		 * Filter to determine if admin footer text should be displayed.
 		 *
-		 * @since 2.5.8
+		 * @since 2.2.1
 		 *
 		 * @param bool $is_plugin_page Whether the current page is a plugin page.
 		 */
