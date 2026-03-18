@@ -144,8 +144,7 @@ jQuery(document).ready(function($){
 			 * https://docs.woocommerce.com/document/class-reference/#section-5
 			 * @version 2.0.8
 			 */
-			global $woocommerce;
-			if ( $woocommerce->customer->is_vat_exempt() ) {
+			if ( WC()->customer->is_vat_exempt() ) {
 				$taxable = false;
 			}
 
