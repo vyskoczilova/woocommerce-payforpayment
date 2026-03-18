@@ -330,10 +330,6 @@ class Pay4Pay_Admin {
 		return isset( $_POST[ $key ] ) && $_POST[ $key ] === '1' ? 'yes' : 'no';
 	}
 
-	private function _get_float( $key ) {
-		return isset( $_POST[ $key ] ) && $_POST[ $key ] === '1' ? 'yes' : 'no';
-	}
-
 	/*
 	Handline columns in Woocommerce > settings > checkout
 	*/
