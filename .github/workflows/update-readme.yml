@@ -1,8 +1,19 @@
 name: Plugin asset/readme update
+
+# PAUSED 2026-09-23, for the v3 release - same reason as deploy.yml.
+#
+# This pushes readme.txt and the .wordpress-org/ assets straight to wp.org SVN
+# on any push to `trunk`. That branch still exists here and this workflow has
+# fired before (2025-11-12), so it is a live second route to wp.org, not a
+# dormant one. From v3 what wp.org serves comes from the Freemius-generated,
+# contract-verified free artifact; a readme pushed from this tree could
+# describe a build that was never shipped.
+#
+# `workflow_dispatch` leaves it runnable by hand. To re-enable, restore the
+# `push: branches: [trunk]` trigger.
 on:
-  push:
-    branches:
-    - trunk
+  workflow_dispatch:
+
 jobs:
   trunk:
     name: Push to trunk
